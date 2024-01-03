@@ -47,8 +47,17 @@ function SideNavBar() {
             <aside className="bg-gray-800 text-white h-screen w-64 p-4 flex flex-col justify-between ">
                 <div className='mb-5'>
                     {/* Image and Name */}
-                    <img src={Rubayed_Cropped} alt="Rubayed All Islam" className="w-full rounded-full mb-4" />
-                    <h2 className="text-xl font-bold">Rubayed All Islam</h2>
+                    <div className='flex items-center justify-center'>
+                    <img src={Rubayed_Cropped} alt="Rubayed All Islam" className="w-3/4 rounded-full mb-4 border-4 border-gray-400" />
+                    </div>
+                    {/* <img src={Rubayed_Cropped} alt="Rubayed All Islam" className="w-full rounded-full mb-4" /> */}
+                    <div className='flex items-center justify-center'>
+                        <a href="/home" className=''>
+                            <h2 className="text-2xl font-bold">Rubayed All Islam</h2>
+                        </a>
+                    </div>
+
+
 
                     {/* Social Media Icons */}
                     <div className="flex space-x-4 mt-4">
@@ -136,7 +145,7 @@ function SideNavBar() {
                         &copy; 2023 | Rubayed All Islam
                     </div>
                     <div>
-                        
+
                     </div>
                 </footer>
             </aside>
