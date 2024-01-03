@@ -5,22 +5,31 @@ function Education() {
     // State for Education
     const [education, setEducation] = useState([
         {
-            degree: 'Bachelor of Science',
-            department: 'Computer Science',
-            institution: 'University Name 1',
-            gpa: '3.8',
-            outof: '4.0',
-            beginDate: 'August 2016',
-            endDate: 'May 2020',
+            degree: 'BACHELOR OF SCIENCE (B.SC.)',
+            department: 'Computer Science of Engineering',
+            institution: ' Jahangirnagar University',
+            gpa: '3.74',
+            outof: '4.00',
+            beginDate: 'March 2020',
+            endDate: 'Present',
         },
         {
-            degree: 'Master of Science',
-            department: 'Data Science',
-            institution: 'University Name 2',
-            gpa: '4.0',
-            outof: '4.0',
-            beginDate: 'September 2020',
-            endDate: 'Present',
+            degree: 'HIGHER SECONDARY CERTIFICATE (HSC)',
+            department: 'Science',
+            institution: 'Badargonj Govt. College',
+            gpa: '5.00',
+            outof: '5.00',
+            beginDate: 'July 2017',
+            endDate: 'March 2019',
+        },
+        {
+            degree: 'SECONDARY SCHOOL CERTIFICATE (SSC)',
+            department: 'Science',
+            institution: 'Awliagonj High School',
+            gpa: '4.41',
+            outof: '5.00',
+            beginDate: 'January 2015',
+            endDate: 'February 2017',
         },
         // Add more education entries as needed
     ]);
@@ -29,7 +38,7 @@ function Education() {
         <div>
             <div className="container mt-5 mx-auto">
                 <div className="ms-3 me-4">
-                    <header className="bg-blue-500 text-white py-4 rounded-lg">
+                    <header className="bg-gray-500 text-white py-4 rounded-lg">
                         <div className="container mx-auto ml-4">
                             <h1 className="text-3xl font-bold">Education</h1>
                         </div>

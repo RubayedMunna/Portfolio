@@ -3,33 +3,19 @@ import React, { useState } from 'react';
 function Participated() {
   const [events, setEvents] = useState([
     {
-      eventName: 'Seminar/Workshop 1',
-      institutionName: 'Your Institution 1',
-      location: 'Location 1',
+      eventName: 'Concrete Autoencoder-Based Feature Selection Discovers Key Genes in Evaluating Intratumor Heterogeneity',
+      institutionName: 'Jahangirnagar University',
+      location: 'Department of Computer Science and Engineering',
       eventDate: 'January 1, 2022',
       topicsCovered: [
-        'What is Azure Function?',
-        'What is API?',
-        'What are the benefits of Azure Functions?',
-        'What can we do with Azure Functions out of the box?',
-        'Real-life problem-solving with Azure Functions App without any framework implementation.',
-        'Hands-on demo to build a mobile SMS transmitter using Azure Functions HTTP Trigger.',
+        'Evaluating ITH using Depth 2.',
+        'Drawbacks of Depth 2 and Hypothesis to overcome.',
+        'Feature selection algorithms: Autoencoder(AE), Concrete Autoencoder(CAE), Multirun Concrete Autoencoder(mrCAE), MCFC, UDFS',
+        'Survival Analysis: BRCA cohort',
       ],
-      eventLink: 'https://your-website-url1.com',
+      eventLink: '#',
     },
-    {
-      eventName: 'Seminar/Workshop 2',
-      institutionName: 'Your Institution 2',
-      location: 'Location 2',
-      eventDate: 'February 15, 2022',
-      topicsCovered: [
-        'Topic 1',
-        'Topic 2',
-        'Topic 3',
-        'Topic 4',
-      ],
-      eventLink: 'https://your-website-url2.com',
-    },
+    
     // Add more event entries as needed
   ]);
 

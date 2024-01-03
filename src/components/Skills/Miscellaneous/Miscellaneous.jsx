@@ -3,8 +3,12 @@ import React, { useState } from 'react';
 function Miscellaneous() {
     const [skillCards, setSkillCards] = useState([
         { skillName: 'GIT', skillPercentage: 60 },
-        { skillName: 'Matlab', skillPercentage: 75 },
-        { skillName: 'XML', skillPercentage: 75 },
+        { skillName: 'Docker', skillPercentage: 0 },
+        { skillName: 'MQTT Broker (EMQx)', skillPercentage: 0 },
+        { skillName: 'XML', skillPercentage: 0 },
+        { skillName: 'Matlab', skillPercentage: 0 },
+        { skillName: 'Highchart (data visualization)', skillPercentage: 0 },
+        { skillName: 'Xamarin (Cross platform mobile app)', skillPercentage: 0 },
         // Add more cards as needed
     ]);
 
@@ -22,14 +26,14 @@ function Miscellaneous() {
 
                             {/* Skill Percentage as a smaller button-like element */}
                             <div className="text-gray-700">
-                                <span className="inline-block bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
+                                <span className="inline-block bg-gray-500 text-white px-3 py-1 rounded-full text-sm">
                                     {`${card.skillPercentage}%`}
                                 </span>
                             </div>
                         </div>
 
                         {/* Blue line based on skill percentage with increased thickness and margin-bottom */}
-                        <div className="bg-blue-500 h-4 my-2 mx-2 rounded-md" style={{ width: `${card.skillPercentage}%` }}></div>
+                        <div className="bg-gray-500 h-4 my-2 mx-2 rounded-md" style={{ width: `${card.skillPercentage}%` }}></div>
                     </div>
                 ))}
             </div>

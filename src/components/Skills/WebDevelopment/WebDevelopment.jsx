@@ -2,9 +2,19 @@ import React, { useState } from 'react';
 
 function WebDevelopment() {
     const [skillCards, setSkillCards] = useState([
-        { skillName: 'HTML', skillPercentage: 80 },
-        { skillName: 'CSS', skillPercentage: 60 },
-        { skillName: 'Javascript', skillPercentage: 75 },
+        { skillName: 'ASP.Net Core', skillPercentage: 0 },
+        { skillName: 'ASP.Net', skillPercentage: 0 },
+        { skillName: 'Angular', skillPercentage: 0 },
+        { skillName: 'Django', skillPercentage: 55 },
+        { skillName: 'Anjularjs', skillPercentage: 0 },
+        { skillName: 'Entity Framework', skillPercentage: 0 },
+        { skillName: 'HTML', skillPercentage: 90 },
+        { skillName: 'CSS', skillPercentage: 88 },
+        { skillName: 'Bootstrap 5', skillPercentage: 87 },
+        { skillName: 'Tailwind 3', skillPercentage: 90 },
+        { skillName: 'Ocelot API gateway', skillPercentage: 0 },
+        { skillName: 'Microservice architecture', skillPercentage: 0 },
+        { skillName: 'Unit testing (XUnit and NUnit)', skillPercentage: 0 },
         // Add more cards as needed
     ]);
 
@@ -22,14 +32,14 @@ function WebDevelopment() {
 
                             {/* Skill Percentage as a smaller button-like element */}
                             <div className="text-gray-700">
-                                <span className="inline-block bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
+                                <span className="inline-block bg-gray-500 text-white px-3 py-1 rounded-full text-sm">
                                     {`${card.skillPercentage}%`}
                                 </span>
                             </div>
                         </div>
 
                         {/* Blue line based on skill percentage with increased thickness and margin-bottom */}
-                        <div className="bg-blue-500 h-4 my-2 mx-2 rounded-md" style={{ width: `${card.skillPercentage}%` }}></div>
+                        <div className="bg-gray-500 h-4 my-2 mx-2 rounded-md" style={{ width: `${card.skillPercentage}%` }}></div>
                     </div>
                 ))}
             </div>

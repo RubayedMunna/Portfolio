@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 
 function Database() {
     const [skillCards, setSkillCards] = useState([
-        { skillName: 'SQLite', skillPercentage: 60 },
-        { skillName: 'MySQL', skillPercentage: 75 },
+        { skillName: 'MySQL', skillPercentage: 70 },
+        { skillName: 'MSSQL', skillPercentage: 0 },
+        { skillName: 'PostgreSQL', skillPercentage: 0 },
+        { skillName: 'No SQL (MongoDB)', skillPercentage: 0 },
+        { skillName: 'No SQL (Firebase)', skillPercentage: 0 },
         // Add more cards as needed
     ]);
 
@@ -21,14 +24,14 @@ function Database() {
 
                             {/* Skill Percentage as a smaller button-like element */}
                             <div className="text-gray-700">
-                                <span className="inline-block bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
+                                <span className="inline-block bg-gray-500 text-white px-3 py-1 rounded-full text-sm">
                                     {`${card.skillPercentage}%`}
                                 </span>
                             </div>
                         </div>
 
                         {/* Blue line based on skill percentage with increased thickness and margin-bottom */}
-                        <div className="bg-blue-500 h-4 my-2 mx-2 rounded-md" style={{ width: `${card.skillPercentage}%` }}></div>
+                        <div className="bg-gray-500 h-4 my-2 mx-2 rounded-md" style={{ width: `${card.skillPercentage}%` }}></div>
                     </div>
                 ))}
             </div>

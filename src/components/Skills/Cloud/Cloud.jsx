@@ -2,9 +2,16 @@ import React, { useState } from 'react';
 
 function Cloud() {
     const [skillCards, setSkillCards] = useState([
-        { skillName: 'Azure VM', skillPercentage: 60 },
-        { skillName: 'Azure container registry', skillPercentage: 75 },
-        { skillName: 'Azure SQL Database', skillPercentage: 75 },
+        { skillName: 'Azure VM', skillPercentage: 0 },
+        { skillName: 'Azure container registry', skillPercentage: 0 },
+        { skillName: 'Azure SQL Database', skillPercentage: 0 },
+        { skillName: 'Azure files', skillPercentage: 0 },
+        { skillName: 'Azure cognitive services', skillPercentage: 0 },
+        { skillName: 'Azure cosmos DB', skillPercentage: 0 },
+        { skillName: 'Azure functions (serverless code)', skillPercentage: 0 },
+        { skillName: 'Azure Bot services', skillPercentage: 0 },
+        { skillName: 'Amazon S3', skillPercentage: 0 },
+        { skillName: 'Azure app service', skillPercentage: 0 },
         // Add more cards as needed
     ]);
 
@@ -22,14 +29,14 @@ function Cloud() {
 
                             {/* Skill Percentage as a smaller button-like element */}
                             <div className="text-gray-700">
-                                <span className="inline-block bg-blue-500 text-white px-3 py-1 rounded-full text-sm">
+                                <span className="inline-block bg-gray-500 text-white px-3 py-1 rounded-full text-sm">
                                     {`${card.skillPercentage}%`}
                                 </span>
                             </div>
                         </div>
 
                         {/* Blue line based on skill percentage with increased thickness and margin-bottom */}
-                        <div className="bg-blue-500 h-4 my-2 mx-2 rounded-md" style={{ width: `${card.skillPercentage}%` }}></div>
+                        <div className="bg-gray-500 h-4 my-2 mx-2 rounded-md" style={{ width: `${card.skillPercentage}%` }}></div>
                     </div>
                 ))}
             </div>

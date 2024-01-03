@@ -21,7 +21,7 @@ function Extracurricular() {
         <div>
             <div className="container mt-5 mx-auto">
                 <div className="ms-3 me-4">
-                    <header className="bg-blue-500 text-white py-4 rounded-lg">
+                    <header className="bg-gray-500 text-white py-4 rounded-lg">
                         <div className="container mx-auto ml-4">
                             <h1 className="text-3xl font-bold">Extracurricular Activities</h1>
                         </div>
