@@ -4,43 +4,7 @@ import Rubayed_Cropped from './../../assets/images/Rubayed_Cropped.jpg';
 import { Link, useNavigate } from 'react-router-dom';
 
 function SideNavBar() {
-    const navigate = useNavigate();
-
-    const gotoHome = () => {
-        navigate('/home');
-    };
-
-    const gotoExperience = () => {
-        navigate('/experience');
-    };
-
-    const gotoEducation = () => {
-        navigate('/education');
-    };
-
-    const gotoPublications = () => {
-        navigate('/publications');
-    };
-
-    const gotoSkills = () => {
-        navigate('/skills');
-    };
-
-    const gotoAcademicService = () => {
-        navigate('/academic-service');
-    };
-
-    const gotoExtracurricularActivities = () => {
-        navigate('/extracurricular-activities');
-    };
-
-    const gotoSeminarWorkshops = () => {
-        navigate('/seminar-workshops');
-    };
-
-    const gotoAccomplishments = () => {
-        navigate('/accomplishment');
-    };
+    
 
     return (
         <div>
