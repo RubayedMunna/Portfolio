@@ -137,6 +137,7 @@ function SideNavBar() {
                         <FaWhatsapp className="text-green-500 mr-2" />
                         <span>+8801864852588</span>
                     </div>
+                    
                     <div className="flex items-center mt-2">
                         <FaEnvelope className="text-blue-500 mr-2" />
                         <span>jucse29.370@gmail.com, rubayedcse29@gmail.com, rubayed.stu2019@juniv.edu</span>
