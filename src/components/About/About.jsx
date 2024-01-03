@@ -25,7 +25,7 @@ function About() {
                             <div className="md:col-span-12 m-3.5">
                                 <div className="prose text-justify whitespace-pre-wrap">
                                     <p className='mb-5'>
-                                        Hello, I am <b>Rubayed All Islam.</b>
+                                        Hello, I am <b>Rubayed All Islam (Munna).</b>
                                     </p>
                                     <p className='mt-6'>
                                         I am currently embarking on an exciting journey as a Ph.D. student in the Department of Computer Science at Boise State University, where I also serve as a Graduate Teaching Assistant. Previously, I gained valuable industry experience as a Senior Software Engineer at Brain Station 23, Ltd.
