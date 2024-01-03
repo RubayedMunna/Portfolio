@@ -52,9 +52,9 @@ function SideNavBar() {
                     </div>
                     {/* <img src={Rubayed_Cropped} alt="Rubayed All Islam" className="w-full rounded-full mb-4" /> */}
                     <div className='flex items-center justify-center'>
-                        <a href="/home" className=''>
+                        <Link to="/home" onClick={gotoHome}>
                             <h2 className="text-2xl font-bold">Rubayed All Islam</h2>
-                        </a>
+                        </Link>
                     </div>
 
 
