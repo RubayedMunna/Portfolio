@@ -52,7 +52,7 @@ function SideNavBar() {
                     </div>
                     {/* <img src={Rubayed_Cropped} alt="Rubayed All Islam" className="w-full rounded-full mb-4" /> */}
                     <div className='flex items-center justify-center'>
-                        <Link to="/home" onClick={gotoHome}>
+                        <Link to="/home">
                             <h2 className="text-2xl font-bold">Rubayed All Islam</h2>
                         </Link>
                     </div>
@@ -75,55 +75,55 @@ function SideNavBar() {
                     {/* Navigation Links with Icons */}
                     <ul className="space-y-2">
                         <li>
-                            <Link to="/home" className="flex items-center" onClick={gotoHome}>
+                            <Link to="/home" className="flex items-center">
                                 <FaHome className="inline-block mr-2" />
                                 Home
                             </Link>
                         </li>
                         <li>
-                            <Link to="/experience" className="flex items-center my-4" onClick={gotoExperience}>
+                            <Link to="/experience" className="flex items-center my-4">
                                 <FaBriefcase className="inline-block mr-2" />
                                 Experience
                             </Link>
                         </li>
                         <li>
-                            <Link to="/education" className="flex items-center my-4" onClick={gotoEducation}>
+                            <Link to="/education" className="flex items-center my-4">
                                 <FaGraduationCap className="inline-block mr-2" />
                                 Education
                             </Link>
                         </li>
                         <li>
-                            <Link to="/publications" className="flex items-center my-4" onClick={gotoPublications}>
+                            <Link to="/publications" className="flex items-center my-4">
                                 <FaScroll className="inline-block mr-2" />
                                 Publications
                             </Link>
                         </li>
                         <li>
-                            <Link to="/skills" className="flex items-center my-4" onClick={gotoSkills}>
+                            <Link to="/skills" className="flex items-center my-4">
                                 <FaCode className="inline-block mr-2" />
                                 Skills
                             </Link>
                         </li>
                         <li>
-                            <Link to="/academic-service" className="flex items-center my-4" onClick={gotoAcademicService}>
+                            <Link to="/academic-service" className="flex items-center my-4">
                                 <FaChalkboardTeacher className="inline-block mr-2" />
                                 Academic Service
                             </Link>
                         </li>
                         <li>
-                            <Link to="/extracurricular-activities" className="flex items-center my-4" onClick={gotoExtracurricularActivities}>
+                            <Link to="/extracurricular-activities" className="flex items-center my-4">
                                 <FaRunning className="inline-block mr-2" />
                                 Extracurricular Activities
                             </Link>
                         </li>
                         <li>
-                            <Link to="/seminar-workshops" className="flex items-center my-4" onClick={gotoSeminarWorkshops}>
+                            <Link to="/seminar-workshops" className="flex items-center my-4">
                                 <FaBookReader className="inline-block mr-2" />
                                 Seminars & Workshops
                             </Link>
                         </li>
                         <li>
-                            <Link to="/accomplishment" className="flex items-center my-4" onClick={gotoAccomplishments}>
+                            <Link to="/accomplishment" className="flex items-center my-4">
                                 <FaMedal className="inline-block mr-2" />
                                 Accomplishments
                             </Link>
