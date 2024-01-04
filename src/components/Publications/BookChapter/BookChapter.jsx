@@ -71,7 +71,7 @@ function BookChapter() {
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 gap-4">
           <div>
             {filteredCards.map((card) => (
-              <div key={card.id} className="max-w-full mx-auto bg-white shadow-md overflow-hidden rounded-md border-l-4 border-blue-700 ">
+              <div key={card.id} className="max-w-full mx-auto bg-white shadow-md overflow-hidden rounded-md border-l-8 border-blue-700 ">
                 <div className="bg-white-500 text-white px-2 py-2">
                   <h2 className="text-xl font-bold">
                     <span className="bg-white text-blue-500 px-4 py-2 rounded">{card.title}</span>

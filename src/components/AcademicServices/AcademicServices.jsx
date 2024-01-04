@@ -37,7 +37,7 @@ function AcademicServces() {
                                         Reviewer for Journal
                                     </div>
                                     {journals.map((journal, index) => (
-                                        <div key={index} className="w-4/5 mx-auto bg-white shadow-md overflow-hidden rounded-md border-l-4 border-blue-700 my-5 ">
+                                        <div key={index} className="w-4/5 mx-auto bg-white shadow-md overflow-hidden rounded-md border-l-8 border-blue-700 my-5 ">
                                             <div className="bg-white-500 text-gray-900 px-2 py-1">
                                                 <h2 className="text-xl flex items-center px-10">
                                                     <span className='bg-white text-gray-900 pr-4 py-2 rounded '>
@@ -60,7 +60,7 @@ function AcademicServces() {
                                         Reviewer for Conference
                                     </div>
                                     {conferences.map((conference, index) => (
-                                        <div key={index} className="w-4/5 mx-auto bg-white shadow-md overflow-hidden rounded-md border-l-4 border-blue-700 my-5 ">
+                                        <div key={index} className="w-4/5 mx-auto bg-white shadow-md overflow-hidden rounded-md border-l-8 border-blue-700 my-5 ">
                                             <div className="bg-white-500 text-gray-900 px-2 py-1">
                                                 <h2 className="text-xl flex items-center px-10">
                                                     <span className='bg-white text-gray-900 pr-4 py-2 rounded '>
@@ -83,7 +83,7 @@ function AcademicServces() {
                                         Program Committee Member
                                     </div>
                                     {programCommittees.map((programCommittee, index) => (
-                                        <div key={index} className="w-4/5 mx-auto bg-white shadow-md overflow-hidden rounded-md border-l-4 border-blue-700 my-5 ">
+                                        <div key={index} className="w-4/5 mx-auto bg-white shadow-md overflow-hidden rounded-md border-l-8 border-blue-700 my-5 ">
                                             <div className="bg-white-500 text-gray-900 px-2 py-1">
                                                 <h2 className="text-xl flex items-center px-10">
                                                     <span className='bg-white text-gray-900 pr-4 py-2 rounded '>

@@ -6,6 +6,7 @@ import MachineLearning from './MachineLearning/MachineLearning'
 import ProjectManagement from './ProjectManagement/ProjectManagement'
 import Cloud from './Cloud/Cloud'
 import Miscellaneous from './Miscellaneous/Miscellaneous'
+import DSAndAlgo from './DSAndAlgo/DSAndAlgo';
 
 function Skills() {
     const [activeSection, setActiveSection] = useState('programming-language');
@@ -32,6 +33,12 @@ function Skills() {
                                 onClick={() => toggleContent('programming-language')}
                             >
                                 Programming Lang.
+                            </button>
+                            <button
+                                className={`bg-white hover:bg-gray-100 text-gray-800 font-semibold px-4 py-2 border border-gray-400 rounded shadow  ${activeSection === 'ds-algo' && 'active'}`}
+                                onClick={() => toggleContent('ds-algo')}
+                            >
+                                DS and Algorithm
                             </button>
                             <button
                                 className={`bg-white hover:bg-gray-100 text-gray-800 font-semibold px-4 py-2 border border-gray-400 rounded shadow  ${activeSection === 'web-development' && 'active'}`}
@@ -75,6 +82,10 @@ function Skills() {
                         <div id="programming-language" className={`content mt-4 ${activeSection !== 'programming-language' && 'hidden'}`}>
                             <h2 className="text-2xl font-bold mb-3">Programming Languages</h2>
                             <ProgrammingLanguage />
+                        </div>
+                        <div id="ds-algo" className={`content mt-4 ${activeSection !== 'ds-algo' && 'hidden'}`}>
+                            <h2 className="text-2xl font-bold mb-3">Data Structure and Algorithms</h2>
+                            <DSAndAlgo />
                         </div>
                         <div id="web-development" className={`content mt-4 ${activeSection !== 'web-development' && 'hidden'}`}>
                             <h2 className="text-2xl font-bold mb-3">Web Development</h2>

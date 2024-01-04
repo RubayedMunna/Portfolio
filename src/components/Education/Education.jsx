@@ -48,10 +48,10 @@ function Education() {
                             <div>
                                 <div className='education mb-16'>
                                     {education.map((edu, index) => (
-                                        <div key={index} className="w-4/5 mx-auto bg-white shadow-md overflow-hidden pb-3 rounded-md border-l-4 border-blue-700 my-5 ">
-                                            <div className="bg-white-500 text-gray-900 px-2 py-1">
-                                                <h2 className="text-2xl font-bold flex items-center px-10">
-                                                    <span className='bg-white text-gray-900 pr-4 py-2 rounded '>
+                                        <div key={index} className="w-4/5 mx-auto bg-white shadow-md overflow-hidden pb-3 rounded-md border-l-8 border-blue-700 my-8 ">
+                                            <div className="bg-white-500 text-gray-750 px-2 py-1">
+                                                <h2 className="text-2xl font-semibold flex items-center px-10">
+                                                    <span className='bg-white text-gray-750 pr-4 py-2 rounded '>
                                                         {edu.degree}
                                                     </span>
                                                 </h2>
@@ -62,12 +62,12 @@ function Education() {
                                                         <path d="M12 7.875a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z" />
                                                     </svg>
 
-                                                    <span className='bg-white text-gray-900 pr-4 pl-2 rounded '>
+                                                    <span className='bg-white text-gray-700 pr-4 pl-2 rounded '>
                                                         {edu.department}, {edu.institution}
                                                     </span>
                                                 </h2>
 
-                                                <h2 className="text-xl italic flex items-center px-10">
+                                                <h2 className="text-xl italic  flex items-center px-10">
                                                     <span className='bg-white text-gray-900 pr-4 py-2 rounded '>
                                                         GPA: {edu.gpa} out of {edu.outof}
                                                     </span>
