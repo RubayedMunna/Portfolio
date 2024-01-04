@@ -25,13 +25,13 @@ function SideNavBar() {
 
                     {/* Social Media Icons */}
                     <div className="flex space-x-4 mt-4">
-                        <a href="#" target="_blank" rel="noopener noreferrer"><FaTwitter size={24} /></a>
+                        <a href="https://twitter.com/AllRubayed" target="_blank" rel="noopener noreferrer"><FaTwitter size={24} /></a>
                         <a href="https://www.linkedin.com/in/rubayed-all-islam-1683841b4/" target="_blank" rel="noopener noreferrer"><FaLinkedin size={24} /></a>
                         <a href="https://github.com/RubayedMunna" target="_blank" rel="noopener noreferrer"><FaGithub size={24} /></a>
                         <a href="#" target="_blank" rel="noopener noreferrer"><FaGoogle size={24} /></a>
                         <a href="https://www.researchgate.net/profile/Rubayed-Islam" target="_blank" rel="noopener noreferrer"><FaResearchgate size={24} /></a>
                         <a href="https://orcid.org/my-orcid?orcid=0009-0002-8494-4190" target="_blank" rel="noopener noreferrer"><FaOrcid size={24} /></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer"><FaFacebook size={24} /></a>
+                        <a href="https://www.facebook.com/rubayed.munna/" target="_blank" rel="noopener noreferrer"><FaFacebook size={24} /></a>
                     </div>
                 </div>
 
