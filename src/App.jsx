@@ -10,12 +10,14 @@ import ExtraCurricularPage from './pages/ExtraCurricularPage'
 import SeminarWorkshopPage from './pages/SeminarWorkshopPage'
 import AccomplishmentPage from './pages/AccomplishmentPage';
 import Test1 from './components/Test1';
+import ProgrammingProblemPage from './pages/ProgrammingProblemPage';
 
 function App() {
   return (
     // <Test1/>
     <BrowserRouter>
       <Routes>
+        <Route path='/programming-problems' element={<ProgrammingProblemPage/>} />
         <Route path="/accomplishment" element={<AccomplishmentPage/>} />
         <Route path="/seminar-workshops" element={<SeminarWorkshopPage/>} />
         <Route path="/extracurricular-activities" element={<ExtraCurricularPage/>} />

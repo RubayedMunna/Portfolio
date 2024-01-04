@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaTwitter, FaLinkedin, FaGithub, FaGoogle, FaResearchgate, FaOrcid, FaFacebook, FaHome, FaBriefcase, FaGraduationCap, FaScroll, FaCode, FaChalkboardTeacher, FaRunning, FaBookReader, FaMedal, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
+import { FaTwitter, FaLinkedin, FaGithub, FaGoogle, FaResearchgate, FaOrcid, FaFacebook, FaHome, FaBriefcase, FaGraduationCap, FaScroll, FaCode, FaChalkboardTeacher, FaRunning, FaBookReader, FaMedal, FaWhatsapp, FaEnvelope, FaBug, FaDesktop } from 'react-icons/fa';
 import Rubayed_Cropped from './../../assets/images/Rubayed_Cropped.jpg';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -90,6 +90,13 @@ function SideNavBar() {
                             <Link to="/accomplishment" className="flex items-center my-4">
                                 <FaMedal className="inline-block mr-2" />
                                 Accomplishments
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link to="/programming-problems" className="flex items-center my-4">
+                                <FaDesktop className="inline-block mr-2" />
+                                Programming Problems
                             </Link>
                         </li>
                     </ul>
