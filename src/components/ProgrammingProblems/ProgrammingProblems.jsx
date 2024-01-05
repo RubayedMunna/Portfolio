@@ -50,6 +50,16 @@ function ProgrammingProblems() {
             currentRating: 'N/A',
         },
         {
+            id: 8,
+            ojName: 'Leetcode',
+            ojHandle: 'https://leetcode.com/RubayedMunna/',
+            ojHandleName: 'RubayedMunna',
+            solvedProblems: 5,
+            participatedContest: 0,
+            highestRating: 0,
+            currentRating: 0,
+        },
+        {
             id: 5,
             ojName: 'UVA',
             ojHandle: 'https://uhunt.onlinejudge.org/id/1140584',
@@ -79,16 +89,7 @@ function ProgrammingProblems() {
             highestRating: 0,
             currentRating: 0,
         },
-        {
-            id: 8,
-            ojName: 'Leetcode',
-            ojHandle: 'https://leetcode.com/RubayedMunna/',
-            ojHandleName: 'RubayedMunna',
-            solvedProblems: 5,
-            participatedContest: 0,
-            highestRating: 0,
-            currentRating: 0,
-        },
+        
         {
             id: 9,
             ojName: 'beecrowd',
@@ -105,14 +106,13 @@ function ProgrammingProblems() {
 
     const [onsiteContests, setContests] = useState([
         {
-            id: 1,
-            contestTitle: 'The 2020 ICPC Asia Dhaka Regional Site Online Preliminary Contest',
+            id: 3,
+            contestTitle: 'The 2022 ICPC Asia Dhaka Regional Site Online Preliminary Contest',
             organizer: 'International Collegiate Programming Contest(ICPC)',
             location: 'Online',
-            teamname: 'JU_Autobots',
-            teamMembers: 'Tamjid Islam, Sadia Hossain',
-            rank: 'N/A',
-            date: '2020-2021',
+            teamMembers: 'Md Sahal, Jahid Hossain',
+            rank: 87,
+            date: '2022-2023',
             website: '#'
         },
         {
@@ -127,15 +127,19 @@ function ProgrammingProblems() {
             website: '#'
         },
         {
-            id: 3,
-            contestTitle: 'The 2022 ICPC Asia Dhaka Regional Site Online Preliminary Contest',
+            
+            id: 1,
+            contestTitle: 'The 2020 ICPC Asia Dhaka Regional Site Online Preliminary Contest',
             organizer: 'International Collegiate Programming Contest(ICPC)',
             location: 'Online',
-            teamMembers: 'Md Sahal, Jahid Hossain',
-            rank: 87,
-            date: '2022-2023',
+            teamname: 'JU_Autobots',
+            teamMembers: 'Tamjid Islam, Sadia Hossain',
+            rank: 'N/A',
+            date: '2020-2021',
             website: '#'
         },
+        
+        
         // Add more events as needed
     ]);
 
@@ -173,7 +177,7 @@ function ProgrammingProblems() {
                                 <div className="container mx-auto">
                                     <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
                                         {onlineOJ.map((event, index) => (
-                                            <div key={index} className="w-full bg-white shadow-md overflow-hidden rounded-md my-5">
+                                            <div key={index} className="w-full bg-white shadow-md overflow-hidden rounded-md my-0">
                                                 <div className="bg-blue-700 h-2 w-full"></div>
                                                 <div className="px-6 py-4">
                                                     <div className="font-bold text-xl text-gray-750 mb-2">{event.ojName}</div>
@@ -213,7 +217,7 @@ function ProgrammingProblems() {
                                 <div className="container mx-auto">
                                     <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
                                         {onsiteContests.map((event, index) => (
-                                            <div key={index} className="w-full bg-white shadow-md overflow-hidden rounded-md my-5">
+                                            <div key={index} className="w-full bg-white shadow-md overflow-hidden rounded-md my-0">
                                                 <div className="bg-blue-700 h-2 w-full"></div>
                                                 <div className="px-6 py-4">
                                                     <div className="font-bold text-2l text-gray-750 mb-2">{event.contestTitle}</div>
