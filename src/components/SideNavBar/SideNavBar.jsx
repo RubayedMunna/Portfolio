@@ -111,7 +111,7 @@ function SideNavBar() {
                     
                     <div className="flex items-center mt-2">
                         <FaEnvelope className="text-blue-500 mr-2" />
-                        <span>jucse29.370@gmail.com, rubayedcse29@gmail.com, rubayed.stu2019@juniv.edu</span>
+                        <span>jucse29.370@gmail.com rubayedcse29@gmail.com rubayed.stu2019@juniv.edu</span>
                     </div>
                     <div className='my-5'>
                         &copy; 2023 | Rubayed All Islam
