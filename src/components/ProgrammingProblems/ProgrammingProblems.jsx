@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle, faList, faTrophy, faUser, faStar } from '@fortawesome/free-solid-svg-icons';
+
 function ProgrammingProblems() {
 
     const [activeSection, setActiveSection] = useState('online');
@@ -12,6 +15,7 @@ function ProgrammingProblems() {
         {
             id: 1,
             ojName: 'Codeforces',
+            ojLink:'https://codeforces.com/',
             ojHandle: 'https://codeforces.com/profile/RubayedMunna',
             ojHandleName: 'RubayedMunna',
             solvedProblems: 950,
@@ -22,6 +26,7 @@ function ProgrammingProblems() {
         {
             id: 2,
             ojName: 'Atcoder',
+            ojLink:'https://atcoder.jp/',
             ojHandle: 'https://atcoder.jp/users/RubayedMunna',
             ojHandleName: 'RubayedMunna',
             solvedProblems: 'N/A',
@@ -32,6 +37,7 @@ function ProgrammingProblems() {
         {
             id: 3,
             ojName: 'Codechef',
+            ojLink:'https://www.codechef.com/',
             ojHandle: 'https://www.codechef.com/users/munna_370',
             ojHandleName: 'munna_370',
             solvedProblems: 56,
@@ -42,6 +48,7 @@ function ProgrammingProblems() {
         {
             id: 4,
             ojName: 'LightOJ',
+            ojLink:'https://lightoj.com/',
             ojHandle: 'https://lightoj.com/user/rubayedmunna',
             ojHandleName: 'rubayedmunna',
             solvedProblems: 101,
@@ -52,6 +59,7 @@ function ProgrammingProblems() {
         {
             id: 8,
             ojName: 'Leetcode',
+            ojLink:'https://leetcode.com/',
             ojHandle: 'https://leetcode.com/RubayedMunna/',
             ojHandleName: 'RubayedMunna',
             solvedProblems: 5,
@@ -62,6 +70,7 @@ function ProgrammingProblems() {
         {
             id: 5,
             ojName: 'UVA',
+            ojLink:'https://onlinejudge.org/',
             ojHandle: 'https://uhunt.onlinejudge.org/id/1140584',
             ojHandleName: 'Munna370',
             solvedProblems: 112,
@@ -72,6 +81,7 @@ function ProgrammingProblems() {
         {
             id: 6,
             ojName: 'Virtual Judge',
+            ojLink:'https://vjudge.net/',
             ojHandle: 'https://vjudge.net/user/Rubayed_370',
             ojHandleName: 'Rubayed_370',
             solvedProblems: 431,
@@ -82,6 +92,7 @@ function ProgrammingProblems() {
         {
             id: 7,
             ojName: 'SPOJ',
+            ojLink:'https://www.spoj.com/',
             ojHandle: 'https://www.spoj.com/myaccount/',
             ojHandleName: 'munna_370',
             solvedProblems: 3,
@@ -89,10 +100,11 @@ function ProgrammingProblems() {
             highestRating: 0,
             currentRating: 0,
         },
-        
+
         {
             id: 9,
             ojName: 'beecrowd',
+            ojLink:'https://www.beecrowd.com.br/',
             ojHandle: 'https://www.beecrowd.com.br/judge/en/profile/455584',
             ojHandleName: 'RUBAYEDMUNNA',
             solvedProblems: 41,
@@ -109,6 +121,7 @@ function ProgrammingProblems() {
             id: 3,
             contestTitle: 'The 2022 ICPC Asia Dhaka Regional Site Online Preliminary Contest',
             organizer: 'International Collegiate Programming Contest(ICPC)',
+            teamname: 'JU_Tintin',
             location: 'Online',
             teamMembers: 'Md Sahal, Jahid Hossain',
             rank: 87,
@@ -127,7 +140,7 @@ function ProgrammingProblems() {
             website: '#'
         },
         {
-            
+
             id: 1,
             contestTitle: 'The 2020 ICPC Asia Dhaka Regional Site Online Preliminary Contest',
             organizer: 'International Collegiate Programming Contest(ICPC)',
@@ -138,8 +151,8 @@ function ProgrammingProblems() {
             date: '2020-2021',
             website: '#'
         },
-        
-        
+
+
         // Add more events as needed
     ]);
 
@@ -180,26 +193,31 @@ function ProgrammingProblems() {
                                             <div key={index} className="w-full bg-white shadow-md overflow-hidden rounded-md my-0">
                                                 <div className="bg-blue-700 h-2 w-full"></div>
                                                 <div className="px-6 py-4">
-                                                    <div className="font-bold text-xl text-gray-750 mb-2">{event.ojName}</div>
+                                                    <div className="font-bold text-xl text-gray-750 mb-2"><a href={event.ojLink} target='_blank'>{event.ojName}</a></div>
                                                     <ul className="list-disc list-inside mt-4">
                                                         <li className="flex items-center mt-2">
+                                                            <FontAwesomeIcon icon={faCheckCircle} className="text-green-500 mr-2" />
                                                             <span className='font-bold text-l text-gray-700'>Solved Problems:</span>
                                                             <span className='mx-2 text-l text-gray-700'>{event.solvedProblems}</span>
                                                         </li>
                                                         <li className="flex items-center mt-2">
+                                                            <FontAwesomeIcon icon={faList} className="text-blue-500 mr-2" />
                                                             <span className='font-bold text-l text-gray-700'>Participated Contest:</span>
                                                             <span className='mx-2 text-l text-gray-700'>{event.participatedContest}</span>
                                                         </li>
                                                         <li className="flex items-center mt-2">
-                                                            <span className='font-bold text-l text-gray-700'>Current Contest Rating:</span>
+                                                            <FontAwesomeIcon icon={faStar} className="text-yellow-500 mr-2" />
+                                                            <span className='font-bold text-l text-gray-700'>Current Rating:</span>
                                                             <span className='mx-2 text-l text-gray-700'>{event.currentRating}</span>
                                                         </li>
                                                         <li className="flex items-center mt-2">
-                                                            <span className='font-bold text-l text-gray-700'>Highest Contest Rating:</span>
+                                                            <FontAwesomeIcon icon={faTrophy} className="text-orange-500 mr-2" />
+                                                            <span className='font-bold text-l text-gray-700'>Highest Rating:</span>
                                                             <span className='mx-2 text-l text-gray-700'>{event.highestRating}</span>
                                                         </li>
                                                         <li className="flex items-center mt-2">
-                                                            <span className='font-bold text-l text-gray-700'>OJ Handle:</span>
+                                                            <FontAwesomeIcon icon={faUser} className="text-purple-500 mr-2" />
+                                                            <span className='font-bold text-l text-gray-700'>Handle:</span>
                                                             <a href={event.ojHandle} target='_blank' className='font-bold text-l text-gray-700 mx-2'>{event.ojHandleName}</a>
                                                         </li>
                                                     </ul>
@@ -222,6 +240,10 @@ function ProgrammingProblems() {
                                                 <div className="px-6 py-4">
                                                     <div className="font-bold text-2l text-gray-750 mb-2">{event.contestTitle}</div>
                                                     <ul className="list-disc list-inside mt-4">
+                                                    <li className="flex items-center mt-2">
+                                                            <span className='font-bold text-l text-gray-700'>Team:</span>
+                                                            <span className='mx-2 text-l text-gray-700'>{event.teamname}</span>
+                                                        </li>
                                                         <li className="flex items-center mt-2">
                                                             <span className='font-bold text-l text-gray-700'>Team Members:</span>
                                                             <span className='mx-2 text-l text-gray-700'>{event.teamMembers}</span>
@@ -230,7 +252,7 @@ function ProgrammingProblems() {
                                                             <span className='font-bold text-l text-gray-700'>Ranking:</span>
                                                             <span className='mx-2 text-l text-gray-700'>{event.rank}</span>
                                                         </li>
-                                                        
+
                                                         <li className="flex items-center mt-2">
                                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 mr-2">
                                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" />
