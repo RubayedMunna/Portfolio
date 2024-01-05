@@ -123,7 +123,7 @@ function ProgrammingProblems() {
             teamname: 'JU_Autobots',
             teamMembers: 'Sakib Mollah, Abdus Salam Sojib',
             rank: 'N/A',
-            date: '2021-022',
+            date: '2021-2022',
             website: '#'
         },
         {
