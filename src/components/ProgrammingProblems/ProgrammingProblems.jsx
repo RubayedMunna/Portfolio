@@ -18,7 +18,7 @@ function ProgrammingProblems() {
             ojLink:'https://codeforces.com/',
             ojHandle: 'https://codeforces.com/profile/RubayedMunna',
             ojHandleName: 'RubayedMunna',
-            solvedProblems: 950,
+            solvedProblems: 978,
             participatedContest: 107,
             highestRating: 1466,
             currentRating: 1369,
