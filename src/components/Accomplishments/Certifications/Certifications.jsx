@@ -3,17 +3,12 @@ import React, { useState } from 'react';
 function Certifications() {
   const [certifications, setCertifications] = useState([
     {
-      certificationName: 'Certification 1',
-      institutionName: 'Institution 1',
-      certificationDate: 'January 1, 2022',
-      certificateUrl: 'https://www.example.com/certificate1',
+      certificationName: 'Web Development Bootcamp',
+      institutionName: 'bongoDev',
+      certificationDate: '22 December 2023 - 30 December 2023',
+      certificateUrl: 'https://drive.google.com/file/d/1HUk4w74gXZ7vaHVO12wbyzBX8MkR8L15/view?usp=sharing',
     },
-    {
-      certificationName: 'Certification 2',
-      institutionName: 'Institution 2',
-      certificationDate: 'February 15, 2022',
-      certificateUrl: 'https://www.example.com/certificate2',
-    },
+    
     // Add more certification entries as needed
   ]);
 
