@@ -3,20 +3,56 @@ import React, { useState } from 'react';
 function Projects() {
   const [projects, setProjects] = useState([
     {
-      projectName: 'Project 1',
-      projectDescription: 'Explanation about the project goes here. You can provide details and information about the project in this section.',
-      institutionName: 'Your Institution 1',
-      projectDate: 'January 1, 2022',
-      githubUrl: 'https://github.com/yourusername/yourproject1',
-      websiteUrl: 'https://your-website-url1.com',
+      projectName: 'Outcome Based Education (OBE) System',
+      projectDescription: 'This project is a complete automation of the Outcome Based Education (OBE) system based on Reactjs+Django based WebAPP. The dipartments those are following the Outcome Based Education can use this app. It stores and analyzes each of the student so that teachers can have knowledge of the strength and weaknesses of a student and work upon it. It also analyzes a teachers teaching capability.',
+      institutionName: 'CSE, Jahangirnagar University',
+      projectDate: 'October 2023',
+      githubUrl: 'https://github.com/OBESystem/obe-system',
+      websiteUrl: '#',
     },
     {
-      projectName: 'Project 2',
-      projectDescription: 'Explanation about the project goes here. You can provide details and information about the project in this section.',
-      institutionName: 'Your Institution 2',
-      projectDate: 'February 15, 2022',
-      githubUrl: 'https://github.com/yourusername/yourproject2',
-      websiteUrl: 'https://your-website-url2.com',
+      projectName: 'Student Information System',
+      projectDescription: 'This is a student information and registration system based on PHP, HTML, CSS and MySQL. Students can register and give their information. It stores student information and shows if needed.',
+      institutionName: 'CSE, Jahangirnagar University',
+      projectDate: 'December 2022',
+      githubUrl: 'https://github.com/RubayedMunna/Registration-and-Login-System',
+      websiteUrl: '#',
+    },
+
+    {
+      projectName: 'Cloned Amazon',
+      projectDescription: 'This project was made out of curiosity. I have used HTML and CSS only to build a cloned website of Amazon',
+      institutionName: 'Personal Project',
+      projectDate: 'July 2023',
+      githubUrl: 'https://github.com/RubayedMunna/cloned_amazon',
+      websiteUrl: 'https://cloned-amazon-rubayed.netlify.app/',
+    },
+
+    {
+      projectName: 'Student Hostel Management System with JAVA',
+      projectDescription: 'This is a hall management system based on JAVA. This was my academic project. The operations of a hostel and its canteen-dining, room information, governing body and alumny students can be managed by this system.',
+      institutionName: 'CSE, Jahangirnagar University',
+      projectDate: 'July 2022',
+      githubUrl: 'https://github.com/RubayedMunna/SHMS-With-OOP',
+      websiteUrl: '#',
+    },
+
+    {
+      projectName: 'Student Hostel Management System with C++',
+      projectDescription: 'This is a hall management system based on C++. This was my academic project. The operations of a hostel and its canteen-dining, room information, governing body and alumny students can be managed by this system.',
+      institutionName: 'CSE, Jahangirnagar University',
+      projectDate: 'January 2022',
+      githubUrl: 'https://github.com/RubayedMunna/Student-Hostel-Management-System-C-',
+      websiteUrl: '#',
+    },
+
+    {
+      projectName: 'Tic-Tac-Toe and Simple Calculator',
+      projectDescription: 'This is C based project. This project has two zones, Calculator and Game zone. There was a simple calculator. At the Game zone there was facility of playing tic-tac-toe. My system was able to determine the winner and situation like draw.',
+      institutionName: 'CSE, Jahangirnagar University',
+      projectDate: 'August 2021',
+      githubUrl: 'https://github.com/RubayedMunna/Tic-Tac-Toe',
+      websiteUrl: '#',
     },
     // Add more project entries as needed
   ]);
