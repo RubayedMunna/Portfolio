@@ -32,12 +32,7 @@ function Certifications() {
       issuedBy: 'BongoDev',
       issuanceDate: 'January 3, 2024',
     },
-    {
-      title: 'Web Development Bootcamp',
-      image: CertificateBongoDev,
-      issuedBy: 'BongoDev',
-      issuanceDate: 'January 3, 2024',
-    },
+    
     {
       title: 'ICPC Dhaka Regional Preliminary Contest 2022',
       image: CertificateICPCPreli2022,
