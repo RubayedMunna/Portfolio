@@ -136,7 +136,7 @@ function ProgrammingProblems() {
             teamname: 'JU_Autobots',
             teamMembers: 'Sakib Mollah, Abdus Salam Sojib',
             rank: 'N/A',
-            date: '2021-2022',
+            date: 'September 3 2022',
             website: '#'
         },
         {
@@ -148,7 +148,7 @@ function ProgrammingProblems() {
             teamname: 'JU_Autobots',
             teamMembers: 'Tamjid Islam, Sadia Hossain',
             rank: 'N/A',
-            date: '2020-2021',
+            date: 'April 7 2021',
             website: '#'
         },
 
