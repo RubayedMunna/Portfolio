@@ -3,17 +3,17 @@ function Experience() {
     const [cards, setCards] = useState([
         {
             id: 1,
-            jobTitle: 'JUNIOR SOFTWARE ENGINEER',
-            jobType: 'Full Time',
-            jobInstitution: 'S3 Innovate Pte. Ltd.',
-            institutionAddress: 'Dhaka, Bangladesh',
-            from: 'Jul 1, 2020',
-            to: 'Feb 28, 2022',
-            duration: '1 years 8 months',
+            jobTitle: 'Job Title',
+            jobType: 'Full Time/Short Time',
+            jobInstitution: 'Company',
+            institutionAddress: 'Address',
+            from: 'Joining Date',
+            to: 'Ending Date',
+            duration: 'Duration',
             responsiblilities: [
-                'Re-designed and developed a monolithic legacy application to distribute front end/back end architecture that lessened remarkable tightly coupled structure and ease of development.',
-                'Built a regularity service API to identify customer emotions through Azure cognitive services that increased 48% awareness of the shopper assistance crews\' duties.',
-                'Improved and re-developed email notification library for an alert from any complex scenario. It was used in many projects as the NuGet package library, which diminished 80% code redundancy.',
+                'Responsibilities 1',
+                'Responsibilities 2',
+                'Responsibilities 3',
                 
             ],
         },
