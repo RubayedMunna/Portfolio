@@ -29,17 +29,19 @@ function Accomplishments() {
                             >
                                 Projects
                             </button>
-                            <button
-                                className={`bg-white hover:bg-gray-100 text-gray-800 font-semibold px-4 py-2 border border-gray-400 rounded shadow ${activeSection === 'awards' && 'active'}`}
-                                onClick={() => toggleContent('awards')}
-                            >
-                                Awards
-                            </button>
+                            
                             <button
                                 className={`bg-white hover:bg-gray-100 text-gray-800 font-semibold px-4 py-2 border border-gray-400 rounded shadow ${activeSection === 'certifications' && 'active'}`}
                                 onClick={() => toggleContent('certifications')}
                             >
                                 Certifications
+                            </button>
+
+                            <button
+                                className={`bg-white hover:bg-gray-100 text-gray-800 font-semibold px-4 py-2 border border-gray-400 rounded shadow ${activeSection === 'awards' && 'active'}`}
+                                onClick={() => toggleContent('awards')}
+                            >
+                                Awards
                             </button>
                         </div>
 
