@@ -5,9 +5,16 @@ import CertificateResponsiveWeb from './../../../assets/images/Certificate_Respo
 import CertificatePython from './../../../assets/images/Certificate_Python_Kaggle.png'
 import CertificateICPCPreli2022 from './../../../assets/images/ICPCPreli2022.png'
 import CertificateICPCPreli2021 from './../../../assets/images/ICPCPreli2021.png'
+import CertificateMachineLearning from './../../../assets/images/Certificate_MachineLerning.png'
 
 function Certifications() {
   const [certifications, setCertifications] = useState([
+    {
+      title: 'Machine Learning',
+      image: CertificateMachineLearning,
+      issuedBy: 'Simplilearn Skillup',
+      issuanceDate: 'January 9, 2024',
+    },
     {
       title: 'Python',
       image: CertificatePython,
