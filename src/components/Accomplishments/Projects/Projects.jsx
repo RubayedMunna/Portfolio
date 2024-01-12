@@ -4,7 +4,13 @@ function Projects() {
   const [projects, setProjects] = useState([
     {
       projectName: 'Outcome Based Education (OBE) System',
-      projectDescription: 'This project is a complete automation of the Outcome Based Education (OBE) system based on Reactjs+Django based WebAPP. The dipartments those are following the Outcome Based Education can use this app. It stores and analyzes each of the student so that teachers can have knowledge of the strength and weaknesses of a student and work upon it. It also analyzes a teachers teaching capability.',
+      projectDescription: [
+        'A complete automation of the Outcome Based Education (OBE) system.',
+        'Reactjs+Django based WebAPP.',
+        'The dipartments those are following Outcome Based Education can use this app.',
+        'It stores and analyzes each of the student so that teachers can have knowledge of the strength and weaknesses of a student and work upon it.',
+        'It also analyzes a teachers teaching capability.',
+      ],
       institutionName: 'CSE, Jahangirnagar University',
       projectDate: 'October 2023',
       githubUrl: 'https://github.com/OBESystem/obe-system',
@@ -12,7 +18,12 @@ function Projects() {
     },
     {
       projectName: 'Student Information System',
-      projectDescription: 'This is a student information and registration system based on PHP, HTML, CSS and MySQL. Students can register and give their information. It stores student information and shows if needed.',
+      projectDescription: [
+        'This is a student information and registration system.',
+        'Based on PHP, HTML, CSS and MySQL.',
+        'Students can register and give their information.',
+        'It stores student information and shows if needed.',
+      ],
       institutionName: 'CSE, Jahangirnagar University',
       projectDate: 'December 2022',
       githubUrl: 'https://github.com/RubayedMunna/Registration-and-Login-System',
@@ -21,7 +32,10 @@ function Projects() {
 
     {
       projectName: 'Cloned Amazon',
-      projectDescription: 'This project was made out of curiosity. I have used HTML and CSS only to build a cloned website of Amazon',
+      projectDescription: [
+        'This project was made out of curiosity.',
+        'I have used HTML and CSS only to build a cloned website of Amazon.',
+      ],
       institutionName: 'Personal Project',
       projectDate: 'July 2023',
       githubUrl: 'https://github.com/RubayedMunna/cloned_amazon',
@@ -30,7 +44,12 @@ function Projects() {
 
     {
       projectName: 'Student Hostel Management System with JAVA',
-      projectDescription: 'This is a hall management system based on JAVA. This was my academic project. The operations of a hostel and its canteen-dining, room information, governing body and alumny students can be managed by this system.',
+      projectDescription: [
+        'This is a hall management system.',
+        'Based on JAVA.',
+        'This was my academic project.',
+        'The operations of a hostel and its canteen-dining, room information, governing body and alumny students can be managed by this system.',
+      ],
       institutionName: 'CSE, Jahangirnagar University',
       projectDate: 'July 2022',
       githubUrl: 'https://github.com/RubayedMunna/SHMS-With-OOP',
@@ -39,7 +58,12 @@ function Projects() {
 
     {
       projectName: 'Student Hostel Management System with C++',
-      projectDescription: 'This is a hall management system based on C++. This was my academic project. The operations of a hostel and its canteen-dining, room information, governing body and alumny students can be managed by this system.',
+      projectDescription: [
+        'This is a hall management system.',
+        'Based on C++.',
+        'This was my academic project.',
+        'The operations of a hostel and its canteen-dining, room information, governing body and alumny students can be managed by this system.',
+      ],
       institutionName: 'CSE, Jahangirnagar University',
       projectDate: 'January 2022',
       githubUrl: 'https://github.com/RubayedMunna/Student-Hostel-Management-System-C-',
@@ -48,7 +72,13 @@ function Projects() {
 
     {
       projectName: 'Tic-Tac-Toe and Simple Calculator',
-      projectDescription: 'This is C based project. This project has two zones, Calculator and Game zone. There was a simple calculator. At the Game zone there was facility of playing tic-tac-toe. My system was able to determine the winner and situation like draw.',
+      projectDescription: [
+        'This is C based project.',
+        'The project has two zones, Calculator and Game zone.',
+        'There was a simple calculator.',
+        'At the Game zone there was facility of playing tic-tac-toe.',
+        'My system was able to determine the winner and situation like draw.',
+      ],
       institutionName: 'CSE, Jahangirnagar University',
       projectDate: 'August 2021',
       githubUrl: 'https://github.com/RubayedMunna/Tic-Tac-Toe',
@@ -62,11 +92,15 @@ function Projects() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
           {projects.map((project, index) => (
-            <div key={index} className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+            <div key={index} className="max-w-full rounded overflow-hidden shadow-lg bg-white">
               <div className="bg-blue-700 h-2 w-full"></div>
               <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">{project.projectName}</div>
-                <p className="text-gray-700 text-base">{project.projectDescription}</p>
+                <ul className="list-disc mt-4 ml-4 text-gray-700 text-base">
+                  {project.projectDescription.map((description, i) => (
+                    <li key={i}>{description}</li>
+                  ))}
+                </ul>
                 <ul className="list-disc list-inside mt-4">
                   <li className="flex items-center mt-2">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 mr-2">

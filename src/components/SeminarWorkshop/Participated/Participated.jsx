@@ -24,7 +24,7 @@ function Participated() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
           {events.map((event, index) => (
-            <div key={index} className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+            <div key={index} className="max-w-full rounded overflow-hidden shadow-lg bg-white">
               <div className="bg-blue-700 h-2 w-full"></div>
               <div className="px-6 py-4">
                 <div className="font-bold text-xl mb-2">{event.eventName}</div>
