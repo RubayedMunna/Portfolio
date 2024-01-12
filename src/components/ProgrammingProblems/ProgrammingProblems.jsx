@@ -188,7 +188,7 @@ function ProgrammingProblems() {
                             <h2 className="text-2xl font-bold mb-3">Online Judges</h2>
                             <div>
                                 <div className="container mx-auto">
-                                    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+                                    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4">
                                         {onlineOJ.map((event, index) => (
                                             <div key={index} className="max-w-full bg-white shadow-md overflow-hidden rounded-md my-0">
                                                 <div className="bg-blue-700 h-2 w-full"></div>
@@ -233,7 +233,7 @@ function ProgrammingProblems() {
                             <h2 className="text-2xl font-bold mb-3">Onsite Contests</h2>
                             <div>
                                 <div className="container mx-auto">
-                                    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+                                    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4">
                                         {onsiteContests.map((event, index) => (
                                             <div key={index} className="max-w-full bg-white shadow-md overflow-hidden rounded-md my-0">
                                                 <div className="bg-blue-700 h-2 w-full"></div>
