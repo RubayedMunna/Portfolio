@@ -5,7 +5,7 @@ function Participated() {
     {
       eventName: 'Software Development Tools & Techniques',
       institutionName: 'Dev Skill',
-      location: 'Department of Computer Science and Engineering',
+      location: 'Department of Computer Science and Engineering, JU',
       eventDate: 'January 14, 2024',
       topicsCovered: [
         'Introduction of different tools like Git, Github, Gitflow, Jira, Atlassian, Git Branching.',
