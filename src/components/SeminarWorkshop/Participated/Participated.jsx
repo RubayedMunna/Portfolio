@@ -3,10 +3,22 @@ import React, { useState } from 'react';
 function Participated() {
   const [events, setEvents] = useState([
     {
+      eventName: 'Software Development Tools & Techniques',
+      institutionName: 'Dev Skill',
+      location: 'Department of Computer Science and Engineering',
+      eventDate: 'January 14, 2024',
+      topicsCovered: [
+        'Introduction of different tools like Git, Github, Gitflow, Jira, Atlassian, Git Branching.',
+        'Introduction with Github Branching and how to use github branching in software development.',
+        'Overview of how software industries works.',
+      ],
+      eventLink: 'https://devskill.com/Seminar/Details/software-development-tools-and-techniques',
+    },
+    {
       eventName: 'Concrete Autoencoder-Based Feature Selection Discovers Key Genes in Evaluating Intratumor Heterogeneity',
       institutionName: 'Jahangirnagar University',
       location: 'Department of Computer Science and Engineering',
-      eventDate: 'January 1, 2022',
+      eventDate: 'December, 2023',
       topicsCovered: [
         'Evaluating ITH using Depth 2.',
         'Drawbacks of Depth 2 and Hypothesis to overcome.',
