@@ -6,9 +6,17 @@ import CertificatePython from './../../../assets/images/Certificate_Python_Kaggl
 import CertificateICPCPreli2022 from './../../../assets/images/ICPCPreli2022.png'
 import CertificateICPCPreli2021 from './../../../assets/images/ICPCPreli2021.png'
 import CertificateMachineLearning from './../../../assets/images/Certificate_MachineLerning.png'
+import CertificateLLM from './../../../assets/images/Certificate_LLM.png'
 
 function Certifications() {
   const [certifications, setCertifications] = useState([
+    {
+      title: 'Introduction to Large Language Models',
+      image: CertificateLLM,
+      issuedBy: 'Simplilearn Skillup',
+      issuanceDate: 'January 17, 2024',
+      certificateLink: 'https://simpli-web.app.link/e/VgHsvOSIqGb',
+    },
     {
       title: 'Machine Learning',
       image: CertificateMachineLearning,
