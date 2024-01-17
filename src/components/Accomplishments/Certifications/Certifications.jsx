@@ -80,7 +80,7 @@ function Certifications() {
             <div className="bg-gray-0 flex items-center justify-center ">
               <div className="max-w-full bg-white p-8 rounded-lg shadow-lg border-r-2 border-t-8 border-t-blue-700">
                 {/* Certification Title */}
-                <a href={certification.certificateLink} target='_blank'><h2 className="text-2xl font-bold mb-4">{certification.title}</h2></a>
+                <a href={certification.certificateLink} target='_blank'><h2 className="text-xl font-bold mb-4">{certification.title}</h2></a>
                 
                 {/* Certification Image */}
                 <div className="my-4 w-full">
