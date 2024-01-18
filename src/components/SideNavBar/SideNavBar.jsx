@@ -8,7 +8,7 @@ function SideNavBar() {
 
     return (
         <div>
-            <aside className="bg-gray-800 text-white h-screen w-64 p-4 flex flex-col justify-between ">
+            <aside className="bg-gray-800 text-white h-fit w-64 p-4 flex flex-col justify-between ">
                 <div className='mb-5'>
                     {/* Image and Name */}
                     <div className='flex items-center justify-center'>
