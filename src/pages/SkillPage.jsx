@@ -3,6 +3,9 @@ import SideNavBar from '../components/SideNavBar/SideNavBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Skills from '../components/Skills/Skills'
+import './SideNavBar.css'
+
+
 function AccomplishmentPage() {
   const [isSideNavBarVisible, setIsSideNavBarVisible] = useState(true);
 
@@ -26,7 +29,7 @@ function AccomplishmentPage() {
   return (
     <div className="flex">
       {isSideNavBarVisible && (
-        <div className={`fixed top-0 left-0 h-full bg-gray-800 text-white transition-all duration-300 ease-in-out ${isSideNavBarVisible ? 'w-72' : 'w-0'}`}>
+        <div className={`overflow-y-scroll scrollbar fixed top-0 left-0 h-full bg-gray-800 text-white transition-all duration-300 ease-in-out ${isSideNavBarVisible ? 'w-72' : 'w-0'}`}>
           <SideNavBar />
         </div>
       )}

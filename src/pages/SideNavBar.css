@@ -1,0 +1,16 @@
+.scrollbar{
+    /* background-color: #eee; */
+    width: 16rem;
+    height: 100%;
+    border: 1px solid black;
+    overflow-y: scroll;
+}
+
+.scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }

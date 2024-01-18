@@ -24,7 +24,7 @@ function SideNavBar() {
 
 
                     {/* Social Media Icons */}
-                    <div className="flex space-x-4 mt-4">
+                    <div className="flex space-x-2 mt-4">
                         <a href="https://twitter.com/AllRubayed" target="_blank" rel="noopener noreferrer"><FaTwitter size={24} /></a>
                         <a href="https://www.linkedin.com/in/rubayed-all-islam-1683841b4/" target="_blank" rel="noopener noreferrer"><FaLinkedin size={24} /></a>
                         <a href="https://github.com/RubayedMunna" target="_blank" rel="noopener noreferrer"><FaGithub size={24} /></a>
