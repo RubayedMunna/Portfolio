@@ -29,7 +29,7 @@ function AccomplishmentPage() {
     <div className="flex">
       <div className='flex-shrink-0'>
         {isSideNavBarVisible && (
-          <div className={`overflow-y-scroll scrollbar fixed top-0 left-0 h-fit bg-gray-800 text-white transition-all duration-300 ease-in-out ${isSideNavBarVisible ? 'w-72' : 'w-0'}`}>
+          <div className={`overflow-y-scroll scrollbar fixed top-0 left-0 h-full bg-gray-800 text-white transition-all duration-300 ease-in-out ${isSideNavBarVisible ? 'w-72' : 'w-0'}`}>
             <SideNavBar />
           </div>
         )}
