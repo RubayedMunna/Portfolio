@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 function Extracurricular() {
     const [extracurricularActivities, setExtracurricularActivities] = useState([
         {
-            role: 'Member',
+            role: 'Executive Member',
             institution: 'Jahangirnagar University Robotics Club',
             website: 'https://www.facebook.com/profile.php?id=100093557881807&mibextid=ZbWKwL',
             beginDate: '17 January 2024',
