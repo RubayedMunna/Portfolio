@@ -7,7 +7,7 @@ function Projects() {
       projectDescription: [
         'A complete automation of the Outcome Based Education (OBE) system.',
         'Reactjs+Django based WebAPP.',
-        'The dipartments those are following Outcome Based Education can use this app.',
+        'The departments those are following Outcome Based Education can use this app.',
         'It stores and analyzes each of the student so that teachers can have knowledge of the strength and weaknesses of a student and work upon it.',
         'It also analyzes a teachers teaching capability.',
       ],
