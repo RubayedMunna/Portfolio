@@ -22,23 +22,23 @@ function Accomplishments() {
                     </header>
                     <div className="container mx-auto mt-8">
                         {/* Buttons */}
-                        <div className="flex flex-wrap space-x-4">
+                        <div className="inline-flex rounded-md shadow-sm">
                             <button
-                                className={`bg-white hover:bg-gray-100 text-gray-800 font-semibold px-4 py-2 border border-gray-400 rounded shadow  ${activeSection === 'projects' && 'active'}`}
+                                className={`px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white`}
                                 onClick={() => toggleContent('projects')}
                             >
                                 Projects
                             </button>
                             
                             <button
-                                className={`bg-white hover:bg-gray-100 text-gray-800 font-semibold px-4 py-2 border border-gray-400 rounded shadow ${activeSection === 'certifications' && 'active'}`}
+                                className={`px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white`}
                                 onClick={() => toggleContent('certifications')}
                             >
                                 Certifications
                             </button>
 
                             <button
-                                className={`bg-white hover:bg-gray-100 text-gray-800 font-semibold px-4 py-2 border border-gray-400 rounded shadow ${activeSection === 'awards' && 'active'}`}
+                                className={`px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white`}
                                 onClick={() => toggleContent('awards')}
                             >
                                 Awards
@@ -46,17 +46,17 @@ function Accomplishments() {
                         </div>
 
                         {/* Content Sections */}
-                        <div id="projects" className={`content mt-4 ${activeSection !== 'projects' && 'hidden'}`}>
+                        <div id="projects" className={`content mt-8 ${activeSection !== 'projects' && 'hidden'}`}>
                             <h2 className="text-2xl font-bold mb-3">Projects</h2>
                             <Projects />
                         </div>
 
-                        <div id="awards" className={`content mt-4 ${activeSection !== 'awards' && 'hidden'}`}>
+                        <div id="awards" className={`content mt-8 ${activeSection !== 'awards' && 'hidden'}`}>
                             <h2 className="text-2xl font-bold mb-3">Awards</h2>
                             <Awards />
                         </div>
 
-                        <div id="certifications" className={`content mt-4 ${activeSection !== 'certifications' && 'hidden'}`}>
+                        <div id="certifications" className={`content mt-8 ${activeSection !== 'certifications' && 'hidden'}`}>
                             <h2 className="text-2xl font-bold mb-3">Certifications</h2>
                             <Certifications />
                         </div>
