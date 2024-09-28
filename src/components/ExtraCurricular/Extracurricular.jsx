@@ -20,7 +20,7 @@ function Extracurricular() {
             organizerWebsite: 'https://jurc.org/',
             location: 'Social Science Building, Jahangirnagar University, Bangladesh',
             disciplines: ['Line Follower Robot(LFR)', 'Robo Soccer'], // Updated to include multiple disciplines
-            eventDate: 'September 21, 2024', // Added event date
+            eventDate: 'September 21, 2024 (DELAYED)', // Added event date
             eventLink: 'https://facebook.com/events/s/6th-jusc-national-science-fest/2656085411239202/'
         },
         // Add more competition entries as needed
