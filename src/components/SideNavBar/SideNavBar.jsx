@@ -123,7 +123,7 @@ function SideNavBar() {
                         <span>rubayed.stu2019@juniv.edu</span>
                     </div>
                     <div className='my-5'>
-                        &copy; 2024 | Rubayed All Islam
+                        &copy; 2025 | Rubayed All Islam
                     </div>
                     <div>
 
