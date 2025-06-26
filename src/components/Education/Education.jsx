@@ -8,7 +8,7 @@ function Education() {
             degree: 'BACHELOR OF SCIENCE (B.SC.)',
             department: 'Computer Science of Engineering',
             institution: ' Jahangirnagar University',
-            gpa: '3.77',
+            gpa: '3.82',
             outof: '4.00',
             beginDate: 'March 2020',
             endDate: 'Present',
