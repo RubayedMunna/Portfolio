@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaTwitter, FaLinkedin, FaGithub, FaGoogle, FaResearchgate, FaOrcid, FaFacebook, FaHome, FaBriefcase, FaGraduationCap, FaScroll, FaCode, FaChalkboardTeacher, FaRunning, FaBookReader, FaMedal, FaWhatsapp, FaEnvelope, FaBug, FaDesktop } from 'react-icons/fa';
 import Rubayed_Cropped from './../../assets/images/Rubayed_Cropped.jpg';
+import Profile_Rubayed_BG_White from './../../assets/images/Profile_Rubayed_BG_White.png'
 import { Link, useNavigate } from 'react-router-dom';
 
 function SideNavBar() {
@@ -12,7 +13,7 @@ function SideNavBar() {
                 <div className='mb-5'>
                     {/* Image and Name */}
                     <div className='flex items-center justify-center'>
-                    <img src={Rubayed_Cropped} alt="Rubayed All Islam" className="w-3/4 rounded-full mb-4 border-4 border-gray-400" />
+                    <img src={Profile_Rubayed_BG_White} alt="Rubayed All Islam" className="w-3/4 rounded-full mb-4 border-4 border-gray-400" />
                     </div>
                     {/* <img src={Rubayed_Cropped} alt="Rubayed All Islam" className="w-full rounded-full mb-4" /> */}
                     <div className='flex items-center justify-center'>
