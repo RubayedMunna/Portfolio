@@ -25,7 +25,7 @@ function Experience() {
                 <div className="ms-3 me-4">
                     <header className="bg-gray-500 text-white py-4 rounded-lg">
                         <div className="container mx-auto ml-4">
-                            <h1 className="text-3xl font-bold">ProfessionalExperiences</h1>
+                            <h1 className="text-3xl font-bold">Professional Experiences</h1>
                         </div>
                     </header>
                     <div className="container mx-auto mt-5">
