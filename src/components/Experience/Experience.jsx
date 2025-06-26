@@ -1,25 +1,24 @@
 import React, { useState } from 'react'
 function Experience() {
     const [cards, setCards] = useState([
-        {
-            id: 1,
-            jobTitle: 'Job Title',
-            jobType: 'Full Time/Short Time',
-            jobInstitution: 'Company',
-            institutionAddress: 'Address',
-            from: 'Joining Date',
-            to: 'Ending Date',
-            duration: 'Duration',
-            responsiblilities: [
-                'Responsibilities 1',
-                'Responsibilities 2',
-                'Responsibilities 3',
-                
-            ],
-        },
-        // Add more card objects as needed
-        
-    ]);
+    {
+        id: 1,
+        jobTitle: 'Guest Lecturer',
+        jobType: 'Full Time',
+        jobInstitution: 'Daffodil International University',
+        institutionAddress: 'Daffodil Smart City, Ashulia, Dhaka',
+        from: 'July 1, 2025',
+        to: 'Present',
+        duration: 'Ongoing',
+        responsiblilities: [
+            'Conduct undergraduate lectures and tutorials',
+            'Assist in curriculum development and academic planning',
+            'Engage in student mentoring and assessment',
+        ],
+    },
+    // Add more card objects as needed
+]);
+
     return (
         <div>
             <div className="container mt-5 mx-auto">
