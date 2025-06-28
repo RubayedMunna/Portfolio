@@ -3,11 +3,11 @@ function Experience() {
     const [cards, setCards] = useState([
     {
         id: 1,
-        jobTitle: 'Guest Lecturer',
+        jobTitle: 'Lecturer',
         jobType: 'Full Time',
         jobInstitution: 'Daffodil International University',
         institutionAddress: 'Daffodil Smart City, Ashulia, Dhaka',
-        from: 'July 1, 2025',
+        from: 'June 28, 2025',
         to: 'Present',
         duration: 'Ongoing',
         responsiblilities: [
