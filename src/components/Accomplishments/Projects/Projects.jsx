@@ -3,6 +3,21 @@ import React, { useState } from 'react';
 function Projects() {
   const [projects, setProjects] = useState([
     {
+      projectName: 'Smart Class Routine Management System',
+      projectDescription: [
+        'A web-based application designed to automate and manage class routines efficiently within an academic institution.',
+        'Developed using React.js for the frontend, Node.js for the backend, and MySQL for the database.',
+        'Implements Scrum methodology for agile project management.',
+        'Includes unit testing with Mocha and CI/CD integration using GitHub Actions.',
+        'Ensures conflict-free class scheduling, rescheduling, and cancellation with administrative control.',
+      ],
+      institutionName: 'CSE, Jahangirnagar University',
+      projectDate: 'March 2024',
+      githubUrl: 'https://github.com/JUCSE49-Mavericks/Smart-Class-Routine-Management-System.git',
+      websiteUrl: '#',
+    },
+
+    {
       projectName: 'Outcome Based Education (OBE) System',
       projectDescription: [
         'A complete automation of the Outcome Based Education (OBE) system.',

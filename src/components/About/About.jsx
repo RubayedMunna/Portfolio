@@ -3,12 +3,17 @@ import React, { useState } from 'react';
 function About() {
     const [name, setName] = useState('Rubayed All Islam');
     const [paragraphs, setParagraphs] = useState([
-        'Currently I am studying B.Sc. in Computer Science and Engineering from Jahangirnagar University. I enjoy problem-solving and coding. Always strive to bring 100% to the work I do. I have worked on technologies like C, C++, Java, Python, JavaScript, Django, MySQL, HTML5, CSS.',
-        'I am enthusiastic about exploring cutting-edge technology, and my interest in research is fueled by a passion for areas such as machine learning and deep learning. I am particularly intrigued by the applications of these technologies in computer vision and natural language processing. While I currently do not have any formal research work, my keen interest and curiosity drive me to actively seek opportunities to contribute to these evolving fields.',
-        'I have a broad range of research interests that span captivating areas within the field of technology. These include Artificial Intelligence, Machine Learning, Deep Learning, Computer Vision & Pattern Recognition, Natural Language Processing, and Data Mining in Social Networks.',
-        'I am defined by my self-motivation and unwavering dedication to every task I embark upon, irrespective of its complexity or scale. When disseminating knowledge, I prioritize delivering information with clarity and precision. My insatiable thirst for learning drives me to eagerly embrace new technologies and ideas. When faced with something truly captivating, my dedication soars to new heights. In my areas of expertise, I demonstrate a steadfast ability to offer valuable suggestions, recommendations, strategic planning, execution methods, and more.',
-        'As I enter this new phase in my academic journey, pursuing my undergraduate studies, I eagerly anticipate delving into unexplored territories within the realm of computer science. My goal is to push boundaries, embrace challenges, and make meaningful contributions to the ever-evolving field of technology.',
+        'Currently I am a Lecturer in the Department of Computer Science and Engineering at Daffodil International University. I have recently completed my B.Sc. and am currently pursuing an M.Sc. in Computer Science and Engineering from Jahangirnagar University. With a deep-rooted passion for learning and innovation, I am dedicated to the pursuit of academic excellence, both as an educator and a lifelong learner.',
+        
+        'My academic and professional interests lie at the intersection of teaching, research, and practical software development. I take great joy in guiding students, engaging in meaningful research, and building impactful technological solutions. I am particularly drawn to fields such as Machine Learning, Deep Learning, Natural Language Processing (NLP), Data Mining, the Internet of Things (IoT), and Software Engineering.',
+        
+        'As a self-motivated and detail-oriented individual, I approach every task with a strong sense of purpose and dedication. My enthusiasm for technology and discovery drives me to explore cutting-edge domains and stay updated with emerging innovations. I believe in delivering knowledge with clarity and precision, and I strive to inspire students by making complex topics accessible and engaging.',
+        
+        'Throughout my journey, I have worked with various technologies including C, C++, Java, Python, JavaScript, Django, MySQL, HTML5, and CSS. My experiences have not only strengthened my technical abilities but also reinforced my desire to contribute to the growth and advancement of computer science.',
+        
+        'My long-term vision is to thrive in a university environment where I can continue teaching, conduct impactful research, and support students in realizing their academic and professional goals. I am committed to making meaningful contributions to academia, driven by curiosity, creativity, and a strong sense of responsibility.'
     ]);
+
 
     return (
         <div>
