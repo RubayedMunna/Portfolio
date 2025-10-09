@@ -5,13 +5,22 @@ function Education() {
     // State for Education
     const [education, setEducation] = useState([
         {
+            degree: 'MASTERS OF SCIENCE (M.SC.)',
+            department: 'Computer Science of Engineering',
+            institution: ' Jahangirnagar University',
+            gpa: '-',
+            outof: '4.00',
+            beginDate: 'July 2025',
+            endDate: 'Present',
+        },
+        {
             degree: 'BACHELOR OF SCIENCE (B.SC.)',
             department: 'Computer Science of Engineering',
             institution: ' Jahangirnagar University',
             gpa: '3.82',
             outof: '4.00',
             beginDate: 'March 2020',
-            endDate: 'Present',
+            endDate: 'July 2025',
         },
         {
             degree: 'HIGHER SECONDARY CERTIFICATE (HSC)',

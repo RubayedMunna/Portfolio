@@ -29,7 +29,7 @@ function SideNavBar() {
                         <a href="https://x.com/rubayed_munna?t=hogc2i5Sm_OODm7USFifWQ&s=08" target="_blank" rel="noopener noreferrer"><FaTwitter size={24} /></a>
                         <a href="https://www.linkedin.com/in/rubayed-all-islam-1683841b4/" target="_blank" rel="noopener noreferrer"><FaLinkedin size={24} /></a>
                         <a href="https://github.com/RubayedMunna" target="_blank" rel="noopener noreferrer"><FaGithub size={24} /></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer"><FaGoogle size={24} /></a>
+                        <a href="https://scholar.google.com/citations?user=Ck_yQoIAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><FaGoogle size={24} /></a>
                         <a href="https://www.researchgate.net/profile/Rubayed-Islam" target="_blank" rel="noopener noreferrer"><FaResearchgate size={24} /></a>
                         <a href="https://orcid.org/my-orcid?orcid=0009-0002-8494-4190" target="_blank" rel="noopener noreferrer"><FaOrcid size={24} /></a>
                         <a href="https://www.facebook.com/rubayed.munna/" target="_blank" rel="noopener noreferrer"><FaFacebook size={24} /></a>

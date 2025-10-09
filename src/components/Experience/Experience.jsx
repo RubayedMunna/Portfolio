@@ -8,8 +8,8 @@ function Experience() {
         jobInstitution: 'Daffodil International University',
         institutionAddress: 'Daffodil Smart City, Ashulia, Dhaka',
         from: 'June 28, 2025',
-        to: 'Present',
-        duration: 'Ongoing',
+        to: 'August 31, 2025',
+        duration: 'One Semester (Contractual)',
         responsiblilities: [
             'Conduct undergraduate lectures and tutorials',
             'Assist in curriculum development and academic planning',
