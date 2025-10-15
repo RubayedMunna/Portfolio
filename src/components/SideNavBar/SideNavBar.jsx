@@ -7,13 +7,13 @@ function SideNavBar() {
     const location = useLocation(); // Get current route
 
     const socialLinks = [
-        { icon: FaTwitter, url: "https://x.com/rubayed_munna?t=hogc2i5Sm_OODm7USFifWQ&s=08" },
+        // { icon: FaTwitter, url: "https://x.com/rubayed_munna?t=hogc2i5Sm_OODm7USFifWQ&s=08" },
         { icon: FaLinkedin, url: "https://www.linkedin.com/in/rubayed-all-islam-1683841b4/" },
         { icon: FaGithub, url: "https://github.com/RubayedMunna" },
         { icon: FaGoogle, url: "https://scholar.google.com/citations?user=Ck_yQoIAAAAJ&hl=en" },
         { icon: FaResearchgate, url: "https://www.researchgate.net/profile/Rubayed-Islam" },
         { icon: FaOrcid, url: "https://orcid.org/my-orcid?orcid=0009-0002-8494-4190" },
-        { icon: FaFacebook, url: "https://www.facebook.com/rubayed.munna/" },
+        // { icon: FaFacebook, url: "https://www.facebook.com/rubayed.munna/" },
     ];
 
 
@@ -47,18 +47,18 @@ function SideNavBar() {
 
                     {/* Social Media Icons */}
                     <div className="flex space-x-2 mt-4 justify-center">
-    {socialLinks.map((item, idx) => (
-        <a 
-            key={idx} 
-            href={item.url} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="text-gray-300 hover:text-amber-400 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-700"
-        >
-            <item.icon size={22} />
-        </a>
-    ))}
-</div>
+                        {socialLinks.map((item, idx) => (
+                            <a
+                                key={idx}
+                                href={item.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-gray-300 hover:text-amber-400 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-700"
+                            >
+                                <item.icon size={22} />
+                            </a>
+                        ))}
+                    </div>
 
                 </div>
 
@@ -71,8 +71,8 @@ function SideNavBar() {
                                     <Link
                                         to={item.to}
                                         className={`flex items-center px-3 py-2 rounded-lg transition-all duration-300 ${isActive
-                                                ? 'bg-amber-500 text-white shadow-lg'
-                                                : 'text-gray-200 hover:text-amber-400 hover:bg-gray-700'
+                                            ? 'bg-amber-500 text-white shadow-lg'
+                                            : 'text-gray-200 hover:text-amber-400 hover:bg-gray-700'
                                             }`}
                                     >
                                         <item.icon className="mr-2" />
