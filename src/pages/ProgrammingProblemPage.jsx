@@ -3,44 +3,78 @@ import SideNavBar from '../components/SideNavBar/SideNavBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import ProgrammingProblems from '../components/ProgrammingProblems/ProgrammingProblems';
-import './SideNavBar.css'
-
-
+import './SideNavBar.css';
 
 function ProgrammingProblemPage() {
-  const [isSideNavBarVisible, setIsSideNavBarVisible] = useState(true);
+  const [isSideNavVisible, setIsSideNavVisible] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1024);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSideNavBarVisible(window.innerWidth > 1200); // Adjust the breakpoint as needed
+      setIsDesktop(window.innerWidth > 1024);
+      if (window.innerWidth > 1024) {
+        setIsSideNavVisible(true);
+      } else {
+        setIsSideNavVisible(false);
+      }
     };
 
-    handleResize();
     window.addEventListener('resize', handleResize);
+    handleResize();
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const toggleSideNavBar = () => {
-    setIsSideNavBarVisible(!isSideNavBarVisible);
+  const toggleSideNav = () => {
+    setIsSideNavVisible(!isSideNavVisible);
   };
 
   return (
     <div className="flex">
-      {isSideNavBarVisible && (
-        <div className={`overflow-y-scroll scrollbar fixed top-0 left-0 h-full bg-gray-800 text-white transition-all duration-300 ease-in-out ${isSideNavBarVisible ? 'w-72' : 'w-0'}`}>
-          <SideNavBar />
-        </div>
+      {/* Sidebar */}
+      <div
+        className={`
+          fixed top-0 left-0 h-screen bg-gray-800 text-white shadow-lg z-50
+          transform transition-transform duration-300 ease-in-out
+          overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800
+          ${isSideNavVisible ? 'translate-x-0' : '-translate-x-full'}
+          ${isDesktop ? 'translate-x-0 w-72' : 'w-64'}
+        `}
+      >
+        <SideNavBar />
+      </div>
+
+      {/* Overlay for mobile */}
+      {!isDesktop && isSideNavVisible && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-40 z-40"
+          onClick={() => setIsSideNavVisible(false)}
+        ></div>
       )}
-      <div className={`flex-grow p-4 transition-all duration-300 ease-in-out ${isSideNavBarVisible ? 'ml-80' : 'ml-10'}`}>
-        <div className="mb-4">
-          <button onClick={toggleSideNavBar} className="text-blue-500">
-            <FontAwesomeIcon icon={faBars} size="lg" />
-          </button>
+
+      {/* Main Content */}
+      <div
+        className={`
+          flex-grow transition-all duration-300 ease-in-out
+          ${isDesktop ? 'ml-72' : 'ml-0 w-full'}
+        `}
+      >
+        {/* Hamburger Button for Mobile */}
+        {!isDesktop && (
+          <div className="p-4">
+            <button
+              onClick={toggleSideNav}
+              className="text-gray-800 bg-gray-200 p-2 rounded-lg shadow hover:bg-gray-300 transition-colors"
+            >
+              <FontAwesomeIcon icon={faBars} size="lg" />
+            </button>
+          </div>
+        )}
+
+        {/* Page Content */}
+        <div className="p-4">
+          <ProgrammingProblems />
         </div>
-        <ProgrammingProblems />
       </div>
     </div>
   );
