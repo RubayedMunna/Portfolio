@@ -14,18 +14,18 @@ function AcademicServices() {
     ];
 
     const journals = [
-        { name: 'Journal Name 1', website: 'https://www.journal1website.com' },
-        { name: 'Journal Name 2', website: 'https://www.journal2website.com' },
+        // { name: 'Journal Name 1', website: 'https://www.journal1website.com' },
+        // { name: 'Journal Name 2', website: 'https://www.journal2website.com' },
     ];
 
     const conferences = [
-        { name: 'Conference Name 1', website: 'https://www.conference1website.com' },
-        { name: 'Conference Name 2', website: 'https://www.conference2website.com' },
+        // { name: 'Conference Name 1', website: 'https://www.conference1website.com' },
+        // { name: 'Conference Name 2', website: 'https://www.conference2website.com' },
     ];
 
     const programCommittees = [
-        { name: 'Program Committee Name 1', website: 'https://www.programcommittee1website.com' },
-        { name: 'Program Committee Name 2', website: 'https://www.programcommittee2website.com' },
+        // { name: 'Program Committee Name 1', website: 'https://www.programcommittee1website.com' },
+        // { name: 'Program Committee Name 2', website: 'https://www.programcommittee2website.com' },
     ];
 
     const renderItems = (items, sectionIcon) => (
@@ -58,6 +58,14 @@ function AcademicServices() {
                     </div>
                 </div>
             ))}
+        </div>
+    );
+
+    const NoItemsMessage = ({ sectionLabel }) => (
+        <div className="text-center mt-6 py-8">
+            <p className="text-gray-600 text-lg font-medium">
+                No {sectionLabel.toLowerCase()} found.
+            </p>
         </div>
     );
 
@@ -107,9 +115,15 @@ function AcademicServices() {
             </div>
 
             {/* Content */}
-            {activeSection === 'journal' && renderItems(journals, <FaBook className="text-amber-600 w-6 h-6" />)}
-            {activeSection === 'conference' && renderItems(conferences, <FaMicrophone className="text-amber-600 w-6 h-6" />)}
-            {activeSection === 'program' && renderItems(programCommittees, <FaUsers className="text-amber-600 w-6 h-6" />)}
+            {activeSection === 'journal' && (
+                journals.length > 0 ? renderItems(journals, <FaBook className="text-amber-600 w-6 h-6" />) : <NoItemsMessage sectionLabel="Reviewer for Journal" />
+            )}
+            {activeSection === 'conference' && (
+                conferences.length > 0 ? renderItems(conferences, <FaMicrophone className="text-amber-600 w-6 h-6" />) : <NoItemsMessage sectionLabel="Reviewer for Conference" />
+            )}
+            {activeSection === 'program' && (
+                programCommittees.length > 0 ? renderItems(programCommittees, <FaUsers className="text-amber-600 w-6 h-6" />) : <NoItemsMessage sectionLabel="Program Committee Member" />
+            )}
         </div>
     );
 }
