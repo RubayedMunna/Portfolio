@@ -3,9 +3,11 @@ import { FaTwitter, FaLinkedin, FaGithub, FaGoogle, FaResearchgate, FaOrcid, FaF
 import Rubayed_Cropped from './../../assets/images/Rubayed_Cropped.jpg';
 import Profile_Rubayed_BG_White from './../../assets/images/Profile_Rubayed_BG_White.png'
 import { Link, useNavigate } from 'react-router-dom';
+import { FaProjectDiagram, FaFolder } from 'react-icons/fa';
+
 
 function SideNavBar() {
-    
+
 
     return (
         <div>
@@ -13,7 +15,7 @@ function SideNavBar() {
                 <div className='mb-5'>
                     {/* Image and Name */}
                     <div className='flex items-center justify-center'>
-                    <img src={Profile_Rubayed_BG_White} alt="Rubayed All Islam" className="w-3/4 rounded-full mb-4 border-4 border-gray-400" />
+                        <img src={Profile_Rubayed_BG_White} alt="Rubayed All Islam" className="w-3/4 rounded-full mb-4 border-4 border-gray-400" />
                     </div>
                     {/* <img src={Rubayed_Cropped} alt="Rubayed All Islam" className="w-full rounded-full mb-4" /> */}
                     <div className='flex items-center justify-center'>
@@ -63,6 +65,14 @@ function SideNavBar() {
                                 Publications
                             </Link>
                         </li>
+
+                        <li>
+                            <Link to="/projects" className="flex items-center my-4">
+                                <FaFolder className="inline-block mr-2" />
+                                Projects
+                            </Link>
+                        </li>
+
                         <li>
                             <Link to="/skills" className="flex items-center my-4">
                                 <FaCode className="inline-block mr-2" />
@@ -109,19 +119,12 @@ function SideNavBar() {
                         <FaWhatsapp className="text-green-500 mr-2" />
                         <span>+8801864852588</span>
                     </div>
-                    
+
                     <div className="flex items-center mt-2">
                         <FaEnvelope className="text-blue-500 mr-2" />
                         <span>jucse29.370@gmail.com</span>
                     </div>
-                    <div className="flex items-center mt-2">
-                        <FaEnvelope className="text-blue-500 mr-2" />
-                        <span>rubayedcse29@gmail.com</span>
-                    </div>
-                    <div className="flex items-center mt-2">
-                        <FaEnvelope className="text-blue-500 mr-2" />
-                        <span>rubayed.stu2019@juniv.edu</span>
-                    </div>
+
                     <div className='my-5'>
                         &copy; 2025 | Rubayed All Islam
                     </div>

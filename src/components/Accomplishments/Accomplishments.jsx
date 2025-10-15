@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import Projects from './Projects/Projects';
 import Awards from './Awards/Awards';
 import Certifications from './Certifications/Certifications';
 
 function Accomplishments() {
-    const [activeSection, setActiveSection] = useState('projects');
+    const [activeSection, setActiveSection] = useState('certifications');
 
     // Function to toggle the active section
     const toggleContent = (sectionId) => {
@@ -23,15 +22,9 @@ function Accomplishments() {
                     <div className="container mx-auto mt-8">
                         {/* Buttons */}
                         <div className="inline-flex rounded-md shadow-sm">
-                            <button
-                                className={`px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white`}
-                                onClick={() => toggleContent('projects')}
-                            >
-                                Projects
-                            </button>
                             
                             <button
-                                className={`px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white`}
+                                className={`px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white`}
                                 onClick={() => toggleContent('certifications')}
                             >
                                 Certifications
@@ -46,10 +39,7 @@ function Accomplishments() {
                         </div>
 
                         {/* Content Sections */}
-                        <div id="projects" className={`content mt-8 ${activeSection !== 'projects' && 'hidden'}`}>
-                            <h2 className="text-2xl font-bold mb-3">Projects</h2>
-                            <Projects />
-                        </div>
+                        
 
                         <div id="awards" className={`content mt-8 ${activeSection !== 'awards' && 'hidden'}`}>
                             <h2 className="text-2xl font-bold mb-3">Awards</h2>

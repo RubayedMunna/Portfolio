@@ -11,7 +11,7 @@ import SeminarWorkshopPage from './pages/SeminarWorkshopPage'
 import AccomplishmentPage from './pages/AccomplishmentPage';
 import Test1 from './components/Test1';
 import ProgrammingProblemPage from './pages/ProgrammingProblemPage';
-
+import ProjectPage from './pages/ProjectPage';
 function App() {
   return (
     // <Test1/>
@@ -26,6 +26,7 @@ function App() {
         <Route path="/publications" element={<PublicationPage/>}/>
         <Route path="/education" element={<EducationPage/>}/>
         <Route path='/experience' element={<ExperiencePage/>} />
+        <Route path='/projects' element={<ProjectPage/>} />
         <Route path="/home" element={<HomePage/>} />
         <Route path="/" element={<HomePage/>} />
       </Routes>
