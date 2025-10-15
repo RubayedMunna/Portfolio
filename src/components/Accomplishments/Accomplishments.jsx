@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Awards from './Awards/Awards';
 import Certifications from './Certifications/Certifications';
+import { FaMedal } from 'react-icons/fa';
 
 function Accomplishments() {
     const [activeSection, setActiveSection] = useState('certifications');
@@ -16,6 +17,7 @@ function Accomplishments() {
         <div className="container mt-10 mx-auto px-4 md:px-6">
             {/* Header */}
             <header className="relative mb-10 overflow-hidden rounded-2xl bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-white shadow-2xl">
+                {/* Animated radial gradient */}
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-amber-400/30 via-transparent to-transparent animate-pulse-slow"></div>
 
                 <div className="relative container mx-auto px-6 py-6 flex flex-col md:flex-row items-start md:items-center justify-between">
@@ -23,9 +25,7 @@ function Accomplishments() {
                     <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4">
                         {/* Icon hidden on mobile */}
                         <div className="hidden sm:flex w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center shadow-md border border-white/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" className="w-6 h-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                            </svg>
+                            <FaMedal className="w-6 h-6 text-white" />
                         </div>
                         <div>
                             <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">Accomplishments</h1>
@@ -47,8 +47,8 @@ function Accomplishments() {
                         key={id}
                         onClick={() => toggleContent(id)}
                         className={`relative px-6 py-3 text-sm font-semibold rounded-full border transition-all duration-300 ${activeSection === id
-                                ? 'bg-gradient-to-r from-amber-600 to-amber-700 text-white border-amber-600 shadow-lg scale-105'
-                                : 'bg-white text-gray-800 border-amber-300 hover:text-amber-700 hover:border-amber-500 hover:shadow-md'
+                            ? 'bg-gradient-to-r from-amber-600 to-amber-700 text-white border-amber-600 shadow-lg scale-105'
+                            : 'bg-white text-gray-800 border-amber-300 hover:text-amber-700 hover:border-amber-500 hover:shadow-md'
                             }`}
                     >
                         {activeSection === id && (

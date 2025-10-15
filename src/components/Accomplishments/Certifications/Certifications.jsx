@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import CertificateBongoDev from './../../../assets/images/Certificate_BongoDev.png';
-import CerticicateJavascript from './../../../assets/images/Certificate_JavascriptAlgorithmsAndDataStructures.png'
-import CertificateResponsiveWeb from './../../../assets/images/Certificate_ResponsiveWebDesign.png'
-import CertificatePython from './../../../assets/images/Certificate_Python_Kaggle.png'
-import CertificateICPCPreli2022 from './../../../assets/images/ICPCPreli2022.png'
-import CertificateICPCPreli2021 from './../../../assets/images/ICPCPreli2021.png'
-import CertificateMachineLearning from './../../../assets/images/Certificate_MachineLerning.png'
-import CertificateLLM from './../../../assets/images/Certificate_LLM.png'
+import CerticicateJavascript from './../../../assets/images/Certificate_JavascriptAlgorithmsAndDataStructures.png';
+import CertificateResponsiveWeb from './../../../assets/images/Certificate_ResponsiveWebDesign.png';
+import CertificatePython from './../../../assets/images/Certificate_Python_Kaggle.png';
+import CertificateICPCPreli2022 from './../../../assets/images/ICPCPreli2022.png';
+import CertificateICPCPreli2021 from './../../../assets/images/ICPCPreli2021.png';
+import CertificateMachineLearning from './../../../assets/images/Certificate_MachineLerning.png';
+import CertificateLLM from './../../../assets/images/Certificate_LLM.png';
 
 function Certifications() {
-  const [certifications, setCertifications] = useState([
+  const [certifications] = useState([
     {
       title: 'Introduction to Large Language Models',
       image: CertificateLLM,
@@ -52,12 +52,11 @@ function Certifications() {
       issuanceDate: 'January 3, 2024',
       certificateLink: 'https://bongodev.com/',
     },
-    
     {
       title: 'ICPC Dhaka Regional Preliminary Contest 2022',
       image: CertificateICPCPreli2022,
       issuedBy: 'International Collegiate Programming Contest (ICPC)',
-      issuanceDate: 'Septermber 3, 2022',
+      issuanceDate: 'September 3, 2022',
       certificateLink: 'https://icpc.global/',
     },
     {
@@ -67,78 +66,69 @@ function Certifications() {
       issuanceDate: 'April 7, 2021',
       certificateLink: 'https://icpc.global/',
     },
-   
-    // Add more certifications as needed
   ]);
 
   return (
-    <div className="container mx-auto">
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
-        {certifications.map((certification, index) => (
-          <div 
+    <div className="container mx-auto px-4 md:px-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+        {certifications.map((cert, index) => (
+          <div
             key={index}
-            className="bg-white rounded-xl shadow-lg border-2 border-amber-200 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-amber-400 hover:bg-amber-50 relative"
+            className="bg-white rounded-xl shadow-lg border-2 border-amber-200 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-amber-400 hover:bg-amber-50 relative flex flex-col mx-auto"
           >
-            {/* Top border - positioned absolutely to ensure perfect alignment */}
+            {/* Top border */}
             <div className="bg-gradient-to-r from-amber-600 to-amber-700 h-2 w-full rounded-t-xl absolute top-0 left-0 right-0"></div>
-            
-            <div className="flex items-center justify-center p-6 pt-8"> {/* Added pt-8 to account for the top border */}
-              <div className="max-w-full w-full">
-                {/* Certification Title */}
-                <a 
-                  href={certification.certificateLink} 
-                  target='_blank' 
+
+            <div className="flex flex-col items-center justify-center p-6 pt-8 w-full">
+              {/* Certification Title */}
+              <a href={cert.certificateLink} target="_blank" rel="noopener noreferrer" className="block mb-4 text-center group">
+                <h2 className="text-lg sm:text-xl font-bold text-gray-800 group-hover:text-amber-700 transition-colors duration-300">
+                  {cert.title}
+                </h2>
+              </a>
+
+              {/* Certification Image */}
+              <div className="my-4 w-full rounded-lg overflow-hidden border-2 border-amber-100">
+                <img
+                  src={cert.image}
+                  alt={cert.title}
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+
+              {/* Certification Info */}
+              <div className="space-y-1 text-center">
+                <p className="text-gray-700 text-sm sm:text-base">
+                  <span className="font-semibold text-gray-800">Issued by:</span> {cert.issuedBy}
+                </p>
+                <p className="text-gray-700 text-sm sm:text-base">
+                  <span className="font-semibold text-gray-800">Date of Issuance:</span> {cert.issuanceDate}
+                </p>
+              </div>
+
+              {/* View Certificate */}
+              <div className="mt-4 pt-4 border-t border-amber-100 w-full text-center">
+                <a
+                  href={cert.certificateLink}
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="block mb-4 group"
+                  className="inline-flex items-center justify-center text-amber-600 hover:text-amber-700 font-semibold transition-colors duration-300"
                 >
-                  <h2 className="text-xl font-bold text-gray-800 group-hover:text-amber-700 transition-colors duration-300">
-                    {certification.title}
-                  </h2>
-                </a>
-                
-                {/* Certification Image */}
-                <div className="my-4 w-full rounded-lg overflow-hidden border-2 border-amber-100">
-                  <img 
-                    src={certification.image} 
-                    alt="Certification Image" 
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" 
-                  />
-                </div>
-                
-                {/* Certification Information */}
-                <div className="space-y-2">
-                  <p className="text-gray-700">
-                    <span className="font-semibold text-gray-800">Issued by:</span> {certification.issuedBy}
-                  </p>
-                  <p className="text-gray-700">
-                    <span className="font-semibold text-gray-800">Date of Issuance:</span> {certification.issuanceDate}
-                  </p>
-                </div>
-                
-                {/* View Certificate Link */}
-                <div className="mt-4 pt-4 border-t border-amber-100">
-                  <a 
-                    href={certification.certificateLink} 
-                    target='_blank' 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-amber-600 hover:text-amber-700 font-semibold transition-colors duration-300"
+                  <span>View Certificate</span>
+                  <svg
+                    className="w-4 h-4 ml-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <span>View Certificate</span>
-                    <svg 
-                      className="w-4 h-4 ml-1" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth="2" 
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                  </a>
-                </div>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>

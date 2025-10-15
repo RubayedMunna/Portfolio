@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { FaBriefcase } from 'react-icons/fa';
 
 function Experience() {
     const [cards, setCards] = useState([
@@ -18,21 +19,7 @@ function Experience() {
             ],
         },
 
-        {
-            id: 1,
-            jobTitle: 'Lecturer',
-            jobType: 'Full Time',
-            jobInstitution: 'Daffodil International University',
-            institutionAddress: 'Daffodil Smart City, Ashulia, Dhaka',
-            from: 'June 28, 2025',
-            to: 'August 31, 2025',
-            duration: 'One Semester (Contractual)',
-            responsiblilities: [
-                'Conduct undergraduate lectures and tutorials',
-                'Assist in curriculum development and academic planning',
-                'Engage in student mentoring and assessment',
-            ],
-        },
+
         // Add more card objects as needed
     ]);
 
@@ -48,9 +35,7 @@ function Experience() {
                         <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4">
                             {/* Icon hidden on mobile */}
                             <div className="hidden sm:flex w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center shadow-md border border-white/30">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" className="w-6 h-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
-                                </svg>
+                                <FaBriefcase className="text-white w-6 h-6" />
                             </div>
                             <div>
                                 <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">Professional Experiences</h1>
@@ -64,6 +49,7 @@ function Experience() {
                         </div>
                     </div>
                 </header>
+
 
                 <div className="experience relative">
                     {/* Vertical Rope line */}
@@ -82,11 +68,11 @@ function Experience() {
                                     <h2 className="text-2xl font-bold flex flex-col md:flex-row items-center px-4 md:px-10">
                                         <span className="bg-white text-gray-900 px-4 py-2 rounded-lg shadow-sm">{card.jobTitle}</span>
                                     </h2>
-                                    
+
                                     <h2 className="text-xl flex flex-col md:flex-row items-center px-4 md:px-10 mt-2">
                                         <span className="bg-white text-gray-700 px-4 py-2 rounded-lg shadow-sm">{card.jobType}</span>
                                     </h2>
-                                    
+
                                     <h2 className="text-xl font-bold flex flex-col md:flex-row items-center px-4 md:px-10 mt-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-amber-700">
                                             <path d="M11.584 2.376a.75.75 0 0 1 .832 0l9 6a.75.75 0 1 1-.832 1.248L12 3.901 3.416 9.624a.75.75 0 0 1-.832-1.248l9-6Z" />

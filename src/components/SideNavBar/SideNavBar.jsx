@@ -19,8 +19,8 @@ function SideNavBar() {
 
     const navItems = [
         { to: "/home", label: "Home", icon: FaHome },
-        { to: "/experience", label: "Experience", icon: FaBriefcase },
         { to: "/education", label: "Education", icon: FaGraduationCap },
+        { to: "/experience", label: "Experience", icon: FaBriefcase },
         { to: "/publications", label: "Publications", icon: FaScroll },
         { to: "/projects", label: "Projects", icon: FaFolder },
         { to: "/skills", label: "Skills", icon: FaCode },

@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { FaGraduationCap } from 'react-icons/fa';
 
 function Education() {
     const [education, setEducation] = useState([
@@ -51,9 +52,7 @@ function Education() {
                         <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4">
                             {/* Icon hidden on mobile */}
                             <div className="hidden sm:flex w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center shadow-md border border-white/30">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" className="w-6 h-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
-                                </svg>
+                                <FaGraduationCap className="text-white w-6 h-6" />
                             </div>
                             <div>
                                 <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">Education</h1>
@@ -67,6 +66,7 @@ function Education() {
                         </div>
                     </div>
                 </header>
+
 
                 <div className="education relative">
                     {/* Vertical Rope line */}
