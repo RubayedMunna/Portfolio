@@ -34,8 +34,9 @@ function AccomplishmentPage() {
       {/* Sidebar */}
       <div
         className={`
-          fixed top-0 left-0 h-full bg-gray-800 text-white shadow-lg z-50
+          fixed top-0 left-0 h-screen bg-gray-800 text-white shadow-lg z-50
           transform transition-transform duration-300 ease-in-out
+          overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800
           ${isSideNavVisible ? 'translate-x-0' : '-translate-x-full'}
           ${isDesktop ? 'translate-x-0 w-72' : 'w-64'}
         `}
