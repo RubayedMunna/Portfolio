@@ -3,24 +3,24 @@ import 'boxicons/css/boxicons.min.css';
 
 function Conducted() {
   const [events, setEvents] = useState([
-    { 
-      id: 1, 
-      name: 'Event 1',
-      institution: 'Institution 1', 
-      location: 'Location 1', 
-      date: 'January 1, 2022', 
-      topics: ['Topic 1', 'Topic 2'], 
-      website: 'https://example.com' 
-    },
-    { 
-      id: 2, 
-      name: 'Event 2', 
-      institution: 'Institution 2', 
-      location: 'Location 2', 
-      date: 'February 1, 2022', 
-      topics: ['Topic 3', 'Topic 4'], 
-      website: 'https://example.com'
-    },
+    // { 
+    //   id: 1, 
+    //   name: 'Event 1',
+    //   institution: 'Institution 1', 
+    //   location: 'Location 1', 
+    //   date: 'January 1, 2022', 
+    //   topics: ['Topic 1', 'Topic 2'], 
+    //   website: 'https://example.com' 
+    // },
+    // { 
+    //   id: 2, 
+    //   name: 'Event 2', 
+    //   institution: 'Institution 2', 
+    //   location: 'Location 2', 
+    //   date: 'February 1, 2022', 
+    //   topics: ['Topic 3', 'Topic 4'], 
+    //   website: 'https://example.com'
+    // },
     // Add more events as needed
   ]);
 
