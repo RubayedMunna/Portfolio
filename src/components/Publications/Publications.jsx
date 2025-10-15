@@ -12,29 +12,30 @@ function Publications() {
     };
 
     return (
-        <div className="container mt-10 mx-auto">
+        <div className="container mt-10 mx-auto px-4 md:px-6">
             <div className="ms-3 me-4">
 
                 {/* --- Modern Header --- */}
                 <header className="relative mb-10 overflow-hidden rounded-2xl bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-white shadow-2xl">
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-amber-400/40 via-transparent to-transparent animate-pulse-slow"></div>
 
-                    <div className="relative container mx-auto px-6 py-6 flex items-center justify-between">
+                    <div className="relative container mx-auto px-6 py-6 flex flex-col md:flex-row items-start md:items-center justify-between">
                         {/* Left Section */}
-                        <div className="flex items-center space-x-4">
-                            <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center shadow-md border border-white/30">
+                        <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4">
+                            {/* Icon hidden on mobile */}
+                            <div className="hidden sm:flex w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center shadow-md border border-white/30">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" className="w-6 h-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
                                 </svg>
                             </div>
                             <div>
-                                <h1 className="text-4xl font-extrabold tracking-tight">Publications</h1>
+                                <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">Publications</h1>
                                 <p className="text-amber-200 text-sm mt-1">Research work and academic contributions</p>
                             </div>
                         </div>
 
                         {/* Right Badge */}
-                        <div className="hidden md:block bg-white/10 px-4 py-2 rounded-full border border-white/20 text-sm font-medium tracking-wide hover:bg-white/20 transition">
+                        <div className="hidden md:block bg-white/10 px-4 py-2 rounded-full border border-white/20 text-sm font-medium tracking-wide hover:bg-white/20 transition mt-2 md:mt-0">
                             <span className="text-amber-200">Scholarly Works</span>
                         </div>
                     </div>
