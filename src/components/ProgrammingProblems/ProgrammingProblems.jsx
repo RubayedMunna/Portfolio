@@ -1,15 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faList, faTrophy, faUser, faStar } from '@fortawesome/free-solid-svg-icons';
 
 function ProgrammingProblems() {
-
     const [activeSection, setActiveSection] = useState('online');
 
-    // Function to toggle the active section
-    const toggleContent = (sectionId) => {
-        setActiveSection(sectionId);
-    };
+    const toggleContent = (sectionId) => setActiveSection(sectionId);
+
+    const sections = [
+        { id: 'online', label: 'Online Judge' },
+        { id: 'onsite', label: 'Onsite Contest' },
+    ];
 
     const [onlineOJ, setonlineOJ] = useState([
         {
@@ -157,134 +158,123 @@ function ProgrammingProblems() {
     ]);
 
     return (
-        <div>
-            <div className="container mt-5 mx-auto">
-                <div className="ms-3 me-4">
-                    <header className="bg-gray-500 text-white py-4 rounded-lg">
-                        <div className="container mx-auto ml-4">
-                            <h1 className="text-3xl font-bold">Programming Problems</h1>
-                        </div>
-                    </header>
+        <div className="container mt-10 mx-auto">
+            <div className="ms-3 me-4">
 
-                    <div className="container mx-auto mt-8">
-                        {/* Buttons */}
-                        <div className="inline-flex rounded-md shadow-sm">
-                            <button
-                                className={`px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white  ${activeSection === 'online' && 'active'}`}
-                                onClick={() => toggleContent('online')}
-                            >
-                                Online Judge
-                            </button>
-                            <button
-                                className={`px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-blue-500 dark:focus:text-white ${activeSection === 'onsite' && 'active'}`}
-                                onClick={() => toggleContent('onsite')}
-                            >
-                                Onsite Contest
-                            </button>
-                        </div>
+                {/* --- Modern Programming Problems Header --- */}
+<header className="relative mb-10 overflow-hidden rounded-2xl bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-white shadow-2xl">
+    {/* Animated radial gradient */}
+    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-amber-400/30 via-transparent to-transparent animate-pulse-slow"></div>
 
-                        {/* Content Sections */}
-                        <div id="online" className={`content mt-4 ${activeSection !== 'online' && 'hidden'}`}>
-                            <h2 className="text-2xl font-bold mb-3">Online Judges</h2>
-                            <div>
-                                <div className="container mx-auto">
-                                    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4">
-                                        {onlineOJ.map((event, index) => (
-                                            <div key={index} className="max-w-full bg-white shadow-md overflow-hidden rounded-md my-0">
-                                                <div className="bg-blue-700 h-2 w-full"></div>
-                                                <div className="px-6 py-4">
-                                                    <div className="font-bold text-xl text-gray-750 mb-2"><a href={event.ojLink} target='_blank'>{event.ojName}</a></div>
-                                                    <ul className="list-disc list-inside mt-4">
-                                                        <li className="flex items-center mt-2">
-                                                            <FontAwesomeIcon icon={faCheckCircle} className="text-green-500 mr-2" />
-                                                            <span className='font-bold text-l text-gray-700'>Solved Problems:</span>
-                                                            <span className='mx-2 text-l text-gray-700'>{event.solvedProblems}</span>
-                                                        </li>
-                                                        <li className="flex items-center mt-2">
-                                                            <FontAwesomeIcon icon={faList} className="text-blue-500 mr-2" />
-                                                            <span className='font-bold text-l text-gray-700'>Participated Contest:</span>
-                                                            <span className='mx-2 text-l text-gray-700'>{event.participatedContest}</span>
-                                                        </li>
-                                                        <li className="flex items-center mt-2">
-                                                            <FontAwesomeIcon icon={faStar} className="text-yellow-500 mr-2" />
-                                                            <span className='font-bold text-l text-gray-700'>Current Rating:</span>
-                                                            <span className='mx-2 text-l text-gray-700'>{event.currentRating}</span>
-                                                        </li>
-                                                        <li className="flex items-center mt-2">
-                                                            <FontAwesomeIcon icon={faTrophy} className="text-orange-500 mr-2" />
-                                                            <span className='font-bold text-l text-gray-700'>Highest Rating:</span>
-                                                            <span className='mx-2 text-l text-gray-700'>{event.highestRating}</span>
-                                                        </li>
-                                                        <li className="flex items-center mt-2">
-                                                            <FontAwesomeIcon icon={faUser} className="text-purple-500 mr-2" />
-                                                            <span className='font-bold text-l text-gray-700'>Handle:</span>
-                                                            <a href={event.ojHandle} target='_blank' className='font-bold text-l text-gray-700 mx-2'>{event.ojHandleName}</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div className="relative container mx-auto px-6 py-6 flex items-center justify-between">
+        {/* Left Section: Icon + Title + Subtitle */}
+        <div className="flex items-center space-x-4">
+            <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center shadow-md border border-white/30">
+                <FontAwesomeIcon icon={faList} className="text-white w-6 h-6" />
+            </div>
+            <div>
+                <h1 className="text-4xl font-extrabold tracking-tight">Programming Problems</h1>
+                <p className="text-amber-200 text-sm mt-1">Online judges & onsite contests record</p>
+            </div>
+        </div>
 
-                        <div id="onsite" className={`content mt-4 ${activeSection !== 'onsite' && 'hidden'}`}>
-                            <h2 className="text-2xl font-bold mb-3">Onsite Contests</h2>
-                            <div>
-                                <div className="container mx-auto">
-                                    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4">
-                                        {onsiteContests.map((event, index) => (
-                                            <div key={index} className="max-w-full bg-white shadow-md overflow-hidden rounded-md my-0">
-                                                <div className="bg-blue-700 h-2 w-full"></div>
-                                                <div className="px-6 py-4">
-                                                    <div className="font-bold text-2l text-gray-750 mb-2">{event.contestTitle}</div>
-                                                    <ul className="list-disc list-inside mt-4">
-                                                    <li className="flex items-center mt-2">
-                                                            <span className='font-bold text-l text-gray-700'>Team:</span>
-                                                            <span className='mx-2 text-l text-gray-700'>{event.teamname}</span>
-                                                        </li>
-                                                        <li className="flex items-center mt-2">
-                                                            <span className='font-bold text-l text-gray-700'>Team Members:</span>
-                                                            <span className='mx-2 text-l text-gray-700'>{event.teamMembers}</span>
-                                                        </li>
-                                                        <li className="flex items-center mt-2">
-                                                            <span className='font-bold text-l text-gray-700'>Ranking:</span>
-                                                            <span className='mx-2 text-l text-gray-700'>{event.rank}</span>
-                                                        </li>
+        {/* Right Section: Badge */}
+        <div className="hidden md:block bg-white/10 px-4 py-2 rounded-full border border-white/20 text-sm font-medium tracking-wide hover:bg-white/20 transition">
+            <span className="text-amber-200">Coding Journey</span>
+        </div>
+    </div>
+</header>
 
-                                                        <li className="flex items-center mt-2">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 mr-2">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" />
-                                                            </svg>
-                                                            <span>{event.organizer}</span>
-                                                        </li>
-                                                        <li className="flex items-center mt-2">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 mr-2">
-                                                                <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
-                                                            </svg>
-                                                            <span>{event.location}</span>
-                                                        </li>
-                                                    </ul>
 
-                                                </div>
-                                                <div className="px-6 py-4 flex items-center justify-between">
-                                                    <div className='flex items-center'>
-                                                        <span className="bg-blue-500 text-white font-bold py-1 px-2 rounded-lg mr-4">{event.date}</span>
-                                                        {/* Event Link */}
-                                                        <a href={event.website} className="flex items-center bg-black hover:bg-gray-800 text-white font-bold py-2 px-4 rounded" target="_blank">
-                                                            <i className='bx bx-globe text-white'></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                {/* --- Modern Buttons --- */}
+                <div className="flex flex-wrap gap-3 justify-center mb-8">
+                    {sections.map(({ id, label }) => (
+                        <button
+                            key={id}
+                            onClick={() => toggleContent(id)}
+                            className={`relative px-5 py-2 text-sm font-semibold rounded-full border transition-all duration-300 ${
+                                activeSection === id
+                                    ? 'bg-gradient-to-r from-amber-600 to-amber-700 text-white border-amber-600 shadow-lg scale-105'
+                                    : 'bg-white text-gray-800 border-amber-300 hover:text-amber-700 hover:border-amber-500 hover:shadow-md'
+                            }`}
+                        >
+                            {activeSection === id && (
+                                <span className="absolute inset-0 bg-amber-400/20 blur-md rounded-full animate-pulse-slow"></span>
+                            )}
+                            <span className="relative z-10">{label}</span>
+                        </button>
+                    ))}
                 </div>
+
+                {/* --- Online Judge Section --- */}
+                {activeSection === 'online' && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                        {onlineOJ.map((event) => (
+                            <div key={event.id} className="rounded-xl overflow-hidden shadow-xl border-2 border-amber-200 hover:border-amber-400 hover:scale-105 hover:shadow-2xl hover:bg-amber-50 transition-all duration-300 bg-white">
+                                <div className="bg-gradient-to-r from-amber-600 to-amber-700 h-3 w-full"></div>
+                                <div className="px-6 py-4">
+                                    <h2 className="font-bold text-xl mb-3 text-gray-800 hover:text-amber-700 transition-colors duration-300">
+                                        <a href={event.ojLink} target="_blank" rel="noopener noreferrer">{event.ojName}</a>
+                                    </h2>
+                                    <ul className="list-disc list-inside space-y-2">
+                                        <li className="flex items-center">
+                                            <FontAwesomeIcon icon={faCheckCircle} className="text-green-500 mr-3" />
+                                            <span className="font-semibold text-gray-700">Solved Problems:</span>
+                                            <span className="mx-2 text-gray-600">{event.solvedProblems}</span>
+                                        </li>
+                                        <li className="flex items-center">
+                                            <FontAwesomeIcon icon={faList} className="text-blue-500 mr-3" />
+                                            <span className="font-semibold text-gray-700">Participated Contests:</span>
+                                            <span className="mx-2 text-gray-600">{event.participatedContest}</span>
+                                        </li>
+                                        <li className="flex items-center">
+                                            <FontAwesomeIcon icon={faStar} className="text-yellow-500 mr-3" />
+                                            <span className="font-semibold text-gray-700">Current Rating:</span>
+                                            <span className="mx-2 text-gray-600">{event.currentRating}</span>
+                                        </li>
+                                        <li className="flex items-center">
+                                            <FontAwesomeIcon icon={faTrophy} className="text-orange-500 mr-3" />
+                                            <span className="font-semibold text-gray-700">Highest Rating:</span>
+                                            <span className="mx-2 text-gray-600">{event.highestRating}</span>
+                                        </li>
+                                        <li className="flex items-center">
+                                            <FontAwesomeIcon icon={faUser} className="text-purple-500 mr-3" />
+                                            <span className="font-semibold text-gray-700">Handle:</span>
+                                            <a href={event.ojHandle} target="_blank" rel="noopener noreferrer" className="text-amber-600 font-semibold hover:text-amber-700 mx-2 transition-colors">{event.ojHandleName}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
+
+                {/* --- Onsite Contest Section --- */}
+                {activeSection === 'onsite' && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                        {onsiteContests.map((contest) => (
+                            <div key={contest.id} className="rounded-xl overflow-hidden shadow-xl border-2 border-amber-200 hover:border-amber-400 hover:scale-105 hover:shadow-2xl hover:bg-amber-50 transition-all duration-300 bg-white">
+                                <div className="bg-gradient-to-r from-amber-600 to-amber-700 h-3 w-full"></div>
+                                <div className="px-6 py-4">
+                                    <h2 className="font-bold text-xl mb-3 text-gray-800">{contest.contestTitle}</h2>
+                                    <ul className="list-disc list-inside space-y-2 text-gray-700">
+                                        <li><span className="font-semibold">Team:</span> <span className="ml-2">{contest.teamname}</span></li>
+                                        <li><span className="font-semibold">Team Members:</span> <span className="ml-2">{contest.teamMembers}</span></li>
+                                        <li><span className="font-semibold">Rank:</span> <span className="ml-2">{contest.rank}</span></li>
+                                        <li><span className="font-semibold">Organizer:</span> <span className="ml-2">{contest.organizer}</span></li>
+                                        <li><span className="font-semibold">Location:</span> <span className="ml-2">{contest.location}</span></li>
+                                    </ul>
+                                </div>
+                                <div className="px-6 py-4 flex items-center justify-between">
+                                    <span className="bg-amber-600 text-white font-bold py-2 px-3 rounded-lg shadow-md">{contest.date}</span>
+                                    <a href={contest.website} target="_blank" rel="noopener noreferrer" className="bg-gray-800 hover:bg-black text-white font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:scale-110 shadow-md flex items-center">
+                                        View
+                                    </a>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     )

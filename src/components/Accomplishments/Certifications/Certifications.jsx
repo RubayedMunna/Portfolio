@@ -73,23 +73,71 @@ function Certifications() {
 
   return (
     <div className="container mx-auto">
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
         {certifications.map((certification, index) => (
-          <div key={index}>
-
-            <div className="bg-gray-0 flex items-center justify-center ">
-              <div className="max-w-full bg-white p-8 rounded-lg shadow-lg border-r-2 border-t-8 border-t-blue-700">
+          <div 
+            key={index}
+            className="bg-white rounded-xl shadow-lg border-2 border-amber-200 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-amber-400 hover:bg-amber-50 relative"
+          >
+            {/* Top border - positioned absolutely to ensure perfect alignment */}
+            <div className="bg-gradient-to-r from-amber-600 to-amber-700 h-2 w-full rounded-t-xl absolute top-0 left-0 right-0"></div>
+            
+            <div className="flex items-center justify-center p-6 pt-8"> {/* Added pt-8 to account for the top border */}
+              <div className="max-w-full w-full">
                 {/* Certification Title */}
-                <a href={certification.certificateLink} target='_blank'><h2 className="text-xl font-bold mb-4">{certification.title}</h2></a>
+                <a 
+                  href={certification.certificateLink} 
+                  target='_blank' 
+                  rel="noopener noreferrer"
+                  className="block mb-4 group"
+                >
+                  <h2 className="text-xl font-bold text-gray-800 group-hover:text-amber-700 transition-colors duration-300">
+                    {certification.title}
+                  </h2>
+                </a>
                 
                 {/* Certification Image */}
-                <div className="my-4 w-full">
-                  <img src={certification.image} alt="Certification Image" className="w-full h-full object-cover" />
+                <div className="my-4 w-full rounded-lg overflow-hidden border-2 border-amber-100">
+                  <img 
+                    src={certification.image} 
+                    alt="Certification Image" 
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" 
+                  />
                 </div>
+                
                 {/* Certification Information */}
-                <div>
-                  <p className="text-gray-600">Issued by: {certification.issuedBy}</p>
-                  <p className="text-gray-600">Date of Issuance: {certification.issuanceDate}</p>
+                <div className="space-y-2">
+                  <p className="text-gray-700">
+                    <span className="font-semibold text-gray-800">Issued by:</span> {certification.issuedBy}
+                  </p>
+                  <p className="text-gray-700">
+                    <span className="font-semibold text-gray-800">Date of Issuance:</span> {certification.issuanceDate}
+                  </p>
+                </div>
+                
+                {/* View Certificate Link */}
+                <div className="mt-4 pt-4 border-t border-amber-100">
+                  <a 
+                    href={certification.certificateLink} 
+                    target='_blank' 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-amber-600 hover:text-amber-700 font-semibold transition-colors duration-300"
+                  >
+                    <span>View Certificate</span>
+                    <svg 
+                      className="w-4 h-4 ml-1" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth="2" 
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                      />
+                    </svg>
+                  </a>
                 </div>
               </div>
             </div>
