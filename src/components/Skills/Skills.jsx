@@ -76,49 +76,41 @@ function Skills() {
                 <div className="mt-6 space-y-6">
                     {activeSection === 'programming-language' && (
                         <>
-                            <h2 className="text-2xl font-bold mb-3">Programming Languages</h2>
                             <ProgrammingLanguage />
                         </>
                     )}
                     {activeSection === 'ds-algo' && (
                         <>
-                            <h2 className="text-2xl font-bold mb-3">Data Structures & Algorithms</h2>
                             <DSAndAlgo />
                         </>
                     )}
                     {activeSection === 'web-development' && (
                         <>
-                            <h2 className="text-2xl font-bold mb-3">Web Development</h2>
                             <WebDevelopment />
                         </>
                     )}
                     {activeSection === 'database' && (
                         <>
-                            <h2 className="text-2xl font-bold mb-3">Database</h2>
                             <Database />
                         </>
                     )}
                     {activeSection === 'machine-learning' && (
                         <>
-                            <h2 className="text-2xl font-bold mb-3">Machine Learning</h2>
                             <MachineLearning />
                         </>
                     )}
                     {activeSection === 'project-management' && (
                         <>
-                            <h2 className="text-2xl font-bold mb-3">Project Management</h2>
                             <ProjectManagement />
                         </>
                     )}
                     {activeSection === 'cloud-technology' && (
                         <>
-                            <h2 className="text-2xl font-bold mb-3">Cloud Technology</h2>
                             <Cloud />
                         </>
                     )}
                     {activeSection === 'miscellaneous' && (
                         <>
-                            <h2 className="text-2xl font-bold mb-3">Miscellaneous</h2>
                             <Miscellaneous />
                         </>
                     )}
