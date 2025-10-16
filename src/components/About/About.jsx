@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './About.css'; // 👈 Import CSS for rope styling
 
 function About() {
   const [cards, setCards] = useState([
@@ -42,13 +43,9 @@ function About() {
   return (
     <div className="container mx-auto px-4 md:px-6 mt-5">
       <div className="relative about-timeline">
-        {/* Vertical Timeline Line */}
-        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-2 z-0">
-          <div className="w-full h-full bg-gradient-to-r from-amber-700 via-amber-600 to-amber-800 rounded-full relative">
-            <div className="absolute top-0 left-0 w-full h-1 bg-amber-500 opacity-30"></div>
-            <div className="absolute top-1/3 left-0 w-full h-1 bg-amber-400 opacity-20"></div>
-            <div className="absolute top-2/3 left-0 w-full h-1 bg-amber-500 opacity-30"></div>
-          </div>
+        {/* Realistic Vertical Rope */}
+        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-4 z-0 overflow-hidden">
+          <div className="w-full h-full rope-pattern rounded-full shadow-lg"></div>
         </div>
 
         {cards.map((card, index) => (
