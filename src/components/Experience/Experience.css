@@ -1,0 +1,46 @@
+/* Realistic Rope Look */
+.rope-pattern {
+  background: repeating-linear-gradient(
+    45deg,
+    #92400e,
+    #92400e 5px,
+    #b45309 5px,
+    #b45309 10px
+  );
+  animation: ropeTwist 6s linear infinite;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4),
+              0 0 10px rgba(245, 158, 11, 0.5);
+  border: 2px solid rgba(120, 53, 15, 0.8);
+  position: relative;
+}
+
+@keyframes ropeTwist {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100px 200px;
+  }
+}
+
+/* Optional glowing pulse overlay for realism */
+.rope-pattern::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 215, 0, 0.2), transparent 80%);
+  mix-blend-mode: overlay;
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}

@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { FaBriefcase } from 'react-icons/fa';
+import './Experience.css'; // 👈 Import the CSS file for rope styling
 
 function Experience() {
     const [cards, setCards] = useState([
@@ -19,6 +20,21 @@ function Experience() {
             ],
         },
 
+        {
+            id: 1,
+            jobTitle: 'Lecturer',
+            jobType: 'Full Time',
+            jobInstitution: 'Daffodil International University',
+            institutionAddress: 'Daffodil Smart City, Ashulia, Dhaka',
+            from: 'June 28, 2025',
+            to: 'August 31, 2025',
+            duration: 'One Semester (Contractual)',
+            responsiblilities: [
+                'Conduct undergraduate lectures and tutorials',
+                'Assist in curriculum development and academic planning',
+                'Engage in student mentoring and assessment',
+            ],
+        },
 
         // Add more card objects as needed
     ]);
@@ -50,18 +66,13 @@ function Experience() {
                     </div>
                 </header>
 
-
                 <div className="experience relative">
-                    {/* Vertical Rope line */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-3 z-0">
-                        <div className="w-full h-full bg-gradient-to-r from-amber-700 via-amber-600 to-amber-800 rounded-full relative">
-                            <div className="absolute top-0 left-0 w-full h-1 bg-amber-500 opacity-30"></div>
-                            <div className="absolute top-1/3 left-0 w-full h-1 bg-amber-400 opacity-20"></div>
-                            <div className="absolute top-2/3 left-0 w-full h-1 bg-amber-500 opacity-30"></div>
-                        </div>
+                    {/* Realistic Rope Line */}
+                    <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-4 z-0 overflow-hidden">
+                        <div className="w-full h-full rope-pattern rounded-full shadow-lg"></div>
                     </div>
 
-                    {cards.map((card, index) => (
+                    {cards.map((card) => (
                         <div key={card.id} className="relative z-10">
                             <div className="w-full md:w-4/5 mx-auto bg-white shadow-xl overflow-hidden pb-3 rounded-xl border-2 border-amber-700 my-12 relative transition-all duration-300 hover:scale-105">
                                 <div className="bg-gradient-to-r from-white to-amber-50 text-gray-750 px-2 py-1">

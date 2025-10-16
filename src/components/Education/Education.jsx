@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { FaGraduationCap } from 'react-icons/fa';
+import './Education.css'; // 👈 Import custom CSS
 
 function Education() {
-    const [education, setEducation] = useState([
+    const [education] = useState([
         {
             degree: 'MASTERS OF SCIENCE (M.SC.)',
             department: 'Computer Science of Engineering',
@@ -41,6 +42,20 @@ function Education() {
         },
     ]);
 
+    // ✅ Rope tilt based on mouse position
+    const [tilt, setTilt] = useState({ rotateX: 0, rotateY: 0 });
+
+    const handleMouseMove = (e) => {
+        const { innerWidth, innerHeight } = window;
+        const rotateY = ((e.clientX / innerWidth) - 0.5) * 30;  // range -15° to +15°
+        const rotateX = ((e.clientY / innerHeight) - 0.5) * -30; // inverse Y
+        setTilt({ rotateX, rotateY });
+    };
+
+    const handleMouseLeave = () => {
+        setTilt({ rotateX: 0, rotateY: 0 });
+    };
+
     return (
         <div>
             <div className="container mt-5 mx-auto px-4 md:px-6">
@@ -50,7 +65,6 @@ function Education() {
                     <div className="relative container mx-auto px-6 py-6 flex flex-col md:flex-row items-start md:items-center justify-between">
                         {/* Left Section: Title */}
                         <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4">
-                            {/* Icon hidden on mobile */}
                             <div className="hidden sm:flex w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center shadow-md border border-white/30">
                                 <FaGraduationCap className="text-white w-6 h-6" />
                             </div>
@@ -60,22 +74,25 @@ function Education() {
                             </div>
                         </div>
 
-                        {/* Right Section: Badge */}
                         <div className="hidden md:block bg-white/10 px-4 py-2 rounded-full border border-white/20 text-sm font-medium tracking-wide hover:bg-white/20 transition mt-2 md:mt-0">
                             <span className="text-amber-200">Academic Journey</span>
                         </div>
                     </div>
                 </header>
 
-
                 <div className="education relative">
-                    {/* Vertical Rope line */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-3 z-0">
-                        <div className="w-full h-full bg-gradient-to-r from-amber-700 via-amber-600 to-amber-800 rounded-full relative">
-                            <div className="absolute top-0 left-0 w-full h-1 bg-amber-500 opacity-30"></div>
-                            <div className="absolute top-1/3 left-0 w-full h-1 bg-amber-400 opacity-20"></div>
-                            <div className="absolute top-2/3 left-0 w-full h-1 bg-amber-500 opacity-30"></div>
-                        </div>
+                    {/* 🪢 Interactive Rope Line */}
+                    <div
+                        className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-4 z-0 overflow-hidden perspective-1000"
+                        onMouseMove={handleMouseMove}
+                        onMouseLeave={handleMouseLeave}
+                        style={{
+                            transform: `translateX(-50%) rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg)`,
+                            transformStyle: 'preserve-3d',
+                            transition: 'transform 0.2s ease-out',
+                        }}
+                    >
+                        <div className="w-full h-full rope-pattern rounded-full shadow-lg"></div>
                     </div>
 
                     {education.map((edu, index) => (
@@ -111,7 +128,7 @@ function Education() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Education;
