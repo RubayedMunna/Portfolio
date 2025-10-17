@@ -6,7 +6,7 @@ function Education() {
     const [education] = useState([
         {
             degree: 'MASTERS OF SCIENCE (M.SC.)',
-            department: 'Computer Science of Engineering',
+            department: 'Computer Science and Engineering',
             institution: 'Jahangirnagar University',
             gpa: '-',
             outof: '4.00',
@@ -15,7 +15,7 @@ function Education() {
         },
         {
             degree: 'BACHELOR OF SCIENCE (B.SC.)',
-            department: 'Computer Science of Engineering',
+            department: 'Computer Science and Engineering',
             institution: 'Jahangirnagar University',
             gpa: '3.82',
             outof: '4.00',
