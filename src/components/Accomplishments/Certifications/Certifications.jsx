@@ -5,6 +5,7 @@ import CertificateResponsiveWeb from './../../../assets/images/Certificate_Respo
 import CertificatePython from './../../../assets/images/Certificate_Python_Kaggle.png';
 import CertificateICPCPreli2022 from './../../../assets/images/ICPCPreli2022.png';
 import CertificateICPCPreli2021 from './../../../assets/images/ICPCPreli2021.png';
+import CertificateICPCPreli2023 from './../../../assets/images/ICPCPreli2023.jpeg';
 import CertificateMachineLearning from './../../../assets/images/Certificate_MachineLerning.png';
 import CertificateLLM from './../../../assets/images/Certificate_LLM.png';
 
@@ -50,22 +51,9 @@ function Certifications() {
       image: CertificateBongoDev,
       issuedBy: 'BongoDev',
       issuanceDate: 'January 3, 2024',
-      certificateLink: 'https://bongodev.com/',
+      certificateLink: 'https://drive.google.com/file/d/1WMZHlVWwKVdPqEX-wquthkU7Gmw9DreQ/view?usp=sharing',
     },
-    {
-      title: 'ICPC Dhaka Regional Preliminary Contest 2022',
-      image: CertificateICPCPreli2022,
-      issuedBy: 'International Collegiate Programming Contest (ICPC)',
-      issuanceDate: 'September 3, 2022',
-      certificateLink: 'https://icpc.global/',
-    },
-    {
-      title: 'ICPC Dhaka Regional Preliminary Contest 2021',
-      image: CertificateICPCPreli2021,
-      issuedBy: 'International Collegiate Programming Contest (ICPC)',
-      issuanceDate: 'April 7, 2021',
-      certificateLink: 'https://icpc.global/',
-    },
+    
   ]);
 
   return (

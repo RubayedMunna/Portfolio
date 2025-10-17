@@ -2,25 +2,33 @@ import React, { useState } from 'react';
 import 'boxicons/css/boxicons.min.css';
 
 // Example award images
-// import AwardImage1 from '../../../assets/images/award1.png';
-// import AwardImage2 from '../../../assets/images/award2.png';
+import CertificateICPCPreli2022 from './../../../assets/images/ICPCPreli2022.png';
+import CertificateICPCPreli2021 from './../../../assets/images/ICPCPreli2021.png';
+import CertificateICPCPreli2023 from './../../../assets/images/ICPCPreli2023.jpeg';
 
 function Awards() {
   const [awards] = useState([
-    // {
-    //   awardTitle: 'Award 1',
-    //   institutionName: 'Institution 1',
-    //   awardDate: 'January 1, 2022',
-    //   awardUrl: '#', // Replace with actual URL
-    //   awardImage: AwardImage1,
-    // },
-    // {
-    //   awardTitle: 'Award 2',
-    //   institutionName: 'Institution 2',
-    //   awardDate: 'February 15, 2022',
-    //   awardUrl: '#', // Replace with actual URL
-    //   awardImage: AwardImage2,
-    // },
+    {
+      awardTitle: '86th in ICPC Dhaka Regional Preliminary Contest 2022',
+      institutionName: 'International Collegiate Programming Contest (ICPC)',
+      awardDate: 'February 11, 2023',
+      awardUrl: 'https://drive.google.com/file/d/1RZsLX_IgTxEgDbEkeQftvAfGCJpuvNP8/view?usp=sharing',
+      awardImage: CertificateICPCPreli2023,
+    },
+    {
+      awardTitle: 'ICPC Dhaka Regional Preliminary Contest 2021',
+      institutionName: 'International Collegiate Programming Contest (ICPC)',
+      awardDate: 'September 3, 2022',
+      awardUrl: 'https://drive.google.com/file/d/1SNwHegU9vIgUK2IkK9tyEi43er-chxyE/view?usp=sharing', // Replace with actual URL
+      awardImage: CertificateICPCPreli2022,
+    },
+    {
+      awardTitle: 'ICPC Dhaka Regional Preliminary Contest 2020',
+      institutionName: 'International Collegiate Programming Contest (ICPC)',
+      awardDate: 'April 7, 2021',
+      awardUrl: 'https://drive.google.com/file/d/1R6SsgIMjTYFH_q24te2WCxIjJXfQ6clL/view?usp=sharing', // Replace with actual URL
+      awardImage: CertificateICPCPreli2021,
+    },
     // Add more awards as needed
   ]);
 
@@ -43,14 +51,15 @@ function Awards() {
               <div className="flex flex-col items-center justify-center p-6 pt-8 w-full">
                 {/* Award Image */}
                 {award.awardImage && (
-                  <div className="mb-4 w-full h-40 sm:h-48 overflow-hidden rounded-lg border-2 border-amber-100">
+                  <div className="mb-4 w-full overflow-hidden rounded-lg border-2 border-amber-100 flex justify-center bg-white">
                     <img
                       src={award.awardImage}
                       alt={award.awardTitle}
-                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                      className="w-full h-auto object-contain transition-transform duration-300 hover:scale-105"
                     />
                   </div>
                 )}
+
 
                 {/* Award Title */}
                 <h2 className="text-lg sm:text-xl font-bold text-gray-800 text-center mb-3">
