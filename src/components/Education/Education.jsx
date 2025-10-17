@@ -107,14 +107,34 @@ function Education() {
                                         <span className="bg-white text-gray-750 pr-4 py-2 rounded-lg shadow-sm">{edu.degree}</span>
                                     </h2>
 
-                                    <h2 className="text-xl font-bold flex flex-col md:flex-row items-center px-4 md:px-10 mt-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-amber-700">
-                                            <path d="M11.584 2.376a.75.75 0 0 1 .832 0l9 6a.75.75 0 1 1-.832 1.248L12 3.901 3.416 9.624a.75.75 0 0 1-.832-1.248l9-6Z" />
-                                            <path fillRule="evenodd" d="M20.25 10.332v9.918H21a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1 0-1.5h.75v-9.918a.75.75 0 0 1 .634-.74A49.109 49.109 0 0 1 12 9c2.59 0 5.134.202 7.616.592a.75.75 0 0 1 .634.74Zm-7.5 2.418a.75.75 0 0 0-1.5 0v6.75a.75.75 0 0 0 1.5 0v-6.75Zm3-.75a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 1-1.5 0v-6.75a.75.75 0 0 1 .75-.75ZM9 12.75a.75.75 0 0 0-1.5 0v6.75a.75.75 0 0 0 1.5 0v-6.75Z" clipRule="evenodd" />
-                                            <path d="M12 7.875a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z" />
-                                        </svg>
-                                        <span className="bg-white text-gray-700 pr-4 pl-2 rounded-lg shadow-sm ml-0 md:ml-2 mt-1 md:mt-0">{edu.department}, {edu.institution}</span>
+                                    <h2 className="text-xl flex flex-col items-start px-4 md:px-10 mt-2">
+                                        {/* Department — lower priority (lighter gray) */}
+                                        <span className="text-gray-600 font-medium tracking-wide">
+                                            {edu.department}
+                                        </span>
+
+                                        {/* Institution — higher priority (darker gray + icon) */}
+                                        <span className="flex items-center text-gray-800 font-semibold mt-1">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24"
+                                                fill="currentColor"
+                                                className="w-5 h-5 mr-2 text-amber-700"
+                                            >
+                                                <path d="M11.584 2.376a.75.75 0 0 1 .832 0l9 6a.75.75 0 1 1-.832 1.248L12 3.901 3.416 9.624a.75.75 0 0 1-.832-1.248l9-6Z" />
+                                                <path
+                                                    fillRule="evenodd"
+                                                    d="M20.25 10.332v9.918H21a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1 0-1.5h.75v-9.918a.75.75 0 0 1 .634-.74A49.109 49.109 0 0 1 12 9c2.59 0 5.134.202 7.616.592a.75.75 0 0 1 .634.74Zm-7.5 2.418a.75.75 0 0 0-1.5 0v6.75a.75.75 0 0 0 1.5 0v-6.75Zm3-.75a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 1-1.5 0v-6.75a.75.75 0 0 1 .75-.75ZM9 12.75a.75.75 0 0 0-1.5 0v6.75a.75.75 0 0 0 1.5 0v-6.75Z"
+                                                    clipRule="evenodd"
+                                                />
+                                                <path d="M12 7.875a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z" />
+                                            </svg>
+                                            {edu.institution}
+                                        </span>
                                     </h2>
+
+
+
 
                                     <h2 className="text-xl italic flex flex-col md:flex-row items-center px-4 md:px-10 mt-2">
                                         <span className="bg-white text-gray-900 pr-4 py-2 rounded-lg shadow-sm">GPA: {edu.gpa} out of {edu.outof}</span>
