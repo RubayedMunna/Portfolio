@@ -59,13 +59,16 @@ function Education() {
     return (
         <div>
             <div className="container mt-5 mx-auto px-4 md:px-6">
-                <header className="relative mb-10 overflow-hidden rounded-2xl bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-white shadow-2xl">
+
+                <header
+                    className="relative mb-10 overflow-hidden rounded-2xl bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-white shadow-2xl transition-all duration-500 ease-in-out hover:scale-[1.05] hover:shadow-amber-400/60 hover:shadow-3xl"
+                >
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-amber-400/40 via-transparent to-transparent animate-pulse-slow"></div>
 
                     <div className="relative container mx-auto px-6 py-6 flex flex-col md:flex-row items-start md:items-center justify-between">
                         {/* Left Section: Title */}
                         <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4">
-                            <div className="hidden sm:flex w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center shadow-md border border-white/30">
+                            <div className="hidden sm:flex w-12 h-12 rounded-full bg-white/20 backdrop-blur-md items-center justify-center shadow-md border border-white/30 transition-transform duration-500 hover:rotate-12">
                                 <FaGraduationCap className="text-white w-6 h-6" />
                             </div>
                             <div>
@@ -79,6 +82,7 @@ function Education() {
                         </div>
                     </div>
                 </header>
+
 
                 <div className="education relative">
                     {/* 🪢 Interactive Rope Line */}

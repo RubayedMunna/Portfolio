@@ -30,16 +30,18 @@ function Extracurricular() {
     ]);
 
     return (
-        <div className="container mt-8 mx-auto px-4">
+        <div className="container mt-5 mx-auto px-4 md:px-6">
             {/* Header */}
-            <header className="relative mb-10 overflow-hidden rounded-2xl bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-white shadow-2xl">
+            <header
+                className="relative mb-10 overflow-hidden rounded-2xl bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-white shadow-2xl transition-all duration-500 ease-in-out hover:scale-[1.05] hover:shadow-amber-400/60 hover:shadow-3xl"
+            >
                 {/* Animated radial gradient */}
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-amber-400/30 via-transparent to-transparent animate-pulse-slow"></div>
 
                 <div className="relative container mx-auto px-6 py-6 flex flex-col md:flex-row items-start md:items-center justify-between">
                     {/* Left Section */}
                     <div className="flex items-start md:items-center space-x-4">
-                        <div className="hidden sm:flex w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center shadow-md border border-white/30">
+                        <div className="hidden sm:flex w-12 h-12 rounded-full bg-white/20 backdrop-blur-md items-center justify-center shadow-md border border-white/30 transition-transform duration-500 hover:rotate-12">
                             <FaRunning className="w-6 h-6 text-white" />
                         </div>
                         <div>
@@ -55,11 +57,15 @@ function Extracurricular() {
                 </div>
             </header>
 
+
             {/* Organizations Section */}
             <section className="mb-12">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-amber-400 inline-block pb-1 text-center">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-amber-400 inline-block pb-1 text-center 
+               rounded-md transition-all duration-300 transform hover:scale-105 hover:text-amber-600 hover:shadow-md">
                     Organizations
                 </h2>
+
+
                 <div className="flex flex-col items-center space-y-6">
                     {extracurricularActivities.map((activity, index) => (
                         <div key={index} className="w-full max-w-3xl bg-white shadow-xl rounded-2xl border border-amber-200 hover:border-amber-400 hover:bg-amber-50 transition transform hover:scale-105 overflow-hidden relative">
@@ -96,9 +102,11 @@ function Extracurricular() {
 
             {/* Competitions Section */}
             <section>
-                <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-amber-400 inline-block pb-1">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-amber-400 inline-block pb-1 rounded-md 
+               transition-all duration-300 transform hover:scale-105 hover:text-amber-600 hover:shadow-md">
                     Competitions
                 </h2>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {competitions.map((competition, index) => (
                         <div key={index} className="bg-white shadow-xl rounded-2xl border border-amber-200 hover:border-amber-400 hover:bg-amber-50 transition transform hover:scale-105 overflow-hidden relative">

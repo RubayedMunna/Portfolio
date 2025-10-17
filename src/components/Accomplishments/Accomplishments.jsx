@@ -14,9 +14,11 @@ function Accomplishments() {
     ];
 
     return (
-        <div className="container mt-10 mx-auto px-4 md:px-6">
+        <div className="container mt-5 mx-auto px-4 md:px-6">
             {/* Header */}
-            <header className="relative mb-10 overflow-hidden rounded-2xl bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-white shadow-2xl">
+            <header
+                className="relative mb-10 overflow-hidden rounded-2xl bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-white shadow-2xl transition-all duration-500 ease-in-out hover:scale-[1.05] hover:shadow-amber-400/60 hover:shadow-3xl"
+            >
                 {/* Animated radial gradient */}
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-amber-400/30 via-transparent to-transparent animate-pulse-slow"></div>
 
@@ -24,7 +26,7 @@ function Accomplishments() {
                     {/* Left Section */}
                     <div className="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-4">
                         {/* Icon hidden on mobile */}
-                        <div className="hidden sm:flex w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center shadow-md border border-white/30">
+                        <div className="hidden sm:flex w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center shadow-md border border-white/30 transition-transform duration-500 hover:rotate-12">
                             <FaMedal className="w-6 h-6 text-white" />
                         </div>
                         <div>
@@ -40,15 +42,17 @@ function Accomplishments() {
                 </div>
             </header>
 
+
             {/* Toggle Buttons */}
             <div className="flex gap-3 justify-center mb-8 flex-wrap">
                 {sections.map(({ id, label }) => (
                     <button
                         key={id}
                         onClick={() => toggleContent(id)}
-                        className={`relative px-6 py-3 text-sm font-semibold rounded-full border transition-all duration-300 ${activeSection === id
-                            ? 'bg-gradient-to-r from-amber-600 to-amber-700 text-white border-amber-600 shadow-lg scale-105'
-                            : 'bg-white text-gray-800 border-amber-300 hover:text-amber-700 hover:border-amber-500 hover:shadow-md'
+                        className={`relative px-6 py-3 text-sm font-semibold rounded-full border transition-all duration-300 transform
+        ${activeSection === id
+                                ? 'bg-gradient-to-r from-amber-600 to-amber-700 text-white border-amber-600 shadow-lg scale-105 hover:scale-[1.15] hover:shadow-2xl'
+                                : 'bg-white text-gray-800 border-amber-300 hover:text-amber-700 hover:border-amber-500 hover:shadow-lg hover:scale-[1.12]'
                             }`}
                     >
                         {activeSection === id && (
@@ -58,6 +62,7 @@ function Accomplishments() {
                     </button>
                 ))}
             </div>
+
 
             {/* Dynamic Content */}
             <div className="mt-6">

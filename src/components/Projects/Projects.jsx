@@ -103,9 +103,11 @@ function Projects() {
     ]);
 
     return (
-        <div className="container mx-auto mt-10 px-4 md:px-6">
+        <div className="container mt-5 mx-auto px-4 md:px-6">
             {/* --- Stylish Projects Header --- */}
-            <header className="relative mb-12 overflow-hidden rounded-2xl bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-white shadow-2xl">
+            <header
+                className="relative mb-12 overflow-hidden rounded-2xl bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-white shadow-2xl transition-all duration-500 ease-in-out hover:scale-[1.05] hover:shadow-amber-400/60 hover:shadow-3xl"
+            >
                 {/* Animated radial gradient */}
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-amber-400/40 via-transparent to-transparent animate-pulse-slow"></div>
 
@@ -113,7 +115,7 @@ function Projects() {
                     {/* Left Section: Icon + Title + Subtitle */}
                     <div className="flex items-start md:items-center space-x-4">
                         {/* Icon hidden on mobile */}
-                        <div className="hidden sm:flex w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center shadow-md border border-white/30">
+                        <div className="hidden sm:flex w-12 h-12 rounded-full bg-white/20 backdrop-blur-md items-center justify-center shadow-md border border-white/30 transition-transform duration-500 hover:rotate-12">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" className="w-6 h-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" />
                             </svg>
@@ -130,6 +132,7 @@ function Projects() {
                     </div>
                 </div>
             </header>
+
 
             {/* --- Projects Grid --- */}
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
