@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 
 function MachineLearning() {
     const [skillCards, setSkillCards] = useState([
-        { skillName: 'ML Algorithms', skillPercentage: 10 },
-        { skillName: 'Evaluation Metrices', skillPercentage: 20 },
-        { skillName: 'SVN', skillPercentage: 0 },
-        { skillName: 'Neural network architectures', skillPercentage: 0 },
-        { skillName: 'Google colab', skillPercentage: 0 },
-        { skillName: 'Jupyter notebook', skillPercentage: 0 },
+        { skillName: 'ML Algorithms', skillPercentage:80 },
+        { skillName: 'Evaluation Metrices', skillPercentage: 80 },
+        { skillName: 'SVM', skillPercentage: 80 },
+        { skillName: 'Neural network architectures', skillPercentage: 50 },
+        { skillName: 'Google colab', skillPercentage: 80 },
+        { skillName: 'Jupyter notebook', skillPercentage: 85 },
         { skillName: 'Azure ML studio', skillPercentage: 0 },
-        { skillName: 'Keras', skillPercentage: 0 },
-        { skillName: 'Matplotlib', skillPercentage: 0 },
-        { skillName: 'Neural network on NLP', skillPercentage: 0 },
-        { skillName: 'Data augmentation', skillPercentage: 0 },
-        { skillName: 'Sea born', skillPercentage: 0 },
+        { skillName: 'Keras', skillPercentage: 60 },
+        { skillName: 'Matplotlib', skillPercentage: 80 },
+        { skillName: 'Neural network on NLP', skillPercentage: 60 },
+        { skillName: 'Data augmentation', skillPercentage: 75 },
+        { skillName: 'Sea born', skillPercentage: 75 },
         // Add more cards as needed
     ]);
 

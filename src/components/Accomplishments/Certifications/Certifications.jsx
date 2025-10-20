@@ -53,7 +53,7 @@ function Certifications() {
       issuanceDate: 'January 3, 2024',
       certificateLink: 'https://drive.google.com/file/d/1WMZHlVWwKVdPqEX-wquthkU7Gmw9DreQ/view?usp=sharing',
     },
-    
+
   ]);
 
   return (
@@ -69,7 +69,12 @@ function Certifications() {
 
             <div className="flex flex-col items-center justify-center p-6 pt-8 w-full">
               {/* Certification Title */}
-              <a href={cert.certificateLink} target="_blank" rel="noopener noreferrer" className="block mb-4 text-center group">
+              <a
+                href={cert.certificateLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block mb-4 text-center group"
+              >
                 <h2 className="text-lg sm:text-xl font-bold text-gray-800 group-hover:text-amber-700 transition-colors duration-300">
                   {cert.title}
                 </h2>
@@ -85,12 +90,47 @@ function Certifications() {
               </div>
 
               {/* Certification Info */}
-              <div className="space-y-1 text-center">
-                <p className="text-gray-700 text-sm sm:text-base">
-                  <span className="font-semibold text-gray-800">Issued by:</span> {cert.issuedBy}
+              <div className="space-y-2 text-center">
+                {/* Issued By */}
+                <p className="flex items-center justify-center text-gray-700 text-sm sm:text-base">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="w-5 h-5 mr-2 text-amber-600"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z"
+                    />
+                  </svg>
+                  <span>
+                    <span className="font-semibold text-gray-800"></span> {cert.issuedBy}
+                  </span>
                 </p>
-                <p className="text-gray-700 text-sm sm:text-base">
-                  <span className="font-semibold text-gray-800">Date of Issuance:</span> {cert.issuanceDate}
+
+                {/* Date of Issuance */}
+                <p className="flex items-center justify-center text-gray-700 text-sm sm:text-base">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="w-5 h-5 mr-2 text-gray-500"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6.75 3v1.5M17.25 3v1.5M3 8.25h18M4.5 7.5v11.25A2.25 2.25 0 0 0 6.75 21h10.5A2.25 2.25 0 0 0 19.5 18.75V7.5M8.25 12h7.5"
+                    />
+                  </svg>
+                  <span>
+                    <span className="font-semibold text-gray-800"></span> {cert.issuanceDate}
+                  </span>
                 </p>
               </div>
 
@@ -123,6 +163,8 @@ function Certifications() {
         ))}
       </div>
     </div>
+
+
   );
 }
 

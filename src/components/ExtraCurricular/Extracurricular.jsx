@@ -17,8 +17,18 @@ function Extracurricular() {
 
     const [competitions] = useState([
         {
-            name: 'Jahangirnagar University Science Club National Science Festival',
-            status: 'Hosted',
+            name: '7th Jahangirnagar University Science Club National Science Festival',
+            status: 'Participated',
+            organizer: 'Jahangirnagar University Science Club (JUSC)',
+            organizerWebsite: 'https://juscbd.org/',
+            location: 'Zahir Raihan Auditorium, Jahangirnagar University, Bangladesh',
+            disciplines: ['Project Showcasing'],
+            eventDate: 'October 18, 2025',
+            eventLink: 'https://www.facebook.com/events/s/7th-jusc-national-science-fest/804147495349304/'
+        },
+        {
+            name: '6th Jahangirnagar University Science Club National Science Festival',
+            status: 'Hosted (Co-host)',
             organizer: 'Jahangirnagar University Robotics Club (JURC) - Co-host',
             organizerWebsite: 'https://jurc.org/',
             location: 'Social Science Building, Jahangirnagar University, Bangladesh',
@@ -26,6 +36,7 @@ function Extracurricular() {
             eventDate: 'September 21, 2024 (DELAYED)',
             eventLink: 'https://facebook.com/events/s/6th-jusc-national-science-fest/2656085411239202/'
         },
+        
 
     ]);
 

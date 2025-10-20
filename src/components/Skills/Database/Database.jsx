@@ -6,7 +6,7 @@ function Database() {
         { skillName: 'MSSQL', skillPercentage: 0 },
         { skillName: 'PostgreSQL', skillPercentage: 0 },
         { skillName: 'No SQL (MongoDB)', skillPercentage: 0 },
-        { skillName: 'No SQL (Firebase)', skillPercentage: 0 },
+        { skillName: 'No SQL (Firebase)', skillPercentage: 60 },
         // Add more cards as needed
     ]);
 

@@ -34,6 +34,22 @@ function Conference() {
       (selectedStatus === '' || selectedStatus === 'Status' || card.status === selectedStatus)
   );
 
+  // 🟢 Status color mapping
+  const getStatusClasses = (status) => {
+    switch (status) {
+      case 'Published':
+        return 'bg-emerald-600 border-emerald-700 text-white';
+      case 'Accepted':
+        return 'bg-blue-600 border-blue-700 text-white';
+      case 'Under Review':
+        return 'bg-amber-600 border-amber-700 text-white';
+      case 'Submitted':
+        return 'bg-gray-600 border-gray-700 text-white';
+      default:
+        return 'bg-gray-400 border-gray-500 text-white';
+    }
+  };
+
   return (
     <div>
       {/* Filters */}
@@ -96,9 +112,13 @@ function Conference() {
                 </div>
 
                 <div className="px-4 md:px-6 py-4 flex flex-wrap gap-2 items-center justify-between bg-gradient-to-r from-white to-amber-50 border-t border-amber-200">
-                  <span className="bg-amber-600 text-white px-3 py-2 rounded-lg shadow-md font-semibold border border-amber-700 text-sm md:text-base">
+                  {/* 🟣 Dynamic status color */}
+                  <span
+                    className={`px-3 py-2 rounded-lg shadow-md font-semibold text-sm md:text-base border ${getStatusClasses(card.status)}`}
+                  >
                     {card.status}
                   </span>
+
                   <div className="flex flex-wrap gap-2">
                     {card.pdfLink && card.pdfLink !== '#' && (
                       <a

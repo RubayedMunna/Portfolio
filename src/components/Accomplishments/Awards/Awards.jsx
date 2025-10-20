@@ -60,14 +60,13 @@ function Awards() {
                   </div>
                 )}
 
-
                 {/* Award Title */}
                 <h2 className="text-lg sm:text-xl font-bold text-gray-800 text-center mb-3">
                   {award.awardTitle}
                 </h2>
 
                 {/* Institution */}
-                <div className="flex items-center text-gray-700 mb-4 text-sm sm:text-base">
+                <div className="flex items-center justify-center text-gray-700 mb-3 text-sm sm:text-base">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -85,39 +84,57 @@ function Awards() {
                   <span>{award.institutionName}</span>
                 </div>
 
-                {/* Award Date & Link */}
-                <div className="flex flex-col sm:flex-row items-center justify-center w-full gap-3 mt-2">
-                  <span className="bg-amber-600 text-white font-bold py-2 px-3 rounded-lg shadow-md text-sm sm:text-base">
-                    {award.awardDate}
-                  </span>
+                {/* Award Date */}
+                <div className="flex items-center justify-center text-gray-700 mb-4 text-sm sm:text-base">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="w-5 h-5 mr-2 text-gray-500"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6.75 3v1.5M17.25 3v1.5M3 8.25h18M4.5 7.5v11.25A2.25 2.25 0 0 0 6.75 21h10.5A2.25 2.25 0 0 0 19.5 18.75V7.5M8.25 12h7.5"
+                    />
+                  </svg>
+                  <span>{award.awardDate}</span>
+                </div>
+
+                {/* View Award Button */}
+                <div className="mt-4 pt-4 border-t border-amber-100 w-full text-center">
                   <a
                     href={award.awardUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center bg-gray-800 hover:bg-black text-white font-bold py-2 px-3 rounded-lg transition-all duration-300 hover:scale-105 shadow-md text-sm sm:text-base"
+                    className="inline-flex items-center justify-center text-amber-600 hover:text-amber-700 font-semibold transition-colors duration-300"
                   >
+                    <span>View Award</span>
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-4 h-4 ml-1"
+                      fill="none"
+                      stroke="currentColor"
                       viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="w-5 h-5 mr-1"
                     >
-                      <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
                       <path
-                        fillRule="evenodd"
-                        d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 0 1 0-1.113ZM17.25 12a5.25 5.25 0 1 1-10.5 0 5.25 5.25 0 0 1 10.5 0Z"
-                        clipRule="evenodd"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                       />
                     </svg>
-                    View Award
                   </a>
                 </div>
+
               </div>
             </div>
           ))}
         </div>
       )}
     </div>
+
   );
 }
 
