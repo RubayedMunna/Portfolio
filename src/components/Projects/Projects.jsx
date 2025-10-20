@@ -187,9 +187,10 @@ function Projects() {
                                 ))}
                             </ul>
                             {/* Key Skills Section */}
-                            <p className="mt-3 font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded">
-                                Key Skills:
-                            </p>
+                            <p className="mt-3 inline-block font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded shadow">
+    Key Skills:
+</p>
+
                             <div className="flex flex-wrap mt-1 gap-2">
                                 {project.keySkills.map((skill, i) => (
                                     <span
