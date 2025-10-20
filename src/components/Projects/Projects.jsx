@@ -12,7 +12,7 @@ function Projects() {
             ],
             keySkills: ['React.js', 'Node.js', 'MySQL', 'Scrum', 'Mocha', 'CI/CD'],
             institutionName: 'CSE, Jahangirnagar University',
-            projectDate: 'March 2024',
+            projectDate: 'Nov 2024 - July 2025',
             githubUrl: 'https://github.com/JUCSE49-Mavericks/Smart-Class-Routine-Management-System.git',
             websiteUrl: '#'
         },
@@ -25,7 +25,7 @@ function Projects() {
             ],
             keySkills: ['React.js', 'Django', 'Data Analysis', 'Web Development'],
             institutionName: 'CSE, Jahangirnagar University',
-            projectDate: 'October 2023',
+            projectDate: 'October 2023 - September 2024',
             githubUrl: 'https://github.com/OBESystem/obe-system',
             websiteUrl: '#'
         },
@@ -38,7 +38,7 @@ function Projects() {
             ],
             keySkills: ['Android Studio', 'Dart', 'Flutter', 'Firebase', 'Google Maps API', 'Git'],
             institutionName: 'CSE, Jahangirnagar University',
-            projectDate: 'June 2025',
+            projectDate: 'August 2024 - October 2024',
             githubUrl: 'https://github.com/RubayedMunna/svpa-frontend',
             websiteUrl: '#'
         },
@@ -52,7 +52,7 @@ function Projects() {
             ],
             keySkills: ['Arduino', 'ESP32', 'DHT22', 'MQ-135', 'Flame Sensor', 'ThingSpeak', 'React.js', 'Bootstrap', 'JavaScript', 'Git'],
             institutionName: 'CSE, Jahangirnagar University',
-            projectDate: 'Jan 2025 - June 2025',
+            projectDate: 'May 2025 - July 2025',
             githubUrl: 'https://github.com/RubayedMunna/IoT-Based-Smart-Warehouse',
             websiteUrl: '#'
         },
@@ -66,7 +66,7 @@ function Projects() {
             ],
             keySkills: ['Machine Learning', 'Image Classification', 'Scikit-learn', 'SVM', 'HOG', 'Python'],
             institutionName: 'CSE, Jahangirnagar University',
-            projectDate: 'July 2025',
+            projectDate: 'May 2025 - July 2025',
             githubUrl: 'https://github.com/RubayedMunna/ML-Based-Medicinal-Leaf-Classifier.git',
             websiteUrl: '#'
         },
@@ -79,7 +79,7 @@ function Projects() {
             ],
             keySkills: ['Python', 'NumPy', 'Keras', 'MNIST Dataset', 'Matplotlib', 'Jupyter Notebook'],
             institutionName: 'CSE, Jahangirnagar University',
-            projectDate: 'May 2025',
+            projectDate: 'January 2024',
             githubUrl: 'https://github.com/RubayedMunna/DigitRecognition_MNIST',
             websiteUrl: '#'
         },
@@ -188,8 +188,8 @@ function Projects() {
                             </ul>
                             {/* Key Skills Section */}
                             <p className="mt-3 inline-block font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded shadow">
-    Key Skills:
-</p>
+                                Key Skills:
+                            </p>
 
                             <div className="flex flex-wrap mt-1 gap-2">
                                 {project.keySkills.map((skill, i) => (
