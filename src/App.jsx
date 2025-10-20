@@ -9,7 +9,6 @@ import AcademicServicePage from './pages/AcademicServicePage';
 import ExtraCurricularPage from './pages/ExtraCurricularPage'
 import SeminarWorkshopPage from './pages/SeminarWorkshopPage'
 import AccomplishmentPage from './pages/AccomplishmentPage';
-import Test1 from './components/Test1';
 import ProgrammingProblemPage from './pages/ProgrammingProblemPage';
 import ProjectPage from './pages/ProjectPage';
 function App() {

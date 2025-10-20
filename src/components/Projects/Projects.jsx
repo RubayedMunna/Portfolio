@@ -14,7 +14,7 @@ function Projects() {
             institutionName: 'CSE, Jahangirnagar University',
             projectDate: 'March 2024',
             githubUrl: 'https://github.com/JUCSE49-Mavericks/Smart-Class-Routine-Management-System.git',
-            websiteUrl: '#',
+            websiteUrl: '#'
         },
         {
             projectName: 'Outcome Based Education (OBE) System',
@@ -27,7 +27,7 @@ function Projects() {
             institutionName: 'CSE, Jahangirnagar University',
             projectDate: 'October 2023',
             githubUrl: 'https://github.com/OBESystem/obe-system',
-            websiteUrl: '#',
+            websiteUrl: '#'
         },
         {
             projectName: 'Smart Vehicle Parking App (Android)',
@@ -40,7 +40,7 @@ function Projects() {
             institutionName: 'CSE, Jahangirnagar University',
             projectDate: 'June 2025',
             githubUrl: 'https://github.com/RubayedMunna/svpa-frontend',
-            websiteUrl: '#',
+            websiteUrl: '#'
         },
         {
             projectName: 'IoT-Based Smart Warehouse',
@@ -54,7 +54,7 @@ function Projects() {
             institutionName: 'CSE, Jahangirnagar University',
             projectDate: 'Jan 2025 - June 2025',
             githubUrl: 'https://github.com/RubayedMunna/IoT-Based-Smart-Warehouse',
-            websiteUrl: '#',
+            websiteUrl: '#'
         },
         {
             projectName: 'Machine Learning-Based Identification of Medicinal Plants from Leaf Images',
@@ -64,13 +64,11 @@ function Projects() {
                 'Workflow: dataset preparation, HOG feature extraction, model training (SVM, SGD Classifier), evaluation via confusion matrix, and deployment.',
                 'Applications include object detection, medical imaging, and autonomous systems requiring recognition of natural elements.'
             ],
-            keySkills: [
-                'Machine Learning', 'Image Classification', 'Scikit-learn', 'SVM', 'HOG', 'Python'
-            ],
+            keySkills: ['Machine Learning', 'Image Classification', 'Scikit-learn', 'SVM', 'HOG', 'Python'],
             institutionName: 'CSE, Jahangirnagar University',
             projectDate: 'July 2025',
             githubUrl: 'https://github.com/RubayedMunna/ML-Based-Medicinal-Leaf-Classifier.git',
-            websiteUrl: '#',
+            websiteUrl: '#'
         },
         {
             projectName: 'Digit Recognition from MNIST Dataset',
@@ -83,7 +81,7 @@ function Projects() {
             institutionName: 'CSE, Jahangirnagar University',
             projectDate: 'May 2025',
             githubUrl: 'https://github.com/RubayedMunna/DigitRecognition_MNIST',
-            websiteUrl: '#',
+            websiteUrl: '#'
         },
         {
             projectName: 'Student Information System',
@@ -96,7 +94,7 @@ function Projects() {
             institutionName: 'CSE, Jahangirnagar University',
             projectDate: 'December 2022',
             githubUrl: 'https://github.com/RubayedMunna/Registration-and-Login-System',
-            websiteUrl: '#',
+            websiteUrl: '#'
         },
         {
             projectName: 'Cloned Amazon',
@@ -108,7 +106,7 @@ function Projects() {
             institutionName: 'Personal Project',
             projectDate: 'July 2023',
             githubUrl: 'https://github.com/RubayedMunna/cloned_amazon',
-            websiteUrl: 'https://cloned-amazon-rubayed.netlify.app/',
+            websiteUrl: 'https://cloned-amazon-rubayed.netlify.app/'
         },
         {
             projectName: 'Student Hostel Management System with JAVA',
@@ -120,7 +118,7 @@ function Projects() {
             institutionName: 'CSE, Jahangirnagar University',
             projectDate: 'July 2022',
             githubUrl: 'https://github.com/RubayedMunna/SHMS-With-OOP',
-            websiteUrl: '#',
+            websiteUrl: '#'
         },
         {
             projectName: 'Student Hostel Management System with C++',
@@ -132,7 +130,7 @@ function Projects() {
             institutionName: 'CSE, Jahangirnagar University',
             projectDate: 'January 2022',
             githubUrl: 'https://github.com/RubayedMunna/Student-Hostel-Management-System-C-',
-            websiteUrl: '#',
+            websiteUrl: '#'
         },
         {
             projectName: 'Tic-Tac-Toe and Simple Calculator',
@@ -144,9 +142,10 @@ function Projects() {
             institutionName: 'CSE, Jahangirnagar University',
             projectDate: 'August 2021',
             githubUrl: 'https://github.com/RubayedMunna/Tic-Tac-Toe',
-            websiteUrl: '#',
-        },
+            websiteUrl: '#'
+        }
     ]);
+
 
 
     return (
