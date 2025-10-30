@@ -10,7 +10,7 @@ function Conference() {
         'Akila Nipo, Rubayed All Islam, Nuzhat Nairy Afrin, Samsun Nahar Khandakar, Md. Ezharul Islam',
       conferenceName: 'IEEE International Conference On Sustainable Technologies For Industry 5.0',
       publishedYear: '2025',
-      status: 'Under Review',
+      status: 'Accepted',
       pdfLink: '#',
       citationLink: '#',
       sourceLink: '#',
