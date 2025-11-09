@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './About.css'; // 👈 Import CSS for rope styling
+import './About.css';
 
 function About() {
-  const [cards, setCards] = useState([
+  const [cards] = useState([
     {
       id: 1,
       title: 'Introduction',
@@ -41,32 +41,49 @@ function About() {
   ]);
 
   return (
-    <div className="container mx-auto px-4 md:px-6 mt-5">
-      <div className="relative about-timeline">
-        {/* Realistic Vertical Rope */}
-        <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-4 z-0 overflow-hidden">
-          <div className="w-full h-full rope-pattern rounded-full shadow-lg"></div>
-        </div>
+    <div className="container mx-auto px-4 md:px-10 mt-12 mb-20">
+      {/* Gradient Heading */}
+      <div className="text-center mb-14">
+        <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-amber-600 via-orange-500 to-amber-700 bg-clip-text text-transparent inline-block drop-shadow-lg animate-fade-in">
+          About Me
+        </h2>
+        <div className="w-28 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-3 rounded-full"></div>
+        <p className="text-gray-600 mt-4 text-base italic">
+          “Exploring technology, inspiring minds, and shaping future innovators.”
+        </p>
+      </div>
 
+      {/* Responsive Grid */}
+      <div className="grid md:grid-cols-2 gap-x-10 gap-y-12 justify-center">
         {cards.map((card, index) => (
           <div
             key={card.id}
-            className={`relative z-10 mb-8 md:mb-12 w-full md:w-4/5 ${
-              index % 2 === 0 ? 'md:ml-auto' : 'md:mr-auto'
+            className={`relative bg-white rounded-2xl border border-amber-700 overflow-hidden shadow-lg transition-all duration-500 ease-out transform hover:scale-[1.04] hover:-translate-y-2 hover:shadow-2xl hover:border-amber-500 hover:rotate-[0.3deg] hover:brightness-105 group w-full md:w-[90%] ${
+              cards.length % 2 !== 0 && index === cards.length - 1
+                ? 'md:col-span-2 md:mx-auto md:w-[50%]'
+                : ''
             }`}
           >
-            {/* Card */}
-            <div className="bg-white shadow-xl rounded-xl border-2 border-amber-700 overflow-hidden transition-all duration-300 hover:scale-105">
-              <div className="bg-gradient-to-r from-amber-600 to-amber-700 text-white p-4 flex items-center">
-                <span className="text-2xl mr-3">{card.icon}</span>
-                <h3 className="text-lg md:text-xl font-bold">{card.title}</h3>
-              </div>
-              <div className="p-4 md:p-6">
-                <p className="text-gray-700 text-justify text-sm md:text-base leading-relaxed">
-                  {card.content}
-                </p>
-              </div>
+            {/* Glowing Accent Effect */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-amber-500/10 via-orange-400/10 to-amber-600/10 blur-lg"></div>
+
+            {/* Header */}
+            <div className="relative bg-gradient-to-r from-amber-600 to-amber-700 text-white px-6 py-4 flex items-center">
+              <h3 className="text-lg md:text-xl font-semibold flex items-center">
+                <span className="text-2xl mr-3 hidden md:inline">{card.icon}</span>
+                {card.title}
+              </h3>
             </div>
+
+            {/* Body */}
+            <div className="relative px-6 py-6">
+              <p className="text-gray-700 text-justify text-[15.5px] md:text-base leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
+                {card.content}
+              </p>
+            </div>
+
+            {/* Shimmer Accent Line */}
+            <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-amber-500 to-orange-500 group-hover:w-full transition-all duration-500 ease-in-out"></div>
           </div>
         ))}
       </div>

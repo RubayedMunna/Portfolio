@@ -99,10 +99,10 @@ function SideNavBar() {
                     <div className="flex items-center mt-2">
                         <FaEnvelope className="text-blue-500 mr-2" />
                         <a
-                            href="mailto:jucse29.370@gmail.com"
+                            href="mailto:rubayed.munna01@gmail.com"
                             className="hover:text-amber-400 transition-colors duration-300"
                         >
-                            jucse29.370@gmail.com
+                            rubayed.munna01@gmail.com
                         </a>
                     </div>
 
