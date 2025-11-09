@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { FaBriefcase } from 'react-icons/fa';
+import { FaClock } from 'react-icons/fa';
+
 
 function Experience() {
     const [cards] = useState([
         {
             id: 1,
-            jobTitle: 'Lecturer',
+            jobTitle: 'Lecturer (Contractual)',
             jobType: 'Full Time',
             jobInstitution: 'Daffodil International University',
             institutionAddress: 'Daffodil Smart City, Ashulia, Dhaka',
             from: 'June 28, 2025',
             to: 'August 31, 2025',
-            duration: 'One Semester (Contractual)',
+            duration: 'One Semester',
             responsiblilities: [
                 'Conduct undergraduate lectures and tutorials',
                 'Assist in curriculum development and academic planning',
@@ -88,11 +90,23 @@ function Experience() {
                                 </h2>
 
 
-                                <div className="bg-white text-white px-6 py-3 mt-3">
-                                    <h2 className="text-l text-gray-700 text-center md:text-left">
-                                        <span className="bg-amber-600 text-white px-4 py-2 rounded-lg shadow-md font-semibold">{card.from} - {card.to} : {card.duration}</span>
+                                <div className="bg-white px-6 py-4 mt-3 space-y-3">
+                                    {/* Date Range */}
+                                    <h2 className="text-lg text-gray-700 text-center md:text-left">
+                                        <span className="bg-amber-600 text-white px-4 py-2 rounded-lg shadow-md font-semibold">
+                                            {card.from} - {card.to}
+                                        </span>
+                                    </h2>
+
+                                    {/* Duration */}
+                                    <h2 className="text-md text-slate-700 text-center md:text-left flex items-center justify-center md:justify-start gap-2">
+                                        <FaClock className="text-slate-500 w-5 h-5" />
+                                        <span className="bg-slate-200 text-slate-900 px-3 py-1 rounded-lg font-medium shadow-sm">
+                                         {card.duration}
+                                        </span>
                                     </h2>
                                 </div>
+
 
                                 {/* Button to open modal */}
                                 {/* Button to open modal */}
