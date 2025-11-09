@@ -151,25 +151,17 @@ function Projects() {
     return (
         <div className="container mt-5 mx-auto px-4 md:px-6">
             {/* Projects Header */}
-            <header className="relative mb-12 overflow-hidden rounded-2xl bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 text-white shadow-2xl transition-all duration-500 ease-in-out hover:scale-[1.05] hover:shadow-amber-400/60 hover:shadow-3xl">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-amber-400/40 via-transparent to-transparent animate-pulse-slow"></div>
-                <div className="relative container mx-auto px-6 py-6 flex flex-col md:flex-row items-start md:items-center justify-between">
-                    <div className="flex items-start md:items-center space-x-4">
-                        <div className="hidden sm:flex w-12 h-12 rounded-full bg-white/20 backdrop-blur-md items-center justify-center shadow-md border border-white/30 transition-transform duration-500 hover:rotate-12">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="white" className="w-6 h-6">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">Projects</h1>
-                            <p className="text-amber-200 text-sm mt-1">Academic and personal projects showcasing skills</p>
-                        </div>
-                    </div>
-                    <div className="hidden md:block bg-white/10 px-4 py-2 rounded-full border border-white/20 text-sm font-medium tracking-wide hover:bg-white/20 transition mt-2 md:mt-0">
-                        <span className="text-amber-200">Portfolio Highlights</span>
-                    </div>
-                </div>
+            <header className="text-center mb-14">
+                <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-amber-600 via-orange-500 to-amber-700 bg-clip-text text-transparent inline-block drop-shadow-lg animate-fade-in">
+                    Projects
+                </h2>
+                <div className="w-28 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-3 rounded-full"></div>
+                <p className="text-gray-600 mt-4 text-base italic">
+                    Academic and personal projects showcasing skills
+                </p>
             </header>
+
+
 
             {/* Projects Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

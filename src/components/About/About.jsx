@@ -41,7 +41,7 @@ function About() {
   ]);
 
   return (
-    <div className="container mx-auto px-4 md:px-10 mt-12 mb-20">
+    <div className="container mx-auto px-4 md:px-10 mt-5 mb-20">
       {/* Gradient Heading */}
       <div className="text-center mb-14">
         <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-amber-600 via-orange-500 to-amber-700 bg-clip-text text-transparent inline-block drop-shadow-lg animate-fade-in">
