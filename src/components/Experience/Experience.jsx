@@ -7,7 +7,7 @@ function Experience() {
     const [cards] = useState([
         {
             id: 1,
-            jobTitle: 'Lecturer (Contractual)',
+            jobTitle: 'Lecturer',
             jobType: 'Full Time',
             jobInstitution: 'Daffodil International University',
             institutionAddress: 'Daffodil Smart City, Ashulia, Dhaka',
