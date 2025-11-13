@@ -1,39 +1,33 @@
-
-
-
 import React, { useState, useMemo } from 'react';
 
 function Poster() {
     const [cards, setCards] = useState([
 //         {
 //             id: 1,
-//             title: 'Poster Title 1',
-//             authors: 'Author1, My name, Author3, Author4',
-//             eventName: 'Conference Name 1',
-//             publishedYear: '2023',
+//             title: 'IoT-Based Safety Poster for Smart Warehouses',
+//             authors: 'Akila Nipo, Rubayed All Islam, Md. Imdadul Islam',
+//             eventName: 'IEEE International Conference on Smart Technologies 2025',
+//             publishedYear: '2025',
 //             status: 'Presented',
 //             pdfLink: '#',
-//             citationLink: '#',
 //             sourceLink: '#',
-//             bibtex: `@misc{Nipo2023Poster1,
-//   title={Poster Title 1},
+//             bibtex: `@misc{nipo2025poster,
+//   title={IoT-Based Safety Poster for Smart Warehouses},
 //   author={Nipo, Akila and Islam, Rubayed All and Islam, Md. Imdadul},
-//   year={2023},
-//   note={Presented at Conference Name 1}
+//   year={2025},
+//   note={Presented at IEEE International Conference on Smart Technologies 2025}
 // }`,
 //         },
 //         {
 //             id: 2,
-//             title: 'Upcoming Poster Title 2',
-//             authors: 'AuthorA, AuthorB',
-//             eventName: 'Conference Name 2',
-//             publishedYear: '2025',
+//             title: 'Upcoming AI Poster in Industrial Automation',
+//             authors: 'Author A, Author B',
+//             eventName: 'FutureTech Expo 2026',
+//             publishedYear: '2026',
 //             status: 'Submitted',
 //             pdfLink: '#',
-//             citationLink: '#',
 //             sourceLink: '#',
 //         },
-        // Example cards here
     ]);
 
     const statuses = ['Status', 'Published', 'Accepted', 'Under Review', 'Submitted', 'Presented'];
@@ -41,6 +35,8 @@ function Poster() {
     const [selectedStatus, setSelectedStatus] = useState('');
     const [showModal, setShowModal] = useState(false);
     const [selectedBibTex, setSelectedBibTex] = useState('');
+    const [selectedStyle, setSelectedStyle] = useState('BibTeX');
+    const [copied, setCopied] = useState(false);
 
     const uniqueYears = useMemo(() => {
         const years = [...new Set(cards.map(card => card.publishedYear))].sort((a, b) => b - a);
@@ -53,7 +49,6 @@ function Poster() {
             (selectedStatus === '' || selectedStatus === 'Status' || card.status === selectedStatus)
     );
 
-    // 🟢 Status color mapping
     const getStatusClasses = (status) => {
         switch (status) {
             case 'Published':
@@ -71,6 +66,31 @@ function Poster() {
         }
     };
 
+    const formatCitation = (card, style) => {
+        if (!card) return '';
+        const authors = card.authors.replace(/, ([^,]*)$/, ' and $1');
+        switch (style) {
+            case 'IEEE':
+                return `${authors}, "${card.title}," ${card.eventName}, ${card.publishedYear}.`;
+            case 'APA':
+                return `${authors} (${card.publishedYear}). ${card.title}. ${card.eventName}.`;
+            case 'ACM':
+                return `${authors}. ${card.publishedYear}. ${card.title}. Presented at ${card.eventName}.`;
+            case 'Harvard':
+                return `${authors}, ${card.publishedYear}. ${card.title}. ${card.eventName}.`;
+            default:
+                return card.bibtex;
+        }
+    };
+
+    const handleCopy = () => {
+        const card = cards.find(c => c.bibtex === selectedBibTex);
+        const textToCopy = formatCitation(card, selectedStyle);
+        navigator.clipboard.writeText(textToCopy);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
+
     return (
         <div>
             {/* Filters */}
@@ -84,9 +104,7 @@ function Poster() {
                                 onChange={e => setSelectedYear(e.target.value)}
                             >
                                 {uniqueYears.map(year => (
-                                    <option key={year} value={year}>
-                                        {year}
-                                    </option>
+                                    <option key={year} value={year}>{year}</option>
                                 ))}
                             </select>
                         </div>
@@ -97,9 +115,7 @@ function Poster() {
                                 onChange={e => setSelectedStatus(e.target.value)}
                             >
                                 {statuses.map(status => (
-                                    <option key={status} value={status}>
-                                        {status}
-                                    </option>
+                                    <option key={status} value={status}>{status}</option>
                                 ))}
                             </select>
                         </div>
@@ -133,10 +149,7 @@ function Poster() {
                                 </div>
 
                                 <div className="px-4 md:px-6 py-4 flex flex-wrap gap-2 items-center justify-between bg-gradient-to-r from-white to-amber-50 border-t border-amber-200">
-                                    {/* 🟣 Dynamic status color */}
-                                    <span
-                                        className={`px-3 py-2 rounded-lg shadow-md font-semibold text-sm md:text-base border ${getStatusClasses(card.status)}`}
-                                    >
+                                    <span className={`px-3 py-2 rounded-lg shadow-md font-semibold text-sm md:text-base border ${getStatusClasses(card.status)}`}>
                                         {card.status}
                                     </span>
 
@@ -184,7 +197,7 @@ function Poster() {
                 )}
             </div>
 
-            {/* BibTeX Modal */}
+            {/* Citation Modal */}
             {showModal && (
                 <div
                     className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
@@ -195,7 +208,7 @@ function Poster() {
                         onClick={e => e.stopPropagation()}
                     >
                         <div className="flex justify-between items-center mb-4">
-                            <h3 className="text-xl font-bold text-amber-700">BibTeX Citation</h3>
+                            <h3 className="text-xl font-bold text-amber-700">Poster Citation</h3>
                             <button
                                 onClick={() => setShowModal(false)}
                                 className="text-amber-600 hover:text-amber-800 transition-colors duration-300"
@@ -203,8 +216,31 @@ function Poster() {
                                 <i className="bx bx-x text-xl"></i>
                             </button>
                         </div>
+
+                        {/* Citation Style Selector + Copy */}
+                        <div className="flex justify-between items-center mb-3">
+                            <select
+                                value={selectedStyle}
+                                onChange={e => setSelectedStyle(e.target.value)}
+                                className="border border-amber-400 rounded-lg p-2 focus:ring-amber-300 focus:outline-none"
+                            >
+                                <option>BibTeX</option>
+                                <option>IEEE</option>
+                                <option>APA</option>
+                                <option>ACM</option>
+                                <option>Harvard</option>
+                            </select>
+
+                            <button
+                                onClick={handleCopy}
+                                className="bg-amber-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-amber-700 transition-all duration-300"
+                            >
+                                {copied ? 'Copied!' : 'Copy'}
+                            </button>
+                        </div>
+
                         <pre className="bg-gray-100 p-4 rounded-lg font-mono text-sm overflow-auto border border-gray-300 whitespace-pre-wrap">
-                            {selectedBibTex}
+                            {formatCitation(cards.find(c => c.bibtex === selectedBibTex), selectedStyle)}
                         </pre>
                     </div>
                 </div>

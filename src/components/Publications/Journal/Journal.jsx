@@ -41,6 +41,8 @@ function Journal() {
   const [selectedStatus, setSelectedStatus] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [selectedBibTex, setSelectedBibTex] = useState('');
+  const [copied, setCopied] = useState(false);
+  const [selectedStyle, setSelectedStyle] = useState('BibTeX');
 
   const uniqueYears = useMemo(() => {
     const years = [...new Set(cards.map(card => card.publishedYear))].sort((a, b) => b - a);
@@ -53,7 +55,6 @@ function Journal() {
       (selectedStatus === '' || selectedStatus === 'Status' || card.status === selectedStatus)
   );
 
-  // 🟢 Status color mapping
   const getStatusClasses = (status) => {
     switch (status) {
       case 'Published':
@@ -68,6 +69,32 @@ function Journal() {
         return 'bg-gray-400 border-gray-500 text-white';
     }
   };
+
+  const handleCopy = (text) => {
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
+  const formatCitation = (card, style) => {
+    if (!card) return '';
+    const authors = card.authors.replace(/, ([^,]*)$/, ' and $1');
+    switch (style) {
+      case 'IEEE':
+        return `${authors}, "${card.title}," ${card.journalName}, ${card.volume}, ${card.issue}, pp. ${card.pages}, ${card.publishedYear}. doi:${card.doi}`;
+      case 'APA':
+        return `${authors} (${card.publishedYear}). ${card.title}. ${card.journalName}, ${card.volume}(${card.issue}), ${card.pages}. https://doi.org/${card.doi}`;
+      case 'ACM':
+        return `${authors}. ${card.publishedYear}. ${card.title}. ${card.journalName}. ${card.volume}, ${card.issue} (${card.publishedYear}), ${card.pages}. DOI:https://doi.org/${card.doi}`;
+      case 'Harvard':
+        return `${authors}, ${card.publishedYear}. ${card.title}. ${card.journalName}, ${card.volume}(${card.issue}), pp.${card.pages}.`;
+      default:
+        return card.bibtex;
+    }
+  };
+
+  const selectedCard = cards.find((c) => c.bibtex === selectedBibTex);
+  const citationText = formatCitation(selectedCard, selectedStyle);
 
   return (
     <div>
@@ -154,7 +181,6 @@ function Journal() {
                 </div>
 
                 <div className="px-4 md:px-6 py-4 flex flex-wrap gap-2 items-center justify-between bg-gradient-to-r from-white to-amber-50 border-t border-amber-200">
-                  {/* 🟣 Dynamic status color */}
                   <span
                     className={`px-3 py-2 rounded-lg shadow-md font-semibold text-sm md:text-base border ${getStatusClasses(card.status)}`}
                   >
@@ -162,7 +188,7 @@ function Journal() {
                   </span>
 
                   <div className="flex flex-wrap gap-2">
-                    {card.pdfLink && card.pdfLink !== '#' && (
+                    {card.pdfLink && (
                       <a
                         href={card.pdfLink}
                         target="_blank"
@@ -176,6 +202,7 @@ function Journal() {
                       <button
                         onClick={() => {
                           setSelectedBibTex(card.bibtex);
+                          setSelectedStyle('BibTeX');
                           setShowModal(true);
                         }}
                         className="bg-transparent hover:bg-amber-600 text-amber-700 font-semibold hover:text-white py-2 px-4 border-2 border-amber-600 hover:border-amber-700 rounded-lg transition-all duration-300 hover:scale-105 cursor-pointer flex items-center text-sm md:text-base"
@@ -183,7 +210,7 @@ function Journal() {
                         <i className="bx bxs-quote-single-right text-xl mr-1"></i> Citation
                       </button>
                     )}
-                    {card.sourceLink && card.sourceLink !== '#' && (
+                    {card.sourceLink && (
                       <a
                         href={card.sourceLink}
                         target="_blank"
@@ -201,7 +228,7 @@ function Journal() {
         )}
       </div>
 
-      {/* BibTeX Modal */}
+      {/* Citation Modal */}
       {showModal && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
@@ -212,7 +239,7 @@ function Journal() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-xl font-bold text-amber-700">BibTeX Citation</h3>
+              <h3 className="text-xl font-bold text-amber-700">Citation</h3>
               <button
                 onClick={() => setShowModal(false)}
                 className="text-amber-600 hover:text-amber-800 transition-colors duration-300"
@@ -220,8 +247,31 @@ function Journal() {
                 <i className="bx bx-x text-xl"></i>
               </button>
             </div>
+
+            {/* Style Selector + Copy Button */}
+            <div className="flex justify-between items-center mb-3">
+              <select
+                value={selectedStyle}
+                onChange={(e) => setSelectedStyle(e.target.value)}
+                className="border border-amber-400 rounded-lg p-2 focus:ring-amber-300 focus:outline-none"
+              >
+                <option>BibTeX</option>
+                <option>IEEE</option>
+                <option>APA</option>
+                <option>ACM</option>
+                <option>Harvard</option>
+              </select>
+
+              <button
+                onClick={() => handleCopy(citationText)}
+                className="bg-amber-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-amber-700 transition-all duration-300"
+              >
+                {copied ? 'Copied!' : 'Copy'}
+              </button>
+            </div>
+
             <pre className="bg-gray-100 p-4 rounded-lg font-mono text-sm overflow-auto border border-gray-300 whitespace-pre-wrap">
-              {selectedBibTex}
+              {citationText}
             </pre>
           </div>
         </div>

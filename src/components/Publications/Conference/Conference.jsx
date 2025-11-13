@@ -15,6 +15,7 @@ function Conference() {
       citationLink: '#',
       sourceLink: '#',
     },
+    
   ]);
 
   const statuses = ['Status', 'Published', 'Accepted', 'Under Review', 'Submitted'];
@@ -22,6 +23,8 @@ function Conference() {
   const [selectedStatus, setSelectedStatus] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [selectedBibTex, setSelectedBibTex] = useState('');
+  const [selectedStyle, setSelectedStyle] = useState('BibTeX');
+  const [copied, setCopied] = useState(false);
 
   const uniqueYears = useMemo(() => {
     const years = [...new Set(cards.map(card => card.publishedYear))].sort((a, b) => b - a);
@@ -48,6 +51,32 @@ function Conference() {
       default:
         return 'bg-gray-400 border-gray-500 text-white';
     }
+  };
+
+  // 🧠 Format citation based on selected style
+  const formatCitation = (card, style) => {
+    const authors = card.authors.replace(/, ([^,]*)$/, ' and $1');
+    switch (style) {
+      case 'IEEE':
+        return `${authors}, "${card.title}," in *${card.conferenceName}*, ${card.publishedYear}, pp. ${card.pages}. doi:${card.doi}`;
+      case 'APA':
+        return `${authors} (${card.publishedYear}). ${card.title}. In *${card.conferenceName}* (pp. ${card.pages}). IEEE. https://doi.org/${card.doi}`;
+      case 'ACM':
+        return `${authors}. ${card.publishedYear}. ${card.title}. In *${card.conferenceName}*. ${card.pages}. DOI:https://doi.org/${card.doi}`;
+      case 'Harvard':
+        return `${authors}, ${card.publishedYear}. ${card.title}. In: *${card.conferenceName}*, pp.${card.pages}.`;
+      default:
+        return card.bibtex;
+    }
+  };
+
+  // 📋 Copy citation text
+  const handleCopy = () => {
+    const card = cards.find(c => c.bibtex === selectedBibTex);
+    const textToCopy = formatCitation(card, selectedStyle);
+    navigator.clipboard.writeText(textToCopy);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -159,7 +188,7 @@ function Conference() {
         )}
       </div>
 
-      {/* BibTeX Modal */}
+      {/* 🟤 Citation Modal */}
       {showModal && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
@@ -170,7 +199,7 @@ function Conference() {
             onClick={e => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-xl font-bold text-amber-700">BibTeX Citation</h3>
+              <h3 className="text-xl font-bold text-amber-700">Conference Citation</h3>
               <button
                 onClick={() => setShowModal(false)}
                 className="text-amber-600 hover:text-amber-800 transition-colors duration-300"
@@ -178,8 +207,34 @@ function Conference() {
                 <i className="bx bx-x text-xl"></i>
               </button>
             </div>
+
+            {/* Citation Style Selector + Copy Button */}
+            <div className="flex justify-between items-center mb-3">
+              <select
+                value={selectedStyle}
+                onChange={(e) => setSelectedStyle(e.target.value)}
+                className="border border-amber-400 rounded-lg p-2 focus:ring-amber-300 focus:outline-none"
+              >
+                <option>BibTeX</option>
+                <option>IEEE</option>
+                <option>APA</option>
+                <option>ACM</option>
+                <option>Harvard</option>
+              </select>
+
+              <button
+                onClick={handleCopy}
+                className="bg-amber-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-amber-700 transition-all duration-300"
+              >
+                {copied ? 'Copied!' : 'Copy'}
+              </button>
+            </div>
+
             <pre className="bg-gray-100 p-4 rounded-lg font-mono text-sm overflow-auto border border-gray-300 whitespace-pre-wrap">
-              {selectedBibTex}
+              {formatCitation(
+                cards.find((c) => c.bibtex === selectedBibTex),
+                selectedStyle
+              )}
             </pre>
           </div>
         </div>
