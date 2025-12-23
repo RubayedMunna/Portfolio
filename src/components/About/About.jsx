@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './About.css';
+// import './About.css'; // Ensure this doesn't conflict with Tailwind
 
 function About() {
   const [cards] = useState([
@@ -42,7 +42,7 @@ function About() {
 
   return (
     <div className="container mx-auto px-4 md:px-10 mt-5 mb-20">
-      {/* Gradient Heading */}
+      {/* Gradient Heading (Untouched as requested) */}
       <div className="text-center mb-14">
         <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-amber-600 via-orange-500 to-amber-700 bg-clip-text text-transparent inline-block drop-shadow-lg animate-fade-in">
           About Me
@@ -53,37 +53,45 @@ function About() {
         </p>
       </div>
 
-      {/* Responsive Grid */}
-      <div className="grid md:grid-cols-2 gap-x-10 gap-y-12 justify-center">
+      {/* Grid Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center max-w-6xl mx-auto">
         {cards.map((card, index) => (
           <div
             key={card.id}
-            className={`relative bg-white rounded-2xl border border-amber-700 overflow-hidden shadow-lg transition-all duration-500 ease-out transform hover:scale-[1.04] hover:-translate-y-2 hover:shadow-2xl hover:border-amber-500 hover:rotate-[0.3deg] hover:brightness-105 group w-full md:w-[90%] ${
-              cards.length % 2 !== 0 && index === cards.length - 1
-                ? 'md:col-span-2 md:mx-auto md:w-[50%]'
-                : ''
-            }`}
+            className={`
+                group relative bg-white rounded-2xl border border-amber-100 
+                shadow-md hover:shadow-xl hover:border-amber-300
+                transition-all duration-300 ease-out 
+                flex flex-col p-8
+                ${cards.length % 2 !== 0 && index === cards.length - 1
+                    ? 'md:col-span-2 md:w-2/3 md:mx-auto' 
+                    : ''}
+            `}
           >
-            {/* Glowing Accent Effect */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-amber-500/10 via-orange-400/10 to-amber-600/10 blur-lg"></div>
+            {/* Hover Glow Effect */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-amber-50/50 via-white to-transparent rounded-2xl"></div>
 
-            {/* Header */}
-            <div className="relative bg-gradient-to-r from-amber-600 to-amber-700 text-white px-6 py-4 flex items-center">
-              <h3 className="text-lg md:text-xl font-semibold flex items-center">
-                <span className="text-2xl mr-3 hidden md:inline">{card.icon}</span>
-                {card.title}
-              </h3>
+            {/* Card Content Container */}
+            <div className="relative z-10">
+                
+                {/* Icon & Title Row */}
+                <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-2xl shadow-sm group-hover:bg-amber-100 transition-colors">
+                        {card.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-800 group-hover:text-amber-700 transition-colors">
+                        {card.title}
+                    </h3>
+                </div>
+
+                {/* Text Content */}
+                <p className="text-gray-600 leading-relaxed text-base">
+                    {card.content}
+                </p>
             </div>
 
-            {/* Body */}
-            <div className="relative px-6 py-6">
-              <p className="text-gray-700 text-justify text-[15.5px] md:text-base leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
-                {card.content}
-              </p>
-            </div>
-
-            {/* Shimmer Accent Line */}
-            <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-amber-500 to-orange-500 group-hover:w-full transition-all duration-500 ease-in-out"></div>
+            {/* Bottom Accent Line */}
+            <div className="absolute bottom-0 left-0 w-full h-[3px] bg-amber-100 group-hover:bg-gradient-to-r group-hover:from-amber-500 group-hover:to-orange-500 transition-all duration-500 rounded-b-2xl"></div>
           </div>
         ))}
       </div>
