@@ -2,74 +2,76 @@ import React, { useState } from 'react';
 import { FaClock, FaBuilding, FaMapMarkerAlt } from 'react-icons/fa';
 
 function Experience() {
+
+    // ✅ Duration Calculation Function
+    const calculateDuration = (from, to) => {
+        const startDate = new Date(from);
+        const endDate = to === "Present" ? new Date() : new Date(to);
+
+        let months =
+            (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+            (endDate.getMonth() - startDate.getMonth());
+
+        if (endDate.getDate() < startDate.getDate()) {
+            months--;
+        }
+
+        const years = Math.floor(months / 12);
+        const remainingMonths = months % 12;
+
+        if (years > 0 && remainingMonths > 0)
+            return `${years} Year${years > 1 ? "s" : ""} ${remainingMonths} Month${remainingMonths > 1 ? "s" : ""}`;
+
+        if (years > 0)
+            return `${years} Year${years > 1 ? "s" : ""}`;
+
+        return `${remainingMonths} Month${remainingMonths !== 1 ? "s" : ""}`;
+    };
+
     const [cards] = useState([
         {
             id: 1,
+            jobTitle: 'Lecturer',
+            jobType: 'Full Time',
+            jobInstitution: 'Department of CSE, Southeast University',
+            institutionAddress: '251/A Tejgaon I/A, Dhaka 1208',
+            from: 'February 08, 2026',
+            to: 'Present',
+            responsiblilities: [
+                'Conduct undergraduate lectures and tutorials',
+                'Assist in curriculum development and academic planning',
+                'Engage in student mentoring and assessment',
+            ],
+        },
+        {
+            id: 2,
             jobTitle: 'Lecturer',
             jobType: 'Full Time',
             jobInstitution: 'Department of CSE, Daffodil International University',
             institutionAddress: 'Daffodil Smart City, Ashulia, Dhaka',
             from: 'June 28, 2025',
             to: 'August 31, 2025',
-            duration: 'One Semester',
             responsiblilities: [
                 'Conduct undergraduate lectures and tutorials',
                 'Assist in curriculum development and academic planning',
                 'Engage in student mentoring and assessment',
-
             ],
         },
-        // {
-        //     id: 2,
-        //     jobTitle: 'Research Assistant',
-        //     jobType: 'Part Time',
-        //     jobInstitution: 'Independent University, Bangladesh',
-        //     institutionAddress: 'Bashundhara R/A, Dhaka',
-        //     from: 'Jan 2024',
-        //     to: 'Dec 2024',
-        //     duration: '1 Year',
-        //     responsiblilities: [
-        //         'Analyzed datasets for NLP research',
-        //         'Co-authored 2 conference papers',
-
-        //     ],
-        // },
     ]);
 
     return (
         <div className="container mt-10 mx-auto px-4 max-w-3xl mb-20">
 
-            {/* Header */}
-            {/* <header className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-amber-600 via-orange-500 to-amber-700 bg-clip-text text-transparent inline-block drop-shadow-lg">
-                    Professional Experiences
-                </h2>
-                <div className="w-28 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-3 rounded-full"></div>
-            </header> */}
             <header className="text-center mb-14">
 
-                {/* Gradient Title */}
-
                 <h2 className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-amber-600 via-orange-500 to-amber-700 bg-clip-text text-transparent inline-block drop-shadow-lg animate-fade-in">
-
                     Professional Experiences
-
                 </h2>
-
-
-
-                {/* Gradient Bottom Line */}
 
                 <div className="w-28 h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-3 rounded-full"></div>
 
-
-
-                {/* Subtitle */}
-
                 <p className="text-gray-600 mt-4 text-base italic">
-
                     Roles, responsibilities, and contributions
-
                 </p>
 
             </header>
@@ -79,19 +81,13 @@ function Experience() {
                 {cards.map((card, index) => (
                     <div key={card.id} className="relative pl-8 md:pl-12 py-2 group">
 
-                        {/* --- THE ROPE (Vertical Line) --- */}
-                        {/* Updated Logic:
-                           - We removed the condition that stopped the line for the last item.
-                           - Now 'h-full' applies to ALL items, so the line runs alongside the text for the last item too.
-                           - We keep the 'top-[6px]' for index 0 so the line doesn't poke out above the first knot.
-                        */}
+                        {/* --- THE ROPE --- */}
                         <div
                             className={`absolute left-[3px] w-[2px] bg-amber-600 h-full
-                            ${index === 0 ? 'top-[6px]' : 'top-0'} 
-                            `}
+                            ${index === 0 ? 'top-[6px]' : 'top-0'}`}
                         ></div>
 
-                        {/* --- THE KNOT (Circle) --- */}
+                        {/* --- THE KNOT --- */}
                         <div className="absolute left-[-4px] top-[6px] h-4 w-4 rounded-full border-2 border-amber-600 bg-white z-10 group-hover:scale-125 transition-transform duration-300 shadow-sm"></div>
 
                         {/* CONTENT */}
@@ -118,8 +114,11 @@ function Experience() {
                             <span className="bg-slate-200 text-slate-700 px-3 py-1 rounded-md text-sm font-bold shadow-sm">
                                 {card.from} - {card.to}
                             </span>
+
+                            {/* ✅ AUTO DURATION */}
                             <span className="bg-slate-100 text-slate-500 px-3 py-1 rounded-md text-sm font-medium flex items-center gap-2 border border-slate-200">
-                                <FaClock className="text-xs" /> {card.duration}
+                                <FaClock className="text-xs" />
+                                {calculateDuration(card.from, card.to)}
                             </span>
                         </div>
 
@@ -130,9 +129,11 @@ function Experience() {
                                 </li>
                             ))}
                         </ul>
+
                     </div>
                 ))}
             </div>
+
         </div>
     );
 }
