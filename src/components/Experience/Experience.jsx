@@ -34,7 +34,7 @@ function Experience() {
             jobTitle: 'Lecturer',
             jobType: 'Full Time',
             jobInstitution: 'Department of CSE, Southeast University',
-            institutionAddress: '251/A Tejgaon I/A, Dhaka 1208',
+            institutionAddress: '252, Tejgaon Industrial Area, Dhaka-1208',
             from: 'February 08, 2026',
             to: 'Present',
             responsiblilities: [
