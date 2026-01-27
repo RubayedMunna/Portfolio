@@ -7,7 +7,7 @@ function About() {
       id: 1,
       title: 'Introduction',
       content:
-        'I am Rubayed All Islam, a Lecturer in Computer Science and Engineering at Daffodil International University, currently pursuing my M.Sc. from Jahangirnagar University. I’m passionate about teaching, research, and lifelong learning.',
+        'I am Rubayed All Islam, a Lecturer in Computer Science and Engineering at Southeast University, currently pursuing my M.Sc. from Jahangirnagar University. I’m passionate about teaching, research, and lifelong learning.',
       icon: '👋',
     },
     {
