@@ -4,18 +4,29 @@ function Conference() {
   const [cards, setCards] = useState([
     {
       id: 1,
-      title:
-        'IoT-Enabled Smart Warehouse Monitoring and Safety System for Real Time Hazard Detection and Automated Mitigation',
-      authors:
-        'Akila Nipo, Rubayed All Islam, Nuzhat Nairy Afrin, Samsun Nahar Khandakar, Md. Ezharul Islam',
-      conferenceName: 'IEEE International Conference On Sustainable Technologies For Industry 5.0',
+      title: 'IoT-Enabled Smart Warehouse Monitoring and Safety System for Real Time Hazard Detection and Automated Mitigation',
+      authors: 'Akila Nipo, Rubayed All Islam, Nuzhat Nairy Afrin, Samsun Nahar Khandakar, Md. Ezharul Islam',
+      conferenceName: '2025 IEEE 7th International Conference on Sustainable Technologies For Industry 5.0 (STI)',
       publishedYear: '2025',
-      status: 'Accepted',
-      pdfLink: '#',
-      citationLink: '#',
-      sourceLink: '#',
-    },
-    
+      status: 'Published',
+      pdfLink: 'https://ieeexplore.ieee.org/document/11367508',
+      citationLink: 'https://ieeexplore.ieee.org/document/11367508',
+      sourceLink: 'https://ieeexplore.ieee.org/document/11367508',
+      volume: 'N/A',
+      issue: 'N/A',
+      pages: '1–6',
+      doi: '10.1109/STI69347.2025.11367508',
+      bibtex: `@INPROCEEDINGS{11367508,
+  author={Nipo, Akila and Islam, Rubayed All and Afrin, Nuzhat Nairy and Khandakar, Samsun Nahar and Islam, Md. Ezharul},
+  booktitle={2025 IEEE 7th International Conference on Sustainable Technologies For Industry 5.0 (STI)}, 
+  title={IoT-Enabled Smart Warehouse Monitoring and Safety System for Real Time Hazard Detection and Automated Mitigation}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-6},
+  doi={10.1109/STI69347.2025.11367508}
+}`,
+    }
   ]);
 
   const statuses = ['Status', 'Published', 'Accepted', 'Under Review', 'Submitted'];
