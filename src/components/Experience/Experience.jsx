@@ -31,7 +31,7 @@ function Experience() {
     const [cards] = useState([
         {
             id: 1,
-            jobTitle: 'Lecturer (CSE',
+            jobTitle: 'Lecturer (CSE)',
             jobType: 'Full Time',
             jobInstitution: 'Department of Textile Engineering, Southeast University',
             institutionAddress: '252, Tejgaon Industrial Area, Dhaka-1208',
