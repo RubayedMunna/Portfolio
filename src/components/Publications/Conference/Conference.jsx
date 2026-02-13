@@ -4,16 +4,19 @@ function Conference() {
   const [cards, setCards] = useState([
     {
       id: 1,
-      title: 'IoT-Enabled Smart Warehouse Monitoring and Safety System for Real Time Hazard Detection and Automated Mitigation',
-      authors: 'Akila Nipo, Rubayed All Islam, Nuzhat Nairy Afrin, Samsun Nahar Khandakar, Md. Ezharul Islam',
-      conferenceName: '2025 IEEE 7th International Conference on Sustainable Technologies For Industry 5.0 (STI)',
+      title:
+        'IoT-Enabled Smart Warehouse Monitoring and Safety System for Real Time Hazard Detection and Automated Mitigation',
+      authors:
+        'Akila Nipo, Rubayed All Islam, Nuzhat Nairy Afrin, Samsun Nahar Khandakar, Md. Ezharul Islam',
+      conferenceName:
+        '2025 IEEE 7th International Conference on Sustainable Technologies For Industry 5.0 (STI)',
       publishedYear: '2025',
       status: 'Published',
       pdfLink: 'https://ieeexplore.ieee.org/document/11367508',
       citationLink: 'https://ieeexplore.ieee.org/document/11367508',
       sourceLink: 'https://ieeexplore.ieee.org/document/11367508',
-      volume: 'N/A',
-      issue: 'N/A',
+      volume: '',
+      issue: '',
       pages: '1–6',
       doi: '10.1109/STI69347.2025.11367508',
       bibtex: `@INPROCEEDINGS{11367508,
@@ -26,7 +29,7 @@ function Conference() {
   pages={1-6},
   doi={10.1109/STI69347.2025.11367508}
 }`,
-    }
+    },
   ]);
 
   const statuses = ['Status', 'Published', 'Accepted', 'Under Review', 'Submitted'];
@@ -38,12 +41,12 @@ function Conference() {
   const [copied, setCopied] = useState(false);
 
   const uniqueYears = useMemo(() => {
-    const years = [...new Set(cards.map(card => card.publishedYear))].sort((a, b) => b - a);
+    const years = [...new Set(cards.map((card) => card.publishedYear))].sort((a, b) => b - a);
     return ['Year', ...years];
   }, [cards]);
 
   const filteredCards = cards.filter(
-    card =>
+    (card) =>
       (selectedYear === '' || selectedYear === 'Year' || card.publishedYear === selectedYear) &&
       (selectedStatus === '' || selectedStatus === 'Status' || card.status === selectedStatus)
   );
@@ -66,7 +69,10 @@ function Conference() {
 
   // 🧠 Format citation based on selected style
   const formatCitation = (card, style) => {
+    if (!card) return '';
+
     const authors = card.authors.replace(/, ([^,]*)$/, ' and $1');
+
     switch (style) {
       case 'IEEE':
         return `${authors}, "${card.title}," in *${card.conferenceName}*, ${card.publishedYear}, pp. ${card.pages}. doi:${card.doi}`;
@@ -83,12 +89,16 @@ function Conference() {
 
   // 📋 Copy citation text
   const handleCopy = () => {
-    const card = cards.find(c => c.bibtex === selectedBibTex);
+    const card = cards.find((c) => c.bibtex === selectedBibTex);
     const textToCopy = formatCitation(card, selectedStyle);
+
     navigator.clipboard.writeText(textToCopy);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+
+  const selectedCard = cards.find((c) => c.bibtex === selectedBibTex);
+  const citationText = formatCitation(selectedCard, selectedStyle);
 
   return (
     <div>
@@ -100,22 +110,23 @@ function Conference() {
               <select
                 className="form-select block w-full p-2 border border-amber-300 rounded-md focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-300"
                 value={selectedYear}
-                onChange={e => setSelectedYear(e.target.value)}
+                onChange={(e) => setSelectedYear(e.target.value)}
               >
-                {uniqueYears.map(year => (
+                {uniqueYears.map((year) => (
                   <option key={year} value={year}>
                     {year}
                   </option>
                 ))}
               </select>
             </div>
+
             <div className="md:w-1/2 sm:w-full">
               <select
                 className="form-select block w-full p-2 border border-amber-300 rounded-md focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-all duration-300"
                 value={selectedStatus}
-                onChange={e => setSelectedStatus(e.target.value)}
+                onChange={(e) => setSelectedStatus(e.target.value)}
               >
-                {statuses.map(status => (
+                {statuses.map((status) => (
                   <option key={status} value={status}>
                     {status}
                   </option>
@@ -129,10 +140,12 @@ function Conference() {
       {/* Cards */}
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         {filteredCards.length === 0 ? (
-          <p className="text-center text-gray-600 mt-6 text-lg font-medium">No publication found.</p>
+          <p className="text-center text-gray-600 mt-6 text-lg font-medium">
+            No publication found.
+          </p>
         ) : (
           <div className="grid grid-cols-1 gap-4">
-            {filteredCards.map(card => (
+            {filteredCards.map((card) => (
               <div
                 key={card.id}
                 className="max-w-full mx-auto bg-white shadow-xl overflow-hidden rounded-xl border-2 border-amber-600 mt-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-amber-700"
@@ -145,16 +158,59 @@ function Conference() {
                   </h2>
                 </div>
 
+                {/* ✅ Updated Info Section (same styling) */}
                 <div className="px-4 md:px-6 py-4 bg-white text-sm md:text-base break-words">
                   <p className="text-gray-700">
                     {card.authors}. {card.conferenceName} ({card.publishedYear}).
+                    {card.status === 'Published' && (
+                      <>
+                        {card.pages && (
+                          <>
+                            {' '}
+                            pp. {card.pages}.
+                          </>
+                        )}
+
+                        {card.volume && (
+                          <>
+                            {' '}
+                            Vol. {card.volume}.
+                          </>
+                        )}
+
+                        {card.issue && (
+                          <>
+                            {' '}
+                            Issue {card.issue}.
+                          </>
+                        )}
+
+                        {card.doi && (
+                          <>
+                            {' '}
+                            DOI:{' '}
+                            <a
+                              href={`https://doi.org/${card.doi}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-amber-600 underline hover:text-amber-800 transition-colors duration-300 break-words"
+                            >
+                              {card.doi}
+                            </a>
+                            .
+                          </>
+                        )}
+                      </>
+                    )}
                   </p>
                 </div>
 
                 <div className="px-4 md:px-6 py-4 flex flex-wrap gap-2 items-center justify-between bg-gradient-to-r from-white to-amber-50 border-t border-amber-200">
                   {/* 🟣 Dynamic status color */}
                   <span
-                    className={`px-3 py-2 rounded-lg shadow-md font-semibold text-sm md:text-base border ${getStatusClasses(card.status)}`}
+                    className={`px-3 py-2 rounded-lg shadow-md font-semibold text-sm md:text-base border ${getStatusClasses(
+                      card.status
+                    )}`}
                   >
                     {card.status}
                   </span>
@@ -170,10 +226,12 @@ function Conference() {
                         <i className="bx bxs-file-pdf text-xl mr-1"></i> PDF
                       </a>
                     )}
+
                     {card.bibtex && (
                       <button
                         onClick={() => {
                           setSelectedBibTex(card.bibtex);
+                          setSelectedStyle('BibTeX');
                           setShowModal(true);
                         }}
                         className="bg-transparent hover:bg-amber-600 text-amber-700 font-semibold hover:text-white py-2 px-4 border-2 border-amber-600 hover:border-amber-700 rounded-lg transition-all duration-300 hover:scale-105 cursor-pointer flex items-center text-sm md:text-base"
@@ -181,6 +239,7 @@ function Conference() {
                         <i className="bx bxs-quote-single-right text-xl mr-1"></i> Citation
                       </button>
                     )}
+
                     {card.sourceLink && card.sourceLink !== '#' && (
                       <a
                         href={card.sourceLink}
@@ -207,7 +266,7 @@ function Conference() {
         >
           <div
             className="bg-white rounded-xl p-6 max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto shadow-2xl border-2 border-amber-600"
-            onClick={e => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-xl font-bold text-amber-700">Conference Citation</h3>
@@ -242,10 +301,7 @@ function Conference() {
             </div>
 
             <pre className="bg-gray-100 p-4 rounded-lg font-mono text-sm overflow-auto border border-gray-300 whitespace-pre-wrap">
-              {formatCitation(
-                cards.find((c) => c.bibtex === selectedBibTex),
-                selectedStyle
-              )}
+              {citationText}
             </pre>
           </div>
         </div>
